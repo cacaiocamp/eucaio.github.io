@@ -12,6 +12,7 @@ const DEFAULT_MINCOLOR = 120;
 
 const MAX_GENERALROTATIONPERFRAME = 7;
 
+const MAX_ARMROTATION = 180;
 const MAX_FEMURROTATION = 95;
 const MAX_TIBIAROTATION = 130;
 
@@ -80,6 +81,10 @@ class Caio {
       this.orientation = 1;
     }
     
+    if(random(0, 1.001) > 0.7){
+      this.hasArm = true;
+    }
+    
     this.globalRotation = random(-1.5, 1.5);
     this.femurRotation = 0;
     this.tibiaRotation = 0;
@@ -120,7 +125,7 @@ class Caio {
       this.globalRotationChangePerFrameToTarget = this.targetGlobalRotationPerFrame / this.framesToTargetGlobalRotation;
 
       this.continuousGlobalRotation = continuousRotationAfter;
-    }
+  }
   
   setFemurRotation(newFemurRotation = random(0, MAX_FEMURROTATION), frameDur = int(random(30, 180)), setRandomRotationAfter = true) {
       this.femurRotationChangeFrameCount = 0;
@@ -209,6 +214,20 @@ class Caio {
         }
         else if (random(0, 1.0001) > 0.75){
           this.setTibiaRotation(random(this.tibiaRotation - (this.tibiaRotation / 3), this.tibiaRotation + (this.tibiaRotation / 3)));
+        }
+      }
+      
+       // femur rotation update
+      if ((this.femurRotation != this.targetFemurRotation) && (this.femurRotationChangeFrameCount != this.framesToTargetFemurRotation)) {
+        this.femurRotation = this.femurRotation + this.femurRotationChangePerFrame;
+        this.femurRotationChangeFrameCount++;
+      }
+      else if (this.femurRotationChangeFrameCount >= this.framesToTargetFemurRotation && this.continuousFemurRotation) {
+        if (random(0, 1.0001) > 0.95){
+          this.setFemurRotation();
+        }
+        else if(random(0, 1.0001) > 0.75){
+          this.setFemurRotation(random(this.femurRotation - (this.femurRotation / 3), this.femurRotation + (this.femurRotation / 3)));
         }
       }
       
