@@ -20,18 +20,34 @@
     
     canvas { position:fixed; top:0; left:0; z-index:1; focus:true }
     
-    #navCAIO { position:absolute; z-index:2; opacity :0%; width: 7.5%; bottom: 2.5%; left: 0.5%}
+    #navCAIO { position:absolute; z-index:2; opacity :0%; width: 50%; bottom: 2.5%; left: 2.5%}
     
-    h3 { text-align: center;}
+    a.navTab {text-decoration: none;}
+    p.navP {text-align: center; width:5%; display: inline-block;}
+    span.navSpan {
+      display: inline-block;
+      margin-right: 10px; /* Add space between elements */
+      opacity: 0%;
+      display: none;
+    }
+    h3 {max-height: 50px}
   </style>
 </head>
 
 <body>
     <nav id="navCAIO">
-      <h3 id="c">C</h3>
-      <h3 id="a">A</h3>
-      <h3 id="i">I</h3>
-      <h3 id="o">O</h3>
+      <h3>
+        <a class="navTab" href="#c"> <p class="navP" id="c">C</p> <span class="navSpan" id="cTab"> <p> composições </p> </span> </a>
+      </h3>
+      <h3>
+        <a class="navTab" href="#a"> <p class="navP" id="a">A</p> <span class="navSpan" id="aTab"> <p> academia </p> </span> </a>
+      </h3>
+      <h3>
+        <a class="navTab" href="#i"> <p class="navP" id="i">I</p> <span class="navSpan" id="iTab"> <p> impros </p> </span> </a>
+      </h3>
+      <h3>
+        <a class="navTab" href="#o"> <p class="navP" id="o">O</p> <span class="navSpan" id="oTab"> <p> outros </p> </span> </a>
+      </h3>
     </nav>
 </body>
 </html>
