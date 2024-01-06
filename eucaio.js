@@ -171,3 +171,7 @@ function closeCaioOTab(){
   selectedElement.style('display: none');
   selectedElement.style('opacity: 0%');
 }
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+}
