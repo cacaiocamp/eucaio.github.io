@@ -8,46 +8,63 @@
   <script language="javascript" type="text/javascript" src="libraries/p5.min.js"></script>
   <script language="javascript" type="text/javascript" src="Caio_class.js"></script>
   <script language="javascript" type="text/javascript" src="definitions.js"></script>
+  <script language="javascript" type="text/javascript" src="element_class.js"></script>
   <script language="javascript" type="text/javascript" src="eucaio.js"></script>
   <!-- OK, YOU CAN MAKE CHANGES BELOW THIS LINE AGAIN -->
 
   <style>
     body {
       padding: 0;
-      margin-bottom: 3.5%;
-      margin-left: 1.5%;
     }
     
     canvas { position:fixed; top:0; left:0; z-index:1; focus:true }
     
-    #navCAIO { position:absolute; z-index:2; opacity :0%; width: 50%; bottom: 2.5%; left: 2.5%}
+    #navCAIO { position:absolute; z-index:2; opacity :0%; bottom: 2.5%; left: 4%}
     
     a.navTab {text-decoration: none;}
-    p.navP {text-align: center; width:5%; display: inline-block;}
+    p.navP {
+      text-align: center; 
+      width:5%; 
+      display: inline-block;
+      cursor: pointer;
+      color: #336699;
+    }
+    p.navP:hover {
+      color: #990000;
+    }
     span.navSpan {
       display: inline-block;
-      margin-right: 10px; /* Add space between elements */
       opacity: 0%;
       display: none;
     }
     h3 {max-height: 50px}
+    
+    
+    #caiosCountDiv { position:absolute; z-index:2; opacity: 0%; bottom: 1.5%; right: 1.5%}
+    p.countDiv {
+      display: inline-block;
+    }
   </style>
 </head>
 
 <body>
     <nav id="navCAIO">
       <h3>
-        <a class="navTab" href="#c"> <p class="navP" id="c">C</p> <span class="navSpan" id="cTab"> <p> composições </p> </span> </a>
+        <div> <p class="navP" id="c">C</p> &nbsp; &nbsp; <span class="navSpan" id="cTab"> <a class="navTab" href="#c"> composições </a> </span> </div>
       </h3>
       <h3>
-        <a class="navTab" href="#a"> <p class="navP" id="a">A</p> <span class="navSpan" id="aTab"> <p> academia </p> </span> </a>
+        <div> <p class="navP" id="a">A</p> &nbsp; &nbsp; <span class="navSpan" id="aTab"> <a class="navTab" href="#a"> academia </a> </span> </div>
       </h3>
       <h3>
-        <a class="navTab" href="#i"> <p class="navP" id="i">I</p> <span class="navSpan" id="iTab"> <p> impros </p> </span> </a>
+        <div> <p class="navP" id="i">I</p> &nbsp; &nbsp; <span class="navSpan" id="iTab"> <a class="navTab" href="#i"> impros </a> </span> </div>
       </h3>
       <h3>
-        <a class="navTab" href="#o"> <p class="navP" id="o">O</p> <span class="navSpan" id="oTab"> <p> outros </p> </span> </a>
+        <div> <p class="navP" id="o">O</p> &nbsp; &nbsp; <span class="navSpan" id="oTab"> <a class="navTab" href="#o"> outros </a> &nbsp; <a class="navTab" href="#s"> sobre </a> </span> </div>
       </h3>
     </nav>
+    
+    <div id="caiosCountDiv">
+      <span> <p class="countDiv" id="caiosCount">0</p> <p class="countDiv" >caios caíram</p> </span>
+    </div>
 </body>
 </html>

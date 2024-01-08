@@ -2,8 +2,18 @@ var caiosVec = [];
 var backgroundColor;
 
 var DEFAULT_MAXCAIONUM = 0;
+var caiosCount = 0;
 var framesCounter = 0;
 var changingNavFonts = false;
+
+var navCaioElementControl = null
+var divCountElementControl = null;
+var cTab = null;
+var aTab = null;
+var iTab = null;
+var oTab = null;
+
+var targetFrameRate = null;
 
 function setup() {  
   angleMode(DEGREES);
@@ -13,27 +23,38 @@ function setup() {
   
   selectedElement = select('#c');
   selectedElement.mouseOver(openCaioCTab);
-  selectedElement.mouseOut(closeCaioCTab);
+  selectedElement.mouseClicked(closeCaioCTab);
   selectedElement.touchStarted(openCaioCTab);
-  selectedElement.touchEnded(closeCaioCTab);
   
   selectedElement = select('#a');
   selectedElement.mouseOver(openCaioATab);
-  selectedElement.mouseOut(closeCaioATab);
+  selectedElement.mouseClicked(closeCaioATab);
   selectedElement.touchStarted(openCaioATab);
-  selectedElement.touchEnded(closeCaioATab);
   
   selectedElement = select('#i');
   selectedElement.mouseOver(openCaioITab);
-  selectedElement.mouseOut(closeCaioITab);
+  selectedElement.mouseClicked(closeCaioITab);
   selectedElement.touchStarted(openCaioITab);
-  selectedElement.touchEnded(closeCaioITab);
   
   selectedElement = select('#o');
   selectedElement.mouseOver(openCaioOTab);
-  selectedElement.mouseOut(closeCaioOTab);
+  selectedElement.mouseClicked(closeCaioOTab);
   selectedElement.touchStarted(openCaioOTab);
-  selectedElement.touchEnded(closeCaioOTab);
+  
+  navCaioElementControl = new ElementControl('#navCAIO');
+  divCountElementControl = new ElementControl('#caiosCountDiv');
+  cTab = new ElementControl('#cTab');
+  aTab = new ElementControl('#aTab');
+  iTab = new ElementControl('#iTab');
+  oTab = new ElementControl('#oTab');
+ 
+  selectedElement = select('canvas');
+  selectedElement.mouseClicked(closeCaioTabs);
+  selectedElement.touchStarted(closeCaioTabs);
+  
+  frameRate(60);
+  targetFrameRate = 60;
+  
 }
 
 function update(){
@@ -49,24 +70,36 @@ function update(){
     
     if(caiosVec[i].position.y - abs(caiosVec[i].position.z) > windowHeight){
       caiosVec.splice(i, 1);
+      caiosCount++;
+      select('#caiosCount').html(caiosCount);
     }
   }
-
   if(changingNavFonts == true){
     updateNavFonts();
   }
   
-  if(framesCounter < 481){
-    if(framesCounter > 240){
-      selectedElement = select('#navCAIO');
-      selectedElement.style('opacity', float(((framesCounter-240.0)/240.0)) * 80 + '%');
+  if(framesCounter < int(targetFrameRate*8) + 1){
+    
+    if(framesCounter == 60){
+      divCountElementControl.startOpacityChange(80, int(targetFrameRate));
+    }
+    
+    if(framesCounter == int(targetFrameRate*4)){
+      navCaioElementControl.startOpacityChange(80, int(targetFrameRate*4));
     }
     framesCounter++;
     
-    if(framesCounter == 280){
+    if(framesCounter == int(targetFrameRate*4.5)){
       changingNavFonts = true;
     }
   }
+  
+  navCaioElementControl.update();
+  divCountElementControl.update();
+  cTab.update();
+  aTab.update();
+  iTab.update();
+  oTab.update();
 }
 
 function draw() {
@@ -125,51 +158,42 @@ function updateNavFonts(){
 }
 
 function openCaioCTab(){
-  selectedElement = select('#cTab');
-  selectedElement.style('display: inline-block');
-  selectedElement.style('opacity: 100%');
+  cTab.startOpacityChange(100, targetFrameRate*0.5, 'inline-block');
 }
 
 function openCaioATab(){
-  selectedElement = select('#aTab');
-  selectedElement.style('display: inline-block');
-  selectedElement.style('opacity: 100%');
+  aTab.startOpacityChange(100, targetFrameRate*0.5, 'inline-block');
 }
 
 function openCaioITab(){
-  selectedElement = select('#iTab');
-  selectedElement.style('display: inline-block');
-  selectedElement.style('opacity: 100%');
+  iTab.startOpacityChange(100, targetFrameRate*0.5, 'inline-block');
 }
 
 function openCaioOTab(){
-  selectedElement = select('#oTab');
-  selectedElement.style('display: inline-block');
-  selectedElement.style('opacity: 100%');
+  oTab.startOpacityChange(100, targetFrameRate*0.5, 'inline-block');
 }
 
 function closeCaioCTab(){
-  selectedElement = select('#cTab');
-  selectedElement.style('display: none');
-  selectedElement.style('opacity: 0%');
+    cTab.startOpacityChange(0, targetFrameRate*0.5, 'inline-block');
 }
 
 function closeCaioATab(){
-  selectedElement = select('#aTab');
-  selectedElement.style('display: none');
-  selectedElement.style('opacity: 0%');
+    aTab.startOpacityChange(0, targetFrameRate*0.5, 'inline-block');
 }
 
 function closeCaioITab(){
-  selectedElement = select('#iTab');
-  selectedElement.style('display: none');
-  selectedElement.style('opacity: 0%');
+    iTab.startOpacityChange(0, targetFrameRate*0.5, 'inline-block');
 }
 
 function closeCaioOTab(){
-  selectedElement = select('#oTab');
-  selectedElement.style('display: none');
-  selectedElement.style('opacity: 0%');
+    oTab.startOpacityChange(0, targetFrameRate*0.5, 'inline-block');
+}
+
+function closeCaioTabs(){
+  cTab.startOpacityChange(0, targetFrameRate*1, 'inline-block');
+  aTab.startOpacityChange(0, targetFrameRate*1, 'inline-block');
+  iTab.startOpacityChange(0, targetFrameRate*1, 'inline-block');
+  oTab.startOpacityChange(0, targetFrameRate*1, 'inline-block');
 }
 
 function windowResized() {
