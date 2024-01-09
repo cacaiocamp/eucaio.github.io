@@ -59,7 +59,7 @@ function setup() {
 
 function update(){
   if(caiosVec.length < DEFAULT_MAXCAIONUM){
-    let caio = new Caio(new Point(random(-windowWidth / 3, windowWidth + (windowWidth / 3)), random(-windowHeight + DEFAULT_MAXZ, -windowHeight), random(DEFAULT_MAXZ, -DEFAULT_MAXZ/2)), new Color(random(-15, 30), random(-15, 30), random(-15, 30)), true);
+    let caio = new Caio(new Point(random(-windowWidth / 3, windowWidth + (windowWidth / 3)), random(-windowHeight + (2*DEFAULT_MAXZ), -windowHeight), random(DEFAULT_MAXZ, -DEFAULT_MAXZ/2)), new Color(random(-15, 30), random(-15, 30), random(-15, 30)), true);
     caio.speed.y = random(5, 6.5);
     caio.acceleration.y = random(1, 5) * 0.0035;
     caiosVec.push(caio);
