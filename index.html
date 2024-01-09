@@ -23,22 +23,26 @@
     
     a.navTab {text-decoration: none;}
     p.navP {
-      text-align: center; 
-      width:5%; 
+      text-align: center;
       display: inline-block;
+      opacity: 0;
+    }
+    
+    span.navHover{
+      text-align: center; 
       cursor: pointer;
       color: #336699;
     }
-    p.navP:hover {
+    span.navHover:hover{
       color: #990000;
     }
-    span.navSpan {
+  
+    span.navTab {
       display: inline-block;
       opacity: 0%;
       display: none;
     }
     h3 {max-height: 50px}
-    
     
     #caiosCountDiv { position:absolute; z-index:2; opacity: 0%; top: 0.5%; right: 1%}
     p.countDiv {
@@ -50,16 +54,16 @@
 <body>
     <nav id="navCAIO">
       <h3>
-        <div> <p class="navP" id="c">C</p> &nbsp; &nbsp; <span class="navSpan" id="cTab"> <a class="navTab" href="#c"> composições </a> </span> </div>
+        <div> <span class="navHover" id="c">C<p class="navP">x</p> </span> &nbsp; <span class="navTab" id="cTab"> <a class="navTab" href="#c"> composições </a> </span> </div>
       </h3>
       <h3>
-        <div> <p class="navP" id="a">A</p> &nbsp; &nbsp; <span class="navSpan" id="aTab"> <a class="navTab" href="#a"> academia </a> </span> </div>
+        <div> <span class="navHover" id="a">A<p class="navP">x</p> </span> &nbsp; <span class="navTab" id="aTab"> <a class="navTab" href="#a"> academia </a> </span> </div>
       </h3>
       <h3>
-        <div> <p class="navP" id="i">I</p> &nbsp; &nbsp; <span class="navSpan" id="iTab"> <a class="navTab" href="#i"> impros </a> </span> </div>
+        <div> <span class="navHover" id="i">I<p class="navP">x</p> </span> &nbsp; <span class="navTab" id="iTab"> <a class="navTab" href="#i"> impros </a> </span> </div>
       </h3>
       <h3>
-        <div> <p class="navP" id="o">O</p> &nbsp; &nbsp; <span class="navSpan" id="oTab"> <a class="navTab" href="#o"> outros </a> &nbsp; <a class="navTab" href="#s"> sobre </a> </span> </div>
+        <div> <span class="navHover" id="o">O<p class="navP">x</p> </span> &nbsp; <span class="navTab" id="oTab"> <a class="navTab" href="#o"> outros </a> &nbsp; <a class="navTab" href="#s"> sobre </a> </span> </div>
       </h3>
     </nav>
     
