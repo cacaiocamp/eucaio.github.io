@@ -15,6 +15,9 @@ var oTab = null;
 
 var targetFrameRate = null;
 
+var cooldownCanvasClickCounter = 0;
+var canvasClickAllowed = true;
+
 function setup() {  
   angleMode(DEGREES);
   backgroundColor = color(200, 200, 210);
@@ -23,22 +26,22 @@ function setup() {
   
   selectedElement = select('#c');
   selectedElement.mouseOver(openCaioCTab);
-  //selectedElement.mouseClicked(closeCaioCTab);
+  selectedElement.mouseClicked(closeCaioCTab);
   selectedElement.touchStarted(openCaioCTab);
   
   selectedElement = select('#a');
   selectedElement.mouseOver(openCaioATab);
-  //selectedElement.mouseClicked(closeCaioATab);
+  selectedElement.mouseClicked(closeCaioATab);
   selectedElement.touchStarted(openCaioATab);
   
   selectedElement = select('#i');
   selectedElement.mouseOver(openCaioITab);
-  //selectedElement.mouseClicked(closeCaioITab);
+  selectedElement.mouseClicked(closeCaioITab);
   selectedElement.touchStarted(openCaioITab);
   
   selectedElement = select('#o');
   selectedElement.mouseOver(openCaioOTab);
-  //selectedElement.mouseClicked(closeCaioOTab);
+  selectedElement.mouseClicked(closeCaioOTab);
   selectedElement.touchStarted(openCaioOTab);
   
   navCaioElementControl = new ElementControl('#navCAIO');
@@ -100,6 +103,16 @@ function update(){
   aTab.update();
   iTab.update();
   oTab.update();
+  
+  if(cooldownCanvasClickCounter > -1){
+    cooldownCanvasClickCounter++;
+    canvasClickAllowed = false;
+    
+    if(cooldownCanvasClickCounter == 5){
+      canvasClickAllowed = true;
+      cooldownCanvasClickCounter = -1;
+    }
+  }
 }
 
 function draw() {
@@ -159,18 +172,26 @@ function updateNavFonts(){
 
 function openCaioCTab(){
   cTab.startOpacityChange(100, targetFrameRate*0.5, 'inline-block');
+  cooldownCanvasClickCounter = 0;
+  canvasClickAllowed = false;
 }
 
 function openCaioATab(){
   aTab.startOpacityChange(100, targetFrameRate*0.5, 'inline-block');
+  cooldownCanvasClickCounter = 0;
+  canvasClickAllowed = false;
 }
 
 function openCaioITab(){
   iTab.startOpacityChange(100, targetFrameRate*0.5, 'inline-block');
+  cooldownCanvasClickCounter = 0;
+  canvasClickAllowed = false;
 }
 
 function openCaioOTab(){
   oTab.startOpacityChange(100, targetFrameRate*0.5, 'inline-block');
+  cooldownCanvasClickCounter = 0;
+  canvasClickAllowed = false;
 }
 
 function closeCaioCTab(){
@@ -190,10 +211,13 @@ function closeCaioOTab(){
 }
 
 function closeCaioTabs(){
-  cTab.startOpacityChange(0, targetFrameRate*1, 'inline-block');
-  aTab.startOpacityChange(0, targetFrameRate*1, 'inline-block');
-  iTab.startOpacityChange(0, targetFrameRate*1, 'inline-block');
-  oTab.startOpacityChange(0, targetFrameRate*1, 'inline-block');
+  if(canvasClickAllowed){
+    print('allowed');
+    cTab.startOpacityChange(0, targetFrameRate*1, 'inline-block');
+    aTab.startOpacityChange(0, targetFrameRate*1, 'inline-block');
+    iTab.startOpacityChange(0, targetFrameRate*1, 'inline-block');
+    oTab.startOpacityChange(0, targetFrameRate*1, 'inline-block');
+  }
 }
 
 function windowResized() {
