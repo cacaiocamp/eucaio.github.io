@@ -57,7 +57,6 @@ function setup() {
   
   frameRate(60);
   targetFrameRate = 60;
-  
 }
 
 function update(){
