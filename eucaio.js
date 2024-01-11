@@ -27,22 +27,22 @@ function setup() {
   selectedElement = select('#c');
   selectedElement.mouseOver(openCaioCTab);
   selectedElement.mouseClicked(closeCaioCTab);
-  selectedElement.touchEnded(openCaioCTab);
+  selectedElement.touchStarted(openCaioCTab);
   
   selectedElement = select('#a');
   selectedElement.mouseOver(openCaioATab);
   selectedElement.mouseClicked(closeCaioATab);
-  selectedElement.touchEnded(openCaioATab);
+  selectedElement.touchStarted(openCaioATab);
   
   selectedElement = select('#i');
   selectedElement.mouseOver(openCaioITab);
   selectedElement.mouseClicked(closeCaioITab);
-  selectedElement.touchEnded(openCaioITab);
+  selectedElement.touchStarted(openCaioITab);
   
   selectedElement = select('#o');
   selectedElement.mouseOver(openCaioOTab);
   selectedElement.mouseClicked(closeCaioOTab);
-  selectedElement.touchEnded(openCaioOTab);
+  selectedElement.touchStarted(openCaioOTab);
   
   navCaioElementControl = new ElementControl('#navCAIO');
   divCountElementControl = new ElementControl('#caiosCountDiv');
@@ -176,7 +176,7 @@ function openCaioOTab(){
 }
 
 function closeCaioCTab(){
-    cTab.startOpacityChange(0, targetFrameRate*0.5, 'inline-block');
+  cTab.startOpacityChange(0, targetFrameRate*0.5, 'inline-block');
 }
 
 function closeCaioATab(){

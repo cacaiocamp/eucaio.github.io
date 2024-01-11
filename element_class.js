@@ -34,12 +34,14 @@ class ElementControl {
   }
   
   startOpacityChange(newOpacity, durationInFrames, display = null){
-    this.frameCount = 0;
-    this.targetOpacity = newOpacity;
-    this.framesToTargetOpacity = durationInFrames;
-    this.opacityChangePerFrame = (this.targetOpacity - this.opacity) / this.framesToTargetOpacity;
+    if(this.frameCount == this.framesToTargetOpacity){
+      this.frameCount = 0;
+      this.targetOpacity = newOpacity;
+      this.framesToTargetOpacity = durationInFrames;
+      this.opacityChangePerFrame = (this.targetOpacity - this.opacity) / this.framesToTargetOpacity;
     
-    this.display(true, display);
+      this.display(true, display);
+    }
   }
   
   display(onOff, otherDisplay = null){
