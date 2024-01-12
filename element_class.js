@@ -9,6 +9,9 @@ class ElementControl {
     this.framesToTargetOpacity = 0;
     this.opacityChangePerFrame = 0;
     this.frameCount = 0;
+    
+    this.position = selectedElement.position();
+    this.size = selectedElement.size();
   }
   
   select(){

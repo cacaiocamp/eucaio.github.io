@@ -333,4 +333,85 @@ class Caio {
     newColor = DEFAULT_MINCOLOR + (colorRatio * (DEFAULT_MAXCOLOR - DEFAULT_MINCOLOR));
     this.mainColor = new Color(newColor + this.mainColor.r, newColor + this.mainColor.g, newColor + this.mainColor.b, 255);
   }
+  
+  drawCaioAsSample(samplePos){
+    noStroke();
+    fill(color(this.mainColor.r, this.mainColor.g, this.mainColor.b, this.mainColor.a));
+    push();
+      translate(samplePos.x, samplePos.y, samplePos.z);
+      rotate(this.globalRotation);
+      
+      circle(0, 0, this.generalProp * this.headProp * DEFAULT_HEADRADIUS); // head
+      
+      let partsYPos = this.generalProp * this.headProp * DEFAULT_HEADRADIUS / 2;
+      rect( // torso
+        -(this.generalProp * this.torsoWidthProp * DEFAULT_TORSOWIDTH) / 2,
+        partsYPos,
+        (this.generalProp * this.torsoWidthProp * DEFAULT_TORSOWIDTH),
+        (this.generalProp * this.torsoHeightProp * DEFAULT_TORSOHEIGHT)
+      );
+      
+      push(); //femur start
+        partsYPos = partsYPos + (this.generalProp * this.torsoHeightProp * DEFAULT_TORSOHEIGHT);
+        
+        let rotationPointX = 0;
+        let positionAdjustment = 0;
+
+        if (this.orientation == 1) { //left rotation
+          rotationPointX = (this.generalProp * this.femurWidthProp * DEFAULT_FEMURWIDTH) / 2;
+          positionAdjustment = -1 * this.generalProp * this.femurWidthProp * DEFAULT_FEMURWIDTH;
+        }
+        else { //right rotation
+          rotationPointX = - (this.generalProp * this.femurWidthProp * DEFAULT_FEMURWIDTH) / 2;
+        }
+
+        translate(
+          rotationPointX,
+          partsYPos
+        );
+        rotate(this.femurRotation);
+        rect(
+          positionAdjustment, 0,
+          (this.generalProp * this.femurWidthProp * DEFAULT_FEMURWIDTH),
+          (this.generalProp * this.femurHeightProp * DEFAULT_FEMURHEIGHT)
+        );
+        
+        push(); //tibia start
+          partsYPos = (this.generalProp * this.femurHeightProp * DEFAULT_FEMURHEIGHT);
+
+          if (this.orientation == 1) { //esquerda
+            rotationPointX = -(this.generalProp * this.femurWidthProp * DEFAULT_FEMURWIDTH);
+              
+            if (this.tibiaRotation <= -90) {
+              positionAdjustment = - (this.generalProp * this.femurWidthProp * DEFAULT_FEMURWIDTH);
+            }
+            else {
+              positionAdjustment = 0;
+            }
+          }
+          else { //direita
+            rotationPointX = (this.generalProp * this.femurWidthProp * DEFAULT_FEMURWIDTH);
+
+            if (this.tibiaRotation < 90 ) {
+              positionAdjustment = - (this.generalProp * this.femurWidthProp * DEFAULT_FEMURWIDTH);
+            }
+            else {
+              positionAdjustment = 0;
+            }
+          }
+
+          translate(
+            rotationPointX,
+            partsYPos
+          );
+          rotate(this.tibiaRotation);
+          rect(
+            positionAdjustment, 0,
+            (this.generalProp * this.tibiaWidthProp * DEFAULT_TIBIAWIDTH),
+            (this.generalProp * this.tibiaHeightProp * DEFAULT_TIBIAHEIGHT)
+          );
+        pop(); // end tibia
+      pop(); // end femur
+    pop();// end drawing
+  }
 }

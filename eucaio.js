@@ -5,6 +5,8 @@ var DEFAULT_MAXCAIONUM = 0;
 var caiosCount = 0;
 var framesCounter = 0;
 var changingNavFonts = false;
+var drawSampleCaio = false;
+var sampleCaioIndex = 0;
 
 var navCaioElementControl = null
 var divCountElementControl = null;
@@ -12,13 +14,19 @@ var cTab = null;
 var aTab = null;
 var iTab = null;
 var oTab = null;
+var caiosP = null;
 
 var targetFrameRate = null;
 
-var cooldownCanvasClickCounter = 0;
-var canvasClickAllowed = true;
+function preload(){
+  caiosCount = window.location.hash.substring(1);
+  
+  if(caiosCount != ''){
+      select('#caiosCount').html(caiosCount);
+  }
+}
 
-function setup() {  
+function setup() {
   angleMode(DEGREES);
   backgroundColor = color(200, 200, 210);
   createCanvas(windowWidth, windowHeight, WEBGL);
@@ -44,12 +52,16 @@ function setup() {
   selectedElement.mouseClicked(closeCaioOTab);
   selectedElement.touchStarted(openCaioOTab);
   
+  selectedElement = select('#caiosP');
+  selectedElement.mouseClicked(sampleCaioDraw);
+  
   navCaioElementControl = new ElementControl('#navCAIO');
   divCountElementControl = new ElementControl('#caiosCountDiv');
   cTab = new ElementControl('#cTab');
   aTab = new ElementControl('#aTab');
   iTab = new ElementControl('#iTab');
   oTab = new ElementControl('#oTab');
+  caiosP = new ElementControl('#caiosP');
  
   selectedElement = select('canvas');
   selectedElement.mouseClicked(closeCaioTabs);
@@ -57,6 +69,11 @@ function setup() {
   
   frameRate(60);
   targetFrameRate = 60;
+  
+  if(caiosCount > 0){
+    navCaioElementControl.startOpacityChange(80, 1);
+    divCountElementControl.startOpacityChange(80, 1);
+  }
 }
 
 function update(){
@@ -91,7 +108,7 @@ function update(){
     }
     framesCounter++;
     
-    if(framesCounter == int(targetFrameRate*4.5)){
+    if(framesCounter == int(targetFrameRate*4.5) || caiosCount > 0){
       changingNavFonts = true;
     }
   }
@@ -102,6 +119,10 @@ function update(){
   aTab.update();
   iTab.update();
   oTab.update();
+  
+  if(drawSampleCaio && random(0, 1.001) > 0.98){
+    sampleCaioIndex = int(random(0, caiosVec.length/4));
+  }
 }
 
 function draw() {
@@ -112,6 +133,22 @@ function draw() {
   
   for (let index = 0; index < caiosVec.length; index++){
     caiosVec[index].drawCaio();
+  }
+  
+  if(drawSampleCaio && caiosVec.length > 0){
+    let elementPos = select('#caiosCountDiv').position();
+    let elementSize = select('#caiosCountDiv').size();
+    
+    let samplePosition = new Point(
+      elementPos.x + (elementSize.width/2),
+      elementPos.y + 50 +(elementSize.height/2),
+      1
+    );
+    
+    stroke(255, 255, 255);
+    fill(color(255, 204, 255));
+    rect(elementPos.x, elementPos.y + 40, elementSize.width, (elementSize.height * 2) - 20, 10, 10, 50, 50);
+    caiosVec[0].drawCaioAsSample(samplePosition);
   }
 }
 
@@ -198,6 +235,14 @@ function closeCaioTabs(){
   oTab.startOpacityChange(0, targetFrameRate*1, 'inline-block');
 }
 
+function sampleCaioDraw(){
+  drawSampleCaio = !drawSampleCaio;
+}
+
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
+}
+
+function pageChange(nextPage) {
+  window.location.href = nextPage + "#" + caiosCount;
 }
