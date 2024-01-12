@@ -141,13 +141,15 @@ function draw() {
     
     let samplePosition = new Point(
       elementPos.x + (elementSize.width/2),
-      elementPos.y + 50 +(elementSize.height/2),
+      elementPos.y + 55 +(elementSize.height/2),
       1
     );
-    
     stroke(255, 255, 255);
-    fill(color(255, 204, 255));
-    rect(elementPos.x, elementPos.y + 40, elementSize.width, (elementSize.height * 2) - 20, 10, 10, 50, 50);
+    fill(color(255, 255, 255, 200));
+    triangle((elementPos.x + (elementSize.width/2)), elementPos.y + (caiosP.size.height) + caiosP.position.y, (elementPos.x + caiosP.position.x + (caiosP.size.width)) - 15, elementPos.y + 40, (elementPos.x + caiosP.position.x + (caiosP.size.width))+ 15, elementPos.y + 40);
+    stroke(255, 255, 255);
+    fill(color(255, 204, 255, 200));
+    rect(elementPos.x, elementPos.y + 40, elementSize.width, (elementSize.height * 2) - 20);
     caiosVec[0].drawCaioAsSample(samplePosition);
   }
 }
