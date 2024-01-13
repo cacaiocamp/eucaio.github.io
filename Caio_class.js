@@ -1,23 +1,3 @@
-const DEFAULT_HEADRADIUS = 5.5;
-const DEFAULT_TORSOWIDTH = 4;
-const DEFAULT_TORSOHEIGHT = 10;
-const DEFAULT_FEMURWIDTH = 4;
-const DEFAULT_FEMURHEIGHT = 7;
-const DEFAULT_TIBIAWIDTH = 4;
-const DEFAULT_TIBIAHEIGHT = 7;
-
-const DEFAULT_MAXZ = -3750;
-const DEFAULT_MAXCOLOR = 190;
-const DEFAULT_MINCOLOR = 120;
-
-const MAX_GENERALROTATIONPERFRAME = 7;
-
-const MAX_ARMROTATION = 180;
-const MAX_FEMURROTATION = 95;
-const MAX_TIBIAROTATION = 130;
-
-const NUM_TRAILS = 5;
-
 /*
   each caio is made of 4 parts: head (circle), torso, femur and tibia (rectangles)
   180 rotation is a standing rotation, with 0 beign full north;;

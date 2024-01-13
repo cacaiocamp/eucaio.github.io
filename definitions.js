@@ -32,3 +32,22 @@ var fontFamiliesVec = [
   'font-family: Luminari, cursive;',
   'font-family: Comic Sans MS, cursive;'
 ];
+
+const CAIOSMODE_DEFAULT = 0;
+
+const DEFAULT_HEADRADIUS = 5.5;
+const DEFAULT_TORSOWIDTH = 4;
+const DEFAULT_TORSOHEIGHT = 10;
+const DEFAULT_FEMURWIDTH = 4;
+const DEFAULT_FEMURHEIGHT = 7;
+const DEFAULT_TIBIAWIDTH = 4;
+const DEFAULT_TIBIAHEIGHT = 7;
+
+const DEFAULT_MAXZ = -3750;
+const DEFAULT_MAXCOLOR = 190;
+const DEFAULT_MINCOLOR = 120;
+
+const MAX_GENERALROTATIONPERFRAME = 7;
+
+const MAX_FEMURROTATION = 95;
+const MAX_TIBIAROTATION = 130;

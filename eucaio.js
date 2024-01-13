@@ -78,10 +78,7 @@ function setup() {
 
 function update(){
   if(caiosVec.length < DEFAULT_MAXCAIONUM){
-    let caio = new Caio(new Point(random(-windowWidth / 3, windowWidth + (windowWidth / 3)), random(-windowHeight + (2*DEFAULT_MAXZ), -windowHeight), random(DEFAULT_MAXZ, -DEFAULT_MAXZ/2)), new Color(random(-15, 30), random(-15, 30), random(-15, 30)), true);
-    caio.speed.y = random(5, 6.5);
-    caio.acceleration.y = random(1, 5) * 0.0035;
-    caiosVec.push(caio);
+    addNewCaio();
   }
   
   for(let i = 0; i < caiosVec.length; i++){
@@ -151,6 +148,33 @@ function draw() {
     fill(color(255, 204, 255, 200));
     rect(elementPos.x, elementPos.y + 40, elementSize.width, (elementSize.height * 2) - 20);
     caiosVec[0].drawCaioAsSample(samplePosition);
+  }
+}
+
+function addNewCaio(caiosMode = CAIOSMODE_DEFAULT){
+  if(caiosMode == CAIOSMODE_DEFAULT){
+    let newCaioX = 0;
+    let newCaioY = 0;
+    let newCaioZ = random(DEFAULT_MAXZ, -DEFAULT_MAXZ/2);
+    if(newCaioZ >= 0){
+      newCaioX = random(0, windowWidth);
+      newCaioY = random(-windowHeight, -windowHeight/5);
+    }
+    else {
+      if(newCaioZ < DEFAULT_MAXZ/2){
+        newCaioX = random(-windowWidth / 2, windowWidth + (windowWidth / 2));
+        newCaioY = random(-windowHeight + (2*DEFAULT_MAXZ), -windowHeight + (DEFAULT_MAXZ/2));
+      }
+      else {
+        newCaioX = random(-windowWidth/3, windowWidth + (windowWidth/3));
+        newCaioY = random(-windowHeight + (2*DEFAULT_MAXZ), -windowHeight);
+      }
+    }
+    
+    let caio = new Caio(new Point(newCaioX, newCaioY, newCaioZ), new Color(random(-15, 30), random(-15, 30), random(-15, 30)), true);
+    caio.speed.y = random(5, 6.5);
+    caio.acceleration.y = random(1, 5) * 0.0035;
+    caiosVec.push(caio);
   }
 }
 
