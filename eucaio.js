@@ -30,7 +30,7 @@ function setup() {
   angleMode(DEGREES);
   backgroundColor = color(200, 200, 210);
   createCanvas(windowWidth, windowHeight, WEBGL);
-  DEFAULT_MAXCAIONUM = windowWidth / 7; 
+  DEFAULT_MAXCAIONUM = windowWidth / 8; 
   
   selectedElement = select('#c');
   selectedElement.mouseOver(openCaioCTab);

@@ -236,9 +236,16 @@ class Caio {
       this.speed.y = this.speed.y + this.acceleration.y;
       this.speed.z = this.speed.z + this.acceleration.z;
 
-      this.position.x = this.position.x + this.speed.x;
-      this.position.y = this.position.y + this.speed.y;
-      this.position.z = this.position.z + this.speed.z;
+      if(frameRate() <= 0){
+        this.position.x = this.position.x + this.speed.x;
+        this.position.y = this.position.y + this.speed.y;
+        this.position.z = this.position.z + this.speed.z;
+      }
+      else{
+        this.position.x = this.position.x + (this.speed.x * (targetFrameRate/frameRate()));
+        this.position.y = this.position.y + (this.speed.y * (targetFrameRate/frameRate()));
+        this.position.z = this.position.z + (this.speed.z * (targetFrameRate/frameRate()));
+      }
 
       if (this.setRandomXSpeed) {
         this.speed.x = this.speed.x + random(this.randomXSpeed.x, this.randomXSpeed.y);
