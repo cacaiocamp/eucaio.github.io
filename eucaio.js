@@ -30,7 +30,7 @@ function setup() {
   angleMode(DEGREES);
   backgroundColor = color(200, 200, 210);
   createCanvas(windowWidth, windowHeight, WEBGL);
-  DEFAULT_MAXCAIONUM = windowWidth / 8; 
+  DEFAULT_MAXCAIONUM = windowWidth / 9; 
   
   selectedElement = select('#c');
   selectedElement.mouseOver(openCaioCTab);
@@ -86,6 +86,7 @@ function update(){
     
     if(caiosVec[i].position.y - abs(caiosVec[i].position.z) > windowHeight){
       caiosVec.splice(i, 1);
+      
       caiosCount++;
       select('#caiosCount').html(caiosCount);
     }
@@ -152,22 +153,22 @@ function draw() {
 }
 
 function addNewCaio(caiosMode = CAIOSMODE_DEFAULT){
-  if(caiosMode == CAIOSMODE_DEFAULT){
+  if(caiosMode == CAIOSMODE_DEFAULT){ //----------------------------------------- DEFAULT
     let newCaioX = 0;
     let newCaioY = 0;
     let newCaioZ = random(DEFAULT_MAXZ, -DEFAULT_MAXZ/2);
     if(newCaioZ >= 0){
-      newCaioX = random(0, windowWidth);
-      newCaioY = random(-windowHeight, -windowHeight/5);
+      newCaioX = random(windowWidth/3, windowWidth - (windowWidth/3));
+      newCaioY = random(-2*windowHeight, -windowHeight);
     }
     else {
       if(newCaioZ < DEFAULT_MAXZ/2){
-        newCaioX = random(-windowWidth / 2, windowWidth + (windowWidth / 2));
-        newCaioY = random(-windowHeight + (2*DEFAULT_MAXZ), -windowHeight + (DEFAULT_MAXZ/2));
+        newCaioX = random(windowWidth/3, windowWidth - (windowWidth/3));
+        newCaioY = random(-windowHeight + (2*DEFAULT_MAXZ), -windowHeight + (1.5*DEFAULT_MAXZ));
       }
       else {
-        newCaioX = random(-windowWidth/3, windowWidth + (windowWidth/3));
-        newCaioY = random(-windowHeight + (2*DEFAULT_MAXZ), -windowHeight);
+        newCaioX = random(windowWidth/20, windowWidth - (windowWidth/20));
+        newCaioY = random(-windowHeight + (DEFAULT_MAXZ), -windowHeight + DEFAULT_MAXZ/2);
       }
     }
     
