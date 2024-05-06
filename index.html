@@ -19,7 +19,9 @@
     
     canvas { position:fixed; top:0; left:0; z-index:1; focus:true }
     
-    #navCAIO { position:absolute; z-index:2; opacity :0%; bottom: 2.5%; left: 5%}
+    #divContainer {position:absolute; width: 25%; height: 95%; top: 5%; left: 5%;}
+    #navCAIO { position:absolute; z-index:2; opacity :0%; bottom: 4%; left: 0%; margin:0%;}
+    #h1PageName { position:relative; z-index:2; opacity :75%; letter-spacing: 15px; float: left; margin:0%; font-weight: bold; }
     
     a.navTab {text-decoration: none;}
     p.navP {
@@ -45,7 +47,7 @@
     }
     h3 {max-height: 50px}
     
-    #caiosCountDiv { position:absolute; z-index:2; opacity: 0%; top: 0.5%; right: 1%}
+    #caiosCountDiv { position:absolute; z-index:2; opacity: 0%; top: 0%; right: 1%}
     p.countDiv {
       display: inline-block;
     }
@@ -62,42 +64,43 @@
 </head>
 
 <body>
-    <nav id="navCAIO">
-      <h3>
-        <div> 
-          <a class="navHover" id="c">C<p class="navP">x</p> </a> &nbsp; 
-          <span class="navTab" id="cTab"> 
-            <a class="navTab" href="#c" onclick="pageChange('comps.html')" id="navCompsA" > composições </a> 
-          </span> 
-        </div>
-      </h3>
-      <h3>
-        <div> 
-          <a class="navHover" id="a">A<p class="navP">x</p> </a> &nbsp; 
-          <span class="navTab" id="aTab"> 
-            <a class="navTab" href="#a"> academia </a> 
-          </span> 
-        </div>
-      </h3>
-      <h3>
-        <div> 
-          <a class="navHover" id="i">I<p class="navP">x</p> </a> &nbsp; 
-          <span class="navTab" id="iTab"> 
-            <a class="navTab" href="#i"> impros </a> 
-          </span> 
-        </div>
-      </h3>
-      <h3>
-        <div> 
-          <a class="navHover" id="o">O<p class="navP">x</p> </a> &nbsp; 
-          <span class="navTab" id="oTab"> 
-            <a class="navTab" href="#o"> outros </a> &nbsp; 
-            <a class="navTab" href="#o"> bio </a>  &nbsp; 
-            <a class="navTab" href="#o" onclick="pageChange('index.html')" id="navIndexA"> index </a>
-          </span> 
-        </div>
-      </h3>
-    </nav>
+    <div id="divContainer">
+      <nav id="navCAIO">
+        <h3>
+          <div> 
+            <a class="navHover" id="c">C<p class="navP">x</p> </a> &nbsp; 
+            <span class="navTab" id="cTab"> 
+              <a class="navTab" href="#c" onclick="pageChange('comps.html')"> comps </a> 
+            </span> 
+          </div>
+        </h3>
+        <h3>
+          <div> 
+            <a class="navHover" id="a">A<p class="navP">x</p> </a> &nbsp; 
+            <span class="navTab" id="aTab"> 
+              <a class="navTab" href="#a" onclick="pageChange('academia.html')"> academia </a> 
+            </span> 
+          </div>
+        </h3>
+        <h3>
+          <div> 
+            <a class="navHover" id="i">I<p class="navP">x</p> </a> &nbsp; 
+            <span class="navTab" id="iTab"> 
+              <a class="navTab" href="#i" onclick="pageChange('impros.html')"> impros </a> 
+            </span> 
+          </div>
+        </h3>
+        <h3>
+          <div> 
+            <a class="navHover" id="o">O<p class="navP">x</p> </a> &nbsp; 
+            <span class="navTab" id="oTab"> 
+              <a class="navTab" href="#o" onclick="pageChange('outros.html')"> outros </a> &nbsp; 
+              <a class="navTab" href="#o" onclick="pageChange('bio.html')"> bio </a>  &nbsp; 
+              <a class="navTab" href="#o" onclick="pageChange('index.html')"> index </a>
+            </span> 
+          </div>
+        </h3>
+    </div>
     
     <div id="caiosCountDiv">
       <span> <p class="countDiv" id="caiosCount">0</p> <p class="caiosCountDrawP" id="caiosP"> caios</p> <p class="countDiv">caíram</p> </span>
