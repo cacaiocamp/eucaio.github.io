@@ -158,7 +158,7 @@ function addNewCaio(caiosMode = CAIOSMODE_DEFAULT){
     let newCaioY = 0;
     let newCaioZ = random(DEFAULT_MAXZ, -DEFAULT_MAXZ/2);
     if(newCaioZ >= 0){
-      newCaioX = random(windowWidth/3, windowWidth - (windowWidth/3));
+      newCaioX = random(windowWidth/2.4, windowWidth - (windowWidth/2.4));
       newCaioY = random(-2*windowHeight, -windowHeight);
     }
     else {
