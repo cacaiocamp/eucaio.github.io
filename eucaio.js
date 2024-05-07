@@ -7,7 +7,8 @@ var framesCounter = 0;
 var changingNavFonts = false;
 var drawSampleCaio = false;
 var sampleCaioIndex = 0;
-var windowTooSmall = false;
+var widthTooShort = false;
+var heightTooShort = false;
 
 var navCaioElementControl = null
 var divCountElementControl = null;
@@ -270,23 +271,30 @@ function sampleCaioDraw(){
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
   
-  if(windowTooSmall == false && windowHeight < 450){
-    selectedElement = select('#navCAIO');
-    selectedElement.style("left:7.5%;");
-    
+  if(heightTooShort == false && windowHeight < 450){
     selectedElement = select('#h1PageName');
-    selectedElement.style("top:10%;");
+    selectedElement.style("display: none;");
     
-    windowTooSmall = true;
+    heightTooShort = true;
   }
-  else if(windowTooSmall == true && windowHeight >= 450){
-    selectedElement = select('#navCAIO');
-    selectedElement.style("left:0%;");
-    
+  else if(heightTooShort == true && windowHeight >= 450){
     selectedElement = select('#h1PageName');
-    selectedElement.style("top:2%;");
+    selectedElement.style("display: inline;");
     
-    windowTooSmall = false;
+    heightTooShort = false;
+  }
+  
+  if(widthTooShort == false && windowWidth < 450){
+    selectedElement = select('#navContentNames');
+    selectedElement.style("left:74%;");
+    
+    widthTooShort = true;
+  }
+  else if(widthTooShort == true && windowWidth >= 450){
+    selectedElement = select('#navContentNames');
+    selectedElement.style("left:80%;");
+    
+    widthTooShort = false;
   }
 }
 
