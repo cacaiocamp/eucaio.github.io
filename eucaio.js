@@ -7,6 +7,7 @@ var framesCounter = 0;
 var changingNavFonts = false;
 var drawSampleCaio = false;
 var sampleCaioIndex = 0;
+var windowTooSmall = false;
 
 var navCaioElementControl = null
 var divCountElementControl = null;
@@ -268,6 +269,25 @@ function sampleCaioDraw(){
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
+  
+  if(windowTooSmall == false && windowHeight < 450){
+    selectedElement = select('#navCAIO');
+    selectedElement.style("left:7.5%;");
+    
+    selectedElement = select('#h1PageName');
+    selectedElement.style("top:10%;");
+    
+    windowTooSmall = true;
+  }
+  else if(windowTooSmall == true && windowHeight >= 450){
+    selectedElement = select('#navCAIO');
+    selectedElement.style("left:0%;");
+    
+    selectedElement = select('#h1PageName');
+    selectedElement.style("top:2%;");
+    
+    windowTooSmall = false;
+  }
 }
 
 function pageChange(nextPage) {

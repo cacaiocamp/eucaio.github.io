@@ -19,9 +19,15 @@
     
     canvas { position:fixed; top:0; left:0; z-index:1; focus:true }
     
-    #divContainer {position:absolute; width: 75%; height: 95%; top: 5%; left: 5%;}
-    #navCAIO { position:absolute; z-index:2; opacity :0%; bottom: 4%; left: 0%; margin:0%;}
-    #h1PageName { position:relative; z-index:2; opacity :75%; letter-spacing: 15px; float: left; margin:0%; font-weight: bold; }
+    #divCaio {position:absolute; width: 75%; height: 95%; top: 5%; left: 3%;}
+    #navCAIO { position:absolute; z-index:3; opacity :0%; bottom: 4%; left: 0%; margin:0%;}
+    #h1PageName { position:absolute; z-index:2; opacity :75%; letter-spacing: 25px; top:2%; float: left; margin:0%; color: #4E1400;}
+    
+    #divContentOutter {position:fixed; width: 91.5%; height: 92.5%; top: 5%; left: 7.5%;}
+    #divContent {position:absolute; width: 80%; height: 100%; top: 0%; left: 20%;}
+    #navContentTypes {position:relative; width: 80%; height: 7.5%; top: 0%; left: 20%;}
+    #navContentNames {position:relative; width: 20%; height: 92.5%; top: 0%; left: 0%;}
+    #spanContent {position:relative; width: 100%; height: 100%; top: 0%; left: 0%;}
     
     a.navTab {text-decoration: none;}
     p.navP {
@@ -64,8 +70,8 @@
 </head>
 
 <body>
-    <div id="divContainer">
-      <h1 id="h1PageName">comps</h1>
+    <div id="divCaio">
+      <h1 id="h1PageName" style="transform: translateX(-50%) translateY(140%) rotate(-90deg)">comps</h1>
       <nav id="navCAIO">
         <h3>
           <div> 
@@ -105,6 +111,19 @@
     
     <div id="caiosCountDiv">
       <span> <p class="countDiv" id="caiosCount">0</p> <p class="caiosCountDrawP" id="caiosP"> caios</p> <p class="countDiv">caíram</p> </span>
+    </div>
+    
+    <div id="divContentOutter">
+      <nav id="navContentTypes">
+      </nav>
+      
+      <span id="spanContent">
+        <nav id="navContentNames">
+        </nav>
+      
+        <div id="divContent">
+        </div>
+      </span>
     </div>
 </body>
 </html>
