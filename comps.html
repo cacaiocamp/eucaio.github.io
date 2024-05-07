@@ -24,10 +24,10 @@
     #h1PageName { position:absolute; z-index:2; opacity :75%; letter-spacing: 25px; top:2%; float: left; margin:0%; color: #4E1400;}
     
     #divContentOutter {position:fixed; z-index:2; width: 91.5%; height: 92.5%; top: 5%; left: 12.5%;}
-    #divContent {position:absolute; z-index:3; width: 80%; height: 100%; top: 0%; left: 20%;}
-    #navContentTypes {position:relative; z-index:3; width: 80%; height: 7.5%; top: 0%; left: 20%;}
-    #navContentNames {position:relative; z-index:3; width: 20%; height: 92.5%; top: 0%; left: 0%;}
-    #spanContent {position:relative; z-index:4; width: 100%; height: 100%; top: 0%; left: 0%;}
+    #divContent {position:absolute; z-index:3; width: 75%; height: 95%; top: 0%; left: 0%; margin-right: 10px;}
+    #navContentTypes {position:relative; z-index:4; width: 75%; height: 7.5%; top: 90%; left: 5%;}
+    #navContentNames {position:relative; z-index:5; width: 15%; height: 92.5%; top: 0%; left: 80%;}
+    #spanContent {position:absolute; z-index:3; width: 100%; height: 100%; top: 0%; left: 0%;}
     
     #caiosCountDiv { position:absolute; z-index:2; opacity: 0%; top: 0%; right: 1%}
     
@@ -56,6 +56,7 @@
     span.typesTab {
       display: inline-block;
       opacity: 100%;
+      top: 70%;
       position: relative;
     }
     
@@ -120,31 +121,30 @@
       <span> <p class="countDiv" id="caiosCount">0</p> <p class="caiosCountDrawP" id="caiosP"> caios</p> <p class="countDiv">caíram</p> </span>
     </div>
     
-    <div id="divContentOutter">
+    <div id="divContentOutter" onclick="closeCaioTabs()">
       <nav id="navContentTypes">
-        <span class="typesTab">
-          <h3>
-            <a class="navTab" href="#s" onclick="compsNamesFeed('s')"> solo </a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            <a class="navTab" href="#d" onclick="compsNamesFeed('d')"> duo </a> &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;
-            <a class="navTab" href="#d" onclick="compsNamesFeed('t')"> trio </a> &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;
-            <a class="navTab" href="#q" onclick="compsNamesFeed('q')"> quarteto </a> &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;
-            <a class="navTab" href="#g" onclick="compsNamesFeed('g')"> grupos </a> &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;
-          </h3>
+        <span class="typesTab" style="display: flex; justify-content: space-around;">
+            <a class="navTab" href="#s" onclick="compsNamesFeed('s')" style="font-weight: bold"> solo </a>
+            <a class="navTab" href="#d" onclick="compsNamesFeed('d')" style="font-weight: bold"> duo </a> 
+            <a class="navTab" href="#d" onclick="compsNamesFeed('t')" style="font-weight: bold"> trio </a> 
+            <a class="navTab" href="#q" onclick="compsNamesFeed('q')" style="font-weight: bold"> quarteto </a> 
+            <a class="navTab" href="#g" onclick="compsNamesFeed('g')" style="font-weight: bold"> grupos </a> 
         </span>
       </nav>
       
       <span id="spanContent">
+        <div id="divContent">
+          <p style="margin-top: 0px; margin-right: 15px; ">Escolha uma peça ao lado.</p>
+        </div>
+        
         <nav id="navContentNames">
           <span id="spanSolo">
-            <h4> ----- violão </h4>
-            <h3>
-              <a class="navTab" style="font-style: italic;" href="#" onclick="contentFeed('estante')"> estante em posição ordinária </a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            <h4 style="margin-bottom: 0px"> ----- violão </h4>
+            <h4 style="margin-top: 0px">
+              <a class="navTab" style="font-style: italic;" href="#" onclick="contentFeed('estante')"> estante em posição ordinária (2023)</a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
             </h3>
           </span>
         </nav>
-      
-        <div id="divContent">
-        </div>
       </span>
     </div>
 </body>
