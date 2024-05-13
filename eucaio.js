@@ -18,14 +18,19 @@ var iTab = null;
 var oTab = null;
 var caiosP = null;
 
-var targetFrameRate = null;
+var targetFrameRate = null
+
+var currentCompType = 's';
+var currentCompContentId = '#spanSoloContent';
+var currentCompNamesId = '#spanSoloNames';
 
 function preload(){
   caiosCount = window.location.hash.substring(1);
   
-  if(caiosCount != ''){
-      select('#caiosCount').html(caiosCount);
+  if(caiosCount == '' || caiosCount == 'NaN'){
+      caiosCount = 0;
   }
+  select('#caiosCount').html(caiosCount);
 }
 
 function setup() {
@@ -275,11 +280,25 @@ function windowResized() {
     selectedElement = select('#h1PageName');
     selectedElement.style("display: none;");
     
+    selectedElement = select('#navContentNames');
+    selectedElement.style("display: none;");
+    
+    selectedElement = select('#divContent');
+    selectedElement.style("width:90%;");
+    
     heightTooShort = true;
   }
   else if(heightTooShort == true && windowHeight >= 450){
     selectedElement = select('#h1PageName');
     selectedElement.style("display: inline;");
+    
+    if(widthTooShort == false){
+      selectedElement = select('#navContentNames');
+      selectedElement.style("display: block;");
+      
+      selectedElement = select('#divContent');
+      selectedElement.style("width:75%;");
+    }
     
     heightTooShort = false;
   }
@@ -288,13 +307,68 @@ function windowResized() {
     selectedElement = select('#navContentNames');
     selectedElement.style("left:74%;");
     
+    selectedElement = select('#navContentNames');
+    selectedElement.style("display: none;");
+    
+    selectedElement = select('#divContent');
+    selectedElement.style("width:90%;");
+    
     widthTooShort = true;
   }
   else if(widthTooShort == true && windowWidth >= 450){
     selectedElement = select('#navContentNames');
     selectedElement.style("left:80%;");
     
+    if(heightTooShort == false){
+      selectedElement = select('#navContentNames');
+      selectedElement.style("display: block;");
+      
+      selectedElement = select('#divContent');
+      selectedElement.style("width:75%;");
+    }
+    
     widthTooShort = false;
+  }
+}
+
+function compsFeed(typeToFeed){
+  if(typeToFeed != currentCompType){
+    selectedElement = select(currentCompContentId);
+    selectedElement.style("display: none;");
+    
+    selectedElement = select(currentCompNamesId);
+    selectedElement.style("display: none;");
+    
+    if(typeToFeed == 's'){
+      currentCompContentId = '#spanSoloContent';
+      currentCompNamesId = '#spanSoloNames';
+    }
+    else if(typeToFeed == 'd'){
+      currentCompContentId = '#spanDuoContent';
+      currentCompNamesId = '#spanDuoNames';
+    }
+    else if(typeToFeed == 't'){
+      currentCompContentId = '#spanTrioContent';
+      currentCompNamesId = '#spanTrioNames';
+    }
+    else if(typeToFeed == 'q'){
+      currentCompContentId = '#spanQuartetoContent';
+      currentCompNamesId = '#spanQuartetoNames';
+      
+    }
+    else{ // g
+      currentCompContentId = '#spanMaisContent';
+      currentCompNamesId = '#spanMaisNames';
+    }
+    
+    
+    selectedElement = select(currentCompContentId);
+    selectedElement.style("display: block;");
+    
+    selectedElement = select(currentCompNamesId);
+    selectedElement.style("display: block;");
+    
+    currentCompType = typeToFeed;
   }
 }
 

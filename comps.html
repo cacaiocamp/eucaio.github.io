@@ -24,12 +24,14 @@
     #h1PageName { position:absolute; z-index:2; opacity :75%; letter-spacing: 25px; top:2%; float: left; margin:0%; color: #4E1400;}
     
     #divContentOutter {position:fixed; z-index:2; width: 91.5%; height: 92.5%; top: 5%; left: 12.5%;}
-    #divContent {position:absolute; z-index:3; width: 75%; height: 95%; top: 0%; left: 0%; margin-right: 10px;}
-    #navContentTypes {position:relative; z-index:4; width: 75%; height: 7.5%; top: 90%; left: 5%;}
-    #navContentNames {position:relative; z-index:5; width: 15%; height: 92.5%; top: 0%; left: 80%;}
+    #divContent {position:absolute; z-index:3; width: 75%; height: 95%; top: 0%; left: 5%; margin-right: 10px;}
+    #navContentTypes {position:relative; z-index:4; width: 72%; height: 7.5%; top: 90%; left: 3%;}
+    #navContentNames {position:relative; z-index:5; width: 15%; height: 79%; top: 11%; left: 80%;}
     #spanContent {position:absolute; z-index:3; width: 100%; height: 100%; top: 0%; left: 0%;}
     
     #caiosCountDiv { position:absolute; z-index:2; opacity: 0%; top: 0%; right: 1%}
+    
+    .overflowY {overflow-y:auto;}
     
     a.navTab {text-decoration: none;}
     p.navP {
@@ -124,24 +126,100 @@
     <div id="divContentOutter" onclick="closeCaioTabs()">
       <nav id="navContentTypes">
         <span class="typesTab" style="display: flex; justify-content: space-around;">
-            <a class="navTab" href="#s" onclick="compsNamesFeed('s')" style="font-weight: bold"> solo </a>
-            <a class="navTab" href="#d" onclick="compsNamesFeed('d')" style="font-weight: bold"> duo </a> 
-            <a class="navTab" href="#d" onclick="compsNamesFeed('t')" style="font-weight: bold"> trio </a> 
-            <a class="navTab" href="#q" onclick="compsNamesFeed('q')" style="font-weight: bold"> quarteto </a> 
-            <a class="navTab" href="#g" onclick="compsNamesFeed('g')" style="font-weight: bold"> grupos </a> 
+            <a class="navTab" href="#s" onclick="compsFeed('s')" style="font-weight: bold"> solo </a>
+            <a class="navTab" href="#d" onclick="compsFeed('d')" style="font-weight: bold"> duo </a> 
+            <a class="navTab" href="#d" onclick="compsFeed('t')" style="font-weight: bold"> trio </a> 
+            <a class="navTab" href="#q" onclick="compsFeed('q')" style="font-weight: bold"> quarteto </a> 
+            <a class="navTab" href="#g" onclick="compsFeed('g')" style="font-weight: bold"> + </a> 
         </span>
       </nav>
       
       <span id="spanContent">
-        <div id="divContent">
-          <p style="margin-top: 0px; margin-right: 15px; ">Escolha uma peça ao lado.</p>
+        <div id="divContent" class="overflowY">
+          <span id="spanSoloContent">
+            <h1 style="margin-top: 0px; margin-bottom: 8px; letter-spacing: 5px; color: #4E1400;">solo</h1>
+            
+            <h3 style="margin-top: 0px; margin-bottom: 0px; font-style: italic;" id="eepo">- estante em posição ordinária (2023)</h3>
+            <h4 style="margin-top: 0px; margin-bottom: 0px; font-style: italic;">violonista solo</h4>
+            <p style="margin-top: 5px; margin-right: 15px;">
+              
+            </p>
+          </span>  
+          
+          <span id="spanDuoContent" style="display: none;">
+            <h1 style="margin-top: 0px; margin-bottom: 8px; letter-spacing: 5px; color: #4E1400;">duo</h1>
+            
+            <h3 style="margin-top: 0px; margin-bottom: 0px; font-style: italic;" id="anesidora">- anesidora (2022)</h3>
+            <h4 style="margin-top: 0px; margin-bottom: 0px; font-style: italic;">duo de percussão e eletrônica ao vivo</h4>
+            <p style="margin-top: 5px; margin-right: 15px;">
+              
+            </p>
+          </span>  
+          
+          <span id="spanTrioContent" style="display: none;">
+            <h1 style="margin-top: 0px; margin-bottom: 8px; letter-spacing: 5px; color: #4E1400;">trio</h1>
+            
+            <h3 style="margin-top: 0px; margin-bottom: 0px; font-style: italic;" id="corp">- corpos/corpses (2024)</h3>
+            <h4 style="margin-top: 0px; margin-bottom: 0px; font-style: italic;">percussão, dois instrumentos de sopro a livre escolha, eletrônica ao vivo e video</h4>
+            <p style="margin-top: 5px; margin-right: 15px;">
+              
+            </p>
+          </span> 
+          
+          <span id="spanQuartetoContent" style="display: none;">
+            <h1 style="margin-top: 0px; margin-bottom: 8px; letter-spacing: 5px; color: #4E1400;">quarteto</h1>
+            
+            <h3 style="margin-top: 0px; margin-bottom: 0px; font-style: italic;" id="eepo">- contato1 (2023)</h3>
+            <h4 style="margin-top: 0px; margin-bottom: 0px; font-style: italic;">flautas, saxofones, violão e cello</h4>
+            <p style="margin-top: 5px; margin-right: 15px;">
+              
+            </p>
+          </span> 
+          
+          <span id="spanMaisContent" style="display: none;">
+            <h1 style="margin-top: 0px; margin-bottom: 8px; letter-spacing: 5px; color: #4E1400;">+</h1>
+            
+            <h3 style="margin-top: 0px; margin-bottom: 0px; font-style: italic;" id="eepo">- miniatura1 (2024)</h3>
+            <h4 style="margin-top: 0px; margin-bottom: 0px; font-style: italic;">para faces/rostos</h4>
+            <p style="margin-top: 5px; margin-right: 15px;">
+              
+            </p>
+          </span> 
         </div>
         
         <nav id="navContentNames">
-          <span id="spanSolo">
-            <h4 style="margin-bottom: 0px"> ----- violão </h4>
+          <span id="spanSoloNames">
+            <h4 style="margin-bottom: 0px"> --- violão </h4>
             <h4 style="margin-top: 0px">
-              <a class="navTab" style="font-style: italic;" href="#" onclick="contentFeed('estante')"> estante em posição ordinária (2023)</a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+              <a class="navTab" style="font-style: italic;" href="#eepo"> estante em posição ordinária (2023)</a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            </h3>
+          </span>
+          
+          <span id="spanDuoNames" style="display: none;">
+            <h4 style="margin-bottom: 0px"> --- percussão </h4>
+            <h4 style="margin-top: 0px">
+              <a class="navTab" style="font-style: italic;" href="#anesidora"> anesidora (2022)</a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            </h3>
+          </span>
+          
+          <span id="spanTrioNames" style="display: none;">
+            <h4 style="margin-bottom: 0px"> --- percussão + 2 </h4>
+            <h4 style="margin-top: 0px">
+              <a class="navTab" style="font-style: italic;" href="#corp"> corpos/corpses (2024)</a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            </h3>
+          </span>
+          
+          <span id="spanQuartetoNames" style="display: none;">
+            <h4 style="margin-bottom: 0px"> --- flauta, sax, violão, cello </h4>
+            <h4 style="margin-top: 0px">
+              <a class="navTab" style="font-style: italic;" href="#contato1"> contato1 (2023)</a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            </h3>
+          </span>
+          
+          <span id="spanMaisNames" style="display: none;">
+            <h4 style="margin-bottom: 0px"> --- face/rosto </h4>
+            <h4 style="margin-top: 0px">
+              <a class="navTab" style="font-style: italic;" href="#miniatura1"> miniatura1 (2024)</a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
             </h3>
           </span>
         </nav>
