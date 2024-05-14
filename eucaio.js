@@ -37,7 +37,7 @@ function setup() {
   angleMode(DEGREES);
   backgroundColor = color(200, 200, 210);
   createCanvas(windowWidth, windowHeight, WEBGL);
-  DEFAULT_MAXCAIONUM = windowWidth / 9; 
+  DEFAULT_MAXCAIONUM = windowWidth / 10; 
   
   selectedElement = select('#c');
   selectedElement.mouseOver(openCaioCTab);
@@ -273,64 +273,6 @@ function sampleCaioDraw(){
   drawSampleCaio = !drawSampleCaio;
 }
 
-function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
-  
-  if(heightTooShort == false && windowHeight < 450){
-    selectedElement = select('#h1PageName');
-    selectedElement.style("display: none;");
-    
-    selectedElement = select('#navContentNames');
-    selectedElement.style("display: none;");
-    
-    selectedElement = select('#divContent');
-    selectedElement.style("width:90%;");
-    
-    heightTooShort = true;
-  }
-  else if(heightTooShort == true && windowHeight >= 450){
-    selectedElement = select('#h1PageName');
-    selectedElement.style("display: inline;");
-    
-    if(widthTooShort == false){
-      selectedElement = select('#navContentNames');
-      selectedElement.style("display: block;");
-      
-      selectedElement = select('#divContent');
-      selectedElement.style("width:75%;");
-    }
-    
-    heightTooShort = false;
-  }
-  
-  if(widthTooShort == false && windowWidth < 450){
-    selectedElement = select('#navContentNames');
-    selectedElement.style("left:74%;");
-    
-    selectedElement = select('#navContentNames');
-    selectedElement.style("display: none;");
-    
-    selectedElement = select('#divContent');
-    selectedElement.style("width:90%;");
-    
-    widthTooShort = true;
-  }
-  else if(widthTooShort == true && windowWidth >= 450){
-    selectedElement = select('#navContentNames');
-    selectedElement.style("left:80%;");
-    
-    if(heightTooShort == false){
-      selectedElement = select('#navContentNames');
-      selectedElement.style("display: block;");
-      
-      selectedElement = select('#divContent');
-      selectedElement.style("width:75%;");
-    }
-    
-    widthTooShort = false;
-  }
-}
-
 function compsFeed(typeToFeed){
   if(typeToFeed != currentCompType){
     selectedElement = select(currentCompContentId);
@@ -370,6 +312,86 @@ function compsFeed(typeToFeed){
     
     currentCompType = typeToFeed;
   }
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+  
+  if(heightTooShort == false && windowHeight < 450){
+    selectedElement = select('#h1PageName');
+    selectedElement.style("display: none;");
+    
+    selectedElement = select('#navContentNames');
+    selectedElement.style("display: none;");
+    
+    selectedElement = select('#navContentTypes');
+    selectedElement.style("top: 91%");
+    
+    selectedElement = select('#divContent');
+    selectedElement.style("width:90%;");
+    
+    selectedElement = select('#oIndex');
+    selectedElement.style("display: none;");
+    
+    heightTooShort = true;
+  }
+  else if(heightTooShort == true && windowHeight >= 450){
+    selectedElement = select('#h1PageName');
+    selectedElement.style("display: inline;");
+    
+    if(widthTooShort == false){
+      selectedElement = select('#navContentNames');
+      selectedElement.style("display: block;");
+    
+    selectedElement = select('#navContentTypes');
+    selectedElement.style("top: 93%");
+      
+      selectedElement = select('#divContent');
+      selectedElement.style("width:75%;");
+      
+      selectedElement = select('#oIndex');
+      selectedElement.style("display: inline-block;");
+    }
+    
+    heightTooShort = false;
+  }
+  
+  if(widthTooShort == false && windowWidth < 450){
+    selectedElement = select('#navContentNames');
+    selectedElement.style("left:74%;");
+    
+    selectedElement = select('#navContentNames');
+    selectedElement.style("display: none;");
+    
+    selectedElement = select('#divContent');
+    selectedElement.style("width:90%;");
+    
+    selectedElement = select('#oIndex');
+    selectedElement.style("display: none;");
+    
+    widthTooShort = true;
+    
+    
+  }
+  else if(widthTooShort == true && windowWidth >= 450){
+    selectedElement = select('#navContentNames');
+    selectedElement.style("left:80%;");
+    
+    if(heightTooShort == false){
+      selectedElement = select('#navContentNames');
+      selectedElement.style("display: block;");
+      
+      selectedElement = select('#divContent');
+      selectedElement.style("width:75%;");
+      
+      selectedElement = select('#oIndex');
+      selectedElement.style("display: inline-block;");
+    }
+    
+    widthTooShort = false;
+  }
+  
+  DEFAULT_MAXCAIONUM = windowWidth / 10; 
 }
 
 function pageChange(nextPage) {
