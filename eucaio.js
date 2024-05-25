@@ -30,6 +30,7 @@ function preload(){
   if(caiosCount == '' || caiosCount == 'NaN'){
       caiosCount = 0;
   }
+  
   select('#caiosCount').html(caiosCount);
 }
 
@@ -81,6 +82,9 @@ function setup() {
     navCaioElementControl.startOpacityChange(80, 1);
     divCountElementControl.startOpacityChange(80, 1);
   }
+  
+  selectedElement = selectAll('span.contentSpan');
+  articulateContentSpans(selectedElement);
 }
 
 function update(){
@@ -186,91 +190,35 @@ function addNewCaio(caiosMode = CAIOSMODE_DEFAULT){
   }
 }
 
-var changeFontChance = 0.98;
-var chanceChange = - 0.001;
-
-function updateNavFonts(){
-  let selectedElement = null;
-  let fontChanged = false;
-  
-  if(random(0, 1.001) > changeFontChance){
-    let randomFont = int(random(0, fontFamiliesVec.length));
-    selectedElement = select('#c');
-    selectedElement.style(fontFamiliesVec[randomFont]);
-    fontChanged = true;
-  }
-  
-  if(random(0, 1.001) > changeFontChance){
-    let randomFont = int(random(0, fontFamiliesVec.length));
-    selectedElement = select('#a');
-    selectedElement.style(fontFamiliesVec[randomFont]);
-    fontChanged = true;
-  }
-  
-  if(random(0, 1.001) > changeFontChance){
-    let randomFont = int(random(0, fontFamiliesVec.length));
-    selectedElement = select('#i');
-    selectedElement.style(fontFamiliesVec[randomFont]);
-    fontChanged = true;
-  }
-  
-  if(random(0, 1.001) > changeFontChance){
-    let randomFont = int(random(0, fontFamiliesVec.length));
-    selectedElement = select('#o');
-    selectedElement.style(fontFamiliesVec[randomFont]);
-    fontChanged = true;
-  }
-  
-  if(fontChanged){
-    changeFontChance = changeFontChance + chanceChange;
-    
-    if(changeFontChance < 0.825 || changeFontChance > 0.98){
-      chanceChange = chanceChange * -1;
-    }
-  }
-}
-
-function openCaioCTab(){
-  cTab.startOpacityChange(100, targetFrameRate*0.5, 'inline-block');
-}
-
-function openCaioATab(){
-  aTab.startOpacityChange(100, targetFrameRate*0.5, 'inline-block');
-}
-
-function openCaioITab(){
-  iTab.startOpacityChange(100, targetFrameRate*0.5, 'inline-block');
-}
-
-function openCaioOTab(){
-  oTab.startOpacityChange(100, targetFrameRate*0.5, 'inline-block');
-}
-
-function closeCaioCTab(){
-  cTab.startOpacityChange(0, targetFrameRate*0.5, 'inline-block');
-}
-
-function closeCaioATab(){
-    aTab.startOpacityChange(0, targetFrameRate*0.5, 'inline-block');
-}
-
-function closeCaioITab(){
-    iTab.startOpacityChange(0, targetFrameRate*0.5, 'inline-block');
-}
-
-function closeCaioOTab(){
-    oTab.startOpacityChange(0, targetFrameRate*0.5, 'inline-block');
-}
-
-function closeCaioTabs(){
-  cTab.startOpacityChange(0, targetFrameRate*1, 'inline-block');
-  aTab.startOpacityChange(0, targetFrameRate*1, 'inline-block');
-  iTab.startOpacityChange(0, targetFrameRate*1, 'inline-block');
-  oTab.startOpacityChange(0, targetFrameRate*1, 'inline-block');
-}
-
 function sampleCaioDraw(){
   drawSampleCaio = !drawSampleCaio;
+}
+
+
+function articulateContentSpans(selectedElements){
+  for(let i = 0; i < selectedElements.length; i++){
+    //selectedElement = select('span.activateContentSpan', selectedElements[i].elt);
+    
+    //selectedElement.mouseClicked(openCloseContent);
+  }
+}
+
+function openCloseContent(spanElementId){
+  let spanElement = select(spanElementId);
+  let h3Sign = select('#sign', spanElement);
+  let parent = spanElement.elt.parentElement;
+  let pContent = select('span.pContent', parent);
+  
+  if(spanElement.elt.attributes.val.value == 0){
+    spanElement.elt.attributes.val.value = 1;
+    pContent.style("display: inline;");
+    h3Sign.elt.innerHTML = "▾";
+  }
+  else {
+    spanElement.elt.attributes.val.value = 0;
+    pContent.style("display: none;");
+    h3Sign.elt.innerHTML = "▸";
+  }
 }
 
 function compsFeed(typeToFeed){
@@ -392,6 +340,89 @@ function windowResized() {
   }
   
   DEFAULT_MAXCAIONUM = windowWidth / 10; 
+}
+
+var changeFontChance = 0.98;
+var chanceChange = - 0.001;
+
+function updateNavFonts(){
+  let selectedElement = null;
+  let fontChanged = false;
+  
+  if(random(0, 1.001) > changeFontChance){
+    let randomFont = int(random(0, fontFamiliesVec.length));
+    selectedElement = select('#c');
+    selectedElement.style(fontFamiliesVec[randomFont]);
+    fontChanged = true;
+  }
+  
+  if(random(0, 1.001) > changeFontChance){
+    let randomFont = int(random(0, fontFamiliesVec.length));
+    selectedElement = select('#a');
+    selectedElement.style(fontFamiliesVec[randomFont]);
+    fontChanged = true;
+  }
+  
+  if(random(0, 1.001) > changeFontChance){
+    let randomFont = int(random(0, fontFamiliesVec.length));
+    selectedElement = select('#i');
+    selectedElement.style(fontFamiliesVec[randomFont]);
+    fontChanged = true;
+  }
+  
+  if(random(0, 1.001) > changeFontChance){
+    let randomFont = int(random(0, fontFamiliesVec.length));
+    selectedElement = select('#o');
+    selectedElement.style(fontFamiliesVec[randomFont]);
+    fontChanged = true;
+  }
+  
+  if(fontChanged){
+    changeFontChance = changeFontChance + chanceChange;
+    
+    if(changeFontChance < 0.825 || changeFontChance > 0.98){
+      chanceChange = chanceChange * -1;
+    }
+  }
+}
+
+function openCaioCTab(){
+  cTab.startOpacityChange(100, targetFrameRate*0.5, 'inline-block');
+}
+
+function openCaioATab(){
+  aTab.startOpacityChange(100, targetFrameRate*0.5, 'inline-block');
+}
+
+function openCaioITab(){
+  iTab.startOpacityChange(100, targetFrameRate*0.5, 'inline-block');
+}
+
+function openCaioOTab(){
+  oTab.startOpacityChange(100, targetFrameRate*0.5, 'inline-block');
+}
+
+function closeCaioCTab(){
+  cTab.startOpacityChange(0, targetFrameRate*0.5, 'inline-block');
+}
+
+function closeCaioATab(){
+    aTab.startOpacityChange(0, targetFrameRate*0.5, 'inline-block');
+}
+
+function closeCaioITab(){
+    iTab.startOpacityChange(0, targetFrameRate*0.5, 'inline-block');
+}
+
+function closeCaioOTab(){
+    oTab.startOpacityChange(0, targetFrameRate*0.5, 'inline-block');
+}
+
+function closeCaioTabs(){
+  cTab.startOpacityChange(0, targetFrameRate*1, 'inline-block');
+  aTab.startOpacityChange(0, targetFrameRate*1, 'inline-block');
+  iTab.startOpacityChange(0, targetFrameRate*1, 'inline-block');
+  oTab.startOpacityChange(0, targetFrameRate*1, 'inline-block');
 }
 
 function pageChange(nextPage) {

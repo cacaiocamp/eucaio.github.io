@@ -61,8 +61,28 @@
       top: 70%;
       position: relative;
     }
+    span.activateContentSpan:hover {
+      cursor: pointer;
+    }
+    span.pContent {
+      display: none;
+    }
+    
+    h1.contentType {
+      margin-top: 0px; 
+      margin-bottom: 8px; 
+      letter-spacing: 5px; 
+      color: #4E1400;
+    }
     
     h3 {max-height: 40px}
+    
+    h3.content {
+      display: inline-block; 
+      margin-top: 0px; 
+      margin-bottom: 0px; 
+      user-select: none;
+    }
     
     p.countDiv {
       display: inline-block;
@@ -137,27 +157,51 @@
       <span id="spanContent">
         <div id="divContent" class="overflowY">
           <span id="spanSoloContent">
-            <h1 style="margin-top: 0px; margin-bottom: 8px; letter-spacing: 5px; color: #4E1400;">solo</h1>
+            <h1 class="contentType">solo</h1>
             
-            <h3 style="margin-top: 0px; margin-bottom: 0px; font-style: italic;" id="eepo">- estante em posição ordinária (2023)</h3>
-            <h4 style="margin-top: 0px; margin-bottom: 0px; font-style: italic;">violonista solo</h4>
-            <p style="margin-top: 5px; margin-right: 15px;">
-              
-            </p>
+            <span class="contentSpan">
+              <span class="activateContentSpan" id="activateContentSpanEepo" val="0" onclick="openCloseContent('#activateContentSpanEepo')">
+                <h3 class="content" id="sign">▸</h3><h3 style="font-style: italic;" class="content" id="eepo">estante em posição ordinária (2023)</h3>
+                <h4 style="margin-top: 0px; margin-bottom: 0px; font-style: italic;">violonista solo</h4>
+              </span>
+              <span class="pContent">
+                <p style="margin-top: 5px; margin-right: 15px; text-align:justify;">
+                  <em> estante em posição ordinária </em> é uma peça composta com a colaboração de e dedicada a Pedro Henrique Gilberto Alves de Souza. 
+                </p>
+                <p style="margin-top: -5px; margin-right: 15px; text-align:justify;">
+                  A peça tem a intenção de dialogar com as tradicionais práticas de performance no violão como materiais composicionais. 
+                  Abordando a contrução de discursos musicais como performance, a peça foca principalmente em relações espaciais, de fisicalidade e de corporificação. 
+                  Assim, o movimento dos braços, a direção do olhar, o posicionamento do violão junto ao corpo, por exemplo, se tornam materiais importantes na constução expressiva da peça. 
+                </p>
+              </span>
+            </span>
           </span>  
           
           <span id="spanDuoContent" style="display: none;">
-            <h1 style="margin-top: 0px; margin-bottom: 8px; letter-spacing: 5px; color: #4E1400;">duo</h1>
+            <h1 class="contentType">duo</h1>
             
-            <h3 style="margin-top: 0px; margin-bottom: 0px; font-style: italic;" id="anesidora">- anesidora (2022)</h3>
-            <h4 style="margin-top: 0px; margin-bottom: 0px; font-style: italic;">duo de percussão e eletrônica ao vivo</h4>
-            <p style="margin-top: 5px; margin-right: 15px;">
-              
-            </p>
+            <span class="contentSpan">
+              <span class="activateContentSpan" id="activateContentSpanAnesidora" val="0" onclick="openCloseContent('#activateContentSpanAnesidora')">
+                <h3 class="content" id="sign">▸</h3><h3 class="content" style="font-style: italic;" id="anesidora">anesidora (2022)</h3>
+                <h4 style="margin-top: 0px; margin-bottom: 0px; font-style: italic;">duo de percussão e eletrônica ao vivo</h4>
+              </span>
+              <span class="pContent">
+                <p style="margin-top: 5px; margin-right: 15px; text-align:justify;">
+                  <em>anesidora</em> tem a intenção de explorar outras possibilidades da <em> pandora </em>, instrumento desenvolvido por Sergio Freire, 
+                  junto com o <a href="https://musica.ufmg.br/lapis/projects/obie/" target="_blank">Obié</a>, sistema musical interativo do qual fiz parte do 
+                  desenvolvimento durante minha graduação na UFMG por meio de uma iniciação científica no LaPIS.
+                </p>
+                <p style="margin-top: -5px; margin-right: 15px; text-align:justify;">
+                  A peça explora expressivamente a possibilidade de produzir sons na pandora remotamente, sem a atuação dos percussionistas. Certos gestos corporais
+                  na performance dos instrumentos são então explorados a partir dessa possibilidade. Além disso, utilizando o Obié, descrições de áudio realizadas em alguns dos instrumentos
+                  alimentam certas sonoridades produzidas então na pandora. Com essas duas variáveis, a peça joga com a ideia de ação-reação e expectativas gestuais de diferentes maneiras.
+                </p>
+              </span>
+            </span>
           </span>  
           
           <span id="spanTrioContent" style="display: none;">
-            <h1 style="margin-top: 0px; margin-bottom: 8px; letter-spacing: 5px; color: #4E1400;">trio</h1>
+            <h1 class="contentType">trio</h1>
             
             <h3 style="margin-top: 0px; margin-bottom: 0px; font-style: italic;" id="corp">- corpos/corpses (2024)</h3>
             <h4 style="margin-top: 0px; margin-bottom: 0px; font-style: italic;">percussão, dois instrumentos de sopro a livre escolha, eletrônica ao vivo e video</h4>
@@ -167,7 +211,7 @@
           </span> 
           
           <span id="spanQuartetoContent" style="display: none;">
-            <h1 style="margin-top: 0px; margin-bottom: 8px; letter-spacing: 5px; color: #4E1400;">quarteto</h1>
+            <h1 class="contentType">quarteto</h1>
             
             <h3 style="margin-top: 0px; margin-bottom: 0px; font-style: italic;" id="eepo">- contato1 (2023)</h3>
             <h4 style="margin-top: 0px; margin-bottom: 0px; font-style: italic;">flautas, saxofones, violão e cello</h4>
@@ -177,7 +221,7 @@
           </span> 
           
           <span id="spanMaisContent" style="display: none;">
-            <h1 style="margin-top: 0px; margin-bottom: 8px; letter-spacing: 5px; color: #4E1400;">+</h1>
+            <h1 class="contentType">+</h1>
             
             <h3 style="margin-top: 0px; margin-bottom: 0px; font-style: italic;" id="eepo">- miniatura1 (2024)</h3>
             <h4 style="margin-top: 0px; margin-bottom: 0px; font-style: italic;">para faces/rostos</h4>
