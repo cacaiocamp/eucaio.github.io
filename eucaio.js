@@ -27,7 +27,7 @@ var currentCompNamesId = '#spanSoloNames';
 function preload(){
   caiosCount = window.location.hash.substring(1);
   
-  if(caiosCount == '' || caiosCount == 'NaN'){
+  if(caiosCount == '' || isNaN(caiosCount)){
       caiosCount = 0;
   }
   
@@ -82,9 +82,6 @@ function setup() {
     navCaioElementControl.startOpacityChange(80, 1);
     divCountElementControl.startOpacityChange(80, 1);
   }
-  
-  selectedElement = selectAll('span.contentSpan');
-  articulateContentSpans(selectedElement);
 }
 
 function update(){
@@ -192,15 +189,6 @@ function addNewCaio(caiosMode = CAIOSMODE_DEFAULT){
 
 function sampleCaioDraw(){
   drawSampleCaio = !drawSampleCaio;
-}
-
-
-function articulateContentSpans(selectedElements){
-  for(let i = 0; i < selectedElements.length; i++){
-    //selectedElement = select('span.activateContentSpan', selectedElements[i].elt);
-    
-    //selectedElement.mouseClicked(openCloseContent);
-  }
 }
 
 function openCloseContent(spanElementId){

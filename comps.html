@@ -148,7 +148,7 @@
         <span class="typesTab" style="display: flex; justify-content: space-around;">
             <a class="navTab" href="#s" onclick="compsFeed('s')" style="font-weight: bold"> solo </a>
             <a class="navTab" href="#d" onclick="compsFeed('d')" style="font-weight: bold"> duo </a> 
-            <a class="navTab" href="#d" onclick="compsFeed('t')" style="font-weight: bold"> trio </a> 
+            <a class="navTab" href="#t" onclick="compsFeed('t')" style="font-weight: bold"> trio </a> 
             <a class="navTab" href="#q" onclick="compsFeed('q')" style="font-weight: bold"> quarteto </a> 
             <a class="navTab" href="#g" onclick="compsFeed('g')" style="font-weight: bold"> + </a> 
         </span>
@@ -187,7 +187,7 @@
               </span>
               <span class="pContent">
                 <p style="margin-top: 5px; margin-right: 15px; text-align:justify;">
-                  <em>anesidora</em> tem a intenção de explorar outras possibilidades da <em> pandora </em>, instrumento desenvolvido por Sergio Freire, 
+                  <em>anesidora</em> tem a intenção de explorar outras possibilidades da <em>pandora</em>, instrumento desenvolvido por Sergio Freire, 
                   junto com o <a href="https://musica.ufmg.br/lapis/projects/obie/" target="_blank">Obié</a>, sistema musical interativo do qual fiz parte do 
                   desenvolvimento durante minha graduação na UFMG por meio de uma iniciação científica no LaPIS.
                 </p>
@@ -203,31 +203,51 @@
           <span id="spanTrioContent" style="display: none;">
             <h1 class="contentType">trio</h1>
             
-            <h3 style="margin-top: 0px; margin-bottom: 0px; font-style: italic;" id="corp">- corpos/corpses (2024)</h3>
-            <h4 style="margin-top: 0px; margin-bottom: 0px; font-style: italic;">percussão, dois instrumentos de sopro a livre escolha, eletrônica ao vivo e video</h4>
-            <p style="margin-top: 5px; margin-right: 15px;">
-              
-            </p>
-          </span> 
+            <span class="contentSpan">
+              <span class="activateContentSpan" id="activateContentCorp" val="0" onclick="openCloseContent('#activateContentCorp')">
+                <h3 class="content" id="sign">▸</h3><h3 class="content" style="font-style: italic;" id="corp">corpos/corpses (2024)</h3>
+                <h4 style="margin-top: 0px; margin-bottom: 0px; font-style: italic;">percussão, dois instrumentos de sopro a livre escolha, eletrônica ao vivo e video</h4>
+              </span>
+              <span class="pContent">
+                <p style="margin-top: 5px; margin-right: 15px; text-align:justify;">
+                  Focando na expressividade dos corpos e instrumentos dos performers, a peça explora a boca dos performers como material composicional, utilizando três câmeras focadas em suas bocas,
+                  juntamente à explorações de suas vozes e, pricipalmente do no caso dos dois instrumentistas de sopro, da materialidade de seus instrumentos. A peça acontece quase inteiramente em 
+                  <em>blackout</em>, utilizando iluminadores infravermelhos na captação das bocas pelas câmeras.
+                </p>
+              </span>
+            </span>
+          </span>
           
           <span id="spanQuartetoContent" style="display: none;">
             <h1 class="contentType">quarteto</h1>
             
-            <h3 style="margin-top: 0px; margin-bottom: 0px; font-style: italic;" id="eepo">- contato1 (2023)</h3>
-            <h4 style="margin-top: 0px; margin-bottom: 0px; font-style: italic;">flautas, saxofones, violão e cello</h4>
-            <p style="margin-top: 5px; margin-right: 15px;">
-              
-            </p>
+            <span class="contentSpan">
+              <span class="activateContentSpan" id="activateContentContato1" val="0" onclick="openCloseContent('#activateContentContato1')">
+                <h3 class="content" id="sign">▸</h3><h3 class="content" style="font-style: italic;" id="contato1">contato1 (2023)</h3>
+                <h4 style="margin-top: 0px; margin-bottom: 0px; font-style: italic;">flautas, saxofones, violão e cello</h4>
+              </span>
+              <span class="pContent">
+                <p style="margin-top: 5px; margin-right: 15px;">
+                  teste
+                </p>
+              </span>
+            </span>
           </span> 
           
           <span id="spanMaisContent" style="display: none;">
             <h1 class="contentType">+</h1>
             
-            <h3 style="margin-top: 0px; margin-bottom: 0px; font-style: italic;" id="eepo">- miniatura1 (2024)</h3>
-            <h4 style="margin-top: 0px; margin-bottom: 0px; font-style: italic;">para faces/rostos</h4>
-            <p style="margin-top: 5px; margin-right: 15px;">
-              
-            </p>
+            <span class="contentSpan">
+              <span class="activateContentSpan" id="activateContentMiniatura1" val="0" onclick="openCloseContent('#activateContentMiniatura1')">
+                <h3 class="content" id="sign">▸</h3><h3 class="content" style="font-style: italic;" id="miniatura1">miniatura1 (2024)</h3>
+                <h4 style="margin-top: 0px; margin-bottom: 0px; font-style: italic;">para faces/rostos</h4>
+              </span>
+              <span class="pContent">
+                <p style="margin-top: 5px; margin-right: 15px;">
+                  teste
+                </p>
+              </span>
+            </span>
           </span> 
         </div>
         
