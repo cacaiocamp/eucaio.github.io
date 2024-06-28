@@ -33,6 +33,20 @@
     
     .overflowY {overflow-y:auto;}
     
+    .mediaWrapper {
+      display: flex;
+      justify-content: space-between; /* Or use justify-content: center; */
+      align-items: flex-start; /* Align items at the start vertically */
+    }
+
+    .videoWrapper, .scoreWrapper {
+      margin: 10px;
+    }
+
+    .videoWrapper iframe, .scoreWrapper iframe {
+      max-width: 100%;
+    }
+    
     a.navTab {text-decoration: none;}
     p.navP {
       text-align: center;
@@ -175,6 +189,26 @@
                 </p>
               </span>
             </span>
+            
+            <p style="margin-top: -10px; margin-right: 15px;" >&nbsp;</p>
+            
+            <span class="contentSpan">
+              <span class="activateContentSpan" id="activateContentSpanGHands" val="0" onclick="openCloseContent('#activateContentSpanGHands')">
+                <h3 class="content" id="sign">▸</h3><h3 style="font-style: italic;" class="content" id="ghands">sem título (2024)</h3>
+                <h4 style="margin-top: 0px; margin-bottom: 0px; font-style: italic;">violão, mãos e projeção interativa</h4>
+              </span>
+              <span class="pContent">
+                <p style="margin-top: 5px; margin-right: 15px; text-align:justify;">
+                  <em> sem título </em> é uma peça em processo de composição, com a colaboração de e dedicada a Artur Miranda Azzi. 
+                </p>
+                <p style="margin-top: -5px; margin-right: 15px; text-align:justify;">
+                  Na perspectiva de música como performance, a peça parte de três intenções principais: 
+                  (1) utilizar o peso do violão e sua manipulação como material composicional; 
+                  (2) buscar "automatizar" a percepção visual e espacial da performance, a partir de um blackout e um sistema interativo que projete <em> spotlights </em> nas mãos do performer e/ou na voluta;
+                  (3) trabalhar com a ideia de "preparação do corpo do instrumentista" ou do espaço da performance na produção de sonoridades.
+                </p>
+              </span>
+            </span>
           </span>  
           
           <span id="spanDuoContent" style="display: none;">
@@ -187,6 +221,9 @@
               </span>
               <span class="pContent">
                 <p style="margin-top: 5px; margin-right: 15px; text-align:justify;">
+                  peça composta para o grupo Sonante21
+                </p>
+                <p style="margin-top: 5px; margin-right: 15px; text-align:justify;">
                   <em>anesidora</em> tem a intenção de explorar outras possibilidades da <em>pandora</em>, instrumento desenvolvido por Sergio Freire, 
                   junto com o <a href="https://musica.ufmg.br/lapis/projects/obie/" target="_blank">Obié</a>, sistema musical interativo do qual fiz parte do 
                   desenvolvimento durante minha graduação na UFMG por meio de uma iniciação científica no LaPIS.
@@ -196,6 +233,14 @@
                   na performance dos instrumentos são então explorados a partir dessa possibilidade. Além disso, utilizando o Obié, descrições de áudio realizadas em alguns dos instrumentos
                   alimentam certas sonoridades produzidas então na pandora. Com essas duas variáveis, a peça joga com a ideia de ação-reação e expectativas gestuais de diferentes maneiras.
                 </p>
+                <div class="mediaWrapper">
+                  <div class="videoWrapper">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/jBbDUFM322k?si=khvtS3L8T_l_Sims" title="anesidora" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                  </div>
+                  <div class="scoreWrapper">
+                    <iframe width="560" height="315" class="pdf" src="./parts/anesidora_percussionDuoAndLiveElectronics_caioCampos_score_2022_rev01.pdf"></iframe>
+                  </div>
+                </div>
               </span>
             </span>
           </span>  
@@ -211,7 +256,7 @@
               <span class="pContent">
                 <p style="margin-top: 5px; margin-right: 15px; text-align:justify;">
                   Focando na expressividade dos corpos e instrumentos dos performers, a peça explora a boca dos performers como material composicional, utilizando três câmeras focadas em suas bocas,
-                  juntamente à explorações de suas vozes e, pricipalmente do no caso dos dois instrumentistas de sopro, da materialidade de seus instrumentos. A peça acontece quase inteiramente em 
+                  juntamente à explorações de suas vozes e, pricipalmente no caso dos dois instrumentistas de sopro, da materialidade de seus instrumentos. A peça acontece quase inteiramente em 
                   <em>blackout</em>, utilizando iluminadores infravermelhos na captação das bocas pelas câmeras.
                 </p>
               </span>
@@ -227,9 +272,20 @@
                 <h4 style="margin-top: 0px; margin-bottom: 0px; font-style: italic;">flautas, saxofones, violão e cello</h4>
               </span>
               <span class="pContent">
-                <p style="margin-top: 5px; margin-right: 15px;">
-                  teste
+                <p style="margin-top: 5px; margin-right: 15px; text-align:justify;">
+                  peça composta para o Ensemble Móbile, na 40ª Oficina de Música de Curitiba
                 </p>
+                <p style="margin-top: 5px; margin-right: 15px; text-align:justify;">
+                  
+                </p>
+                <div class="mediaWrapper">
+                  <div class="videoWrapper">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/jBbDUFM322k?si=khvtS3L8T_l_Sims" title="anesidora" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                  </div>
+                  <div class="scoreWrapper">
+                    <iframe width="560" height="315" class="pdf" src="./parts/contato1_quarteto_caioCostaCampos_2023_rev01.pdf"></iframe>
+                  </div>
+                </div>
               </span>
             </span>
           </span> 
@@ -243,8 +299,11 @@
                 <h4 style="margin-top: 0px; margin-bottom: 0px; font-style: italic;">para faces/rostos</h4>
               </span>
               <span class="pContent">
-                <p style="margin-top: 5px; margin-right: 15px;">
-                  teste
+                <p style="margin-top: 5px; margin-right: 15px; text-align:justify;">
+                  Rostos são fontes de expressão em diversas performances, sejam elas artísticas ou as mais corriqueiras e diárias. 
+                  Essa peça é uma primeira exploração de faces em que os músculos faciais, com suas complexidades e limitações de movimento, 
+                  são tomados como materiais base de uma composição performada em 'uníssono' por três rostos, buscando outras possíveis articulações de expressão. 
+                  Algumas destas, talvez, próximas de uma musicalidade.
                 </p>
               </span>
             </span>
@@ -254,37 +313,40 @@
         <nav id="navContentNames">
           <span id="spanSoloNames">
             <h4 style="margin-bottom: 0px"> --- violão </h4>
-            <h4 style="margin-top: 0px">
-              <a class="navTab" style="font-style: italic;" href="#eepo"> estante em posição ordinária (2023)</a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            </h3>
+            <h4 style="margin-top: 0px; margin-bottom: 5px;">
+              - <a class="navTab" style="font-style: italic;" href="#eepo">  estante em posição ordinária (2023)</a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+            </h4>
+            <h4 style="margin-top: 0px; margin-bottom: 5px;">
+              - <a class="navTab" style="font-style: italic;" href="#ghands"> sem título (2024)</a> &nbsp; &nbsp; &nbsp;
+            </h4>
           </span>
           
           <span id="spanDuoNames" style="display: none;">
             <h4 style="margin-bottom: 0px"> --- percussão </h4>
             <h4 style="margin-top: 0px">
               <a class="navTab" style="font-style: italic;" href="#anesidora"> anesidora (2022)</a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            </h3>
+            </h4>
           </span>
           
           <span id="spanTrioNames" style="display: none;">
             <h4 style="margin-bottom: 0px"> --- percussão + 2 </h4>
             <h4 style="margin-top: 0px">
               <a class="navTab" style="font-style: italic;" href="#corp"> corpos/corpses (2024)</a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            </h3>
+            </h4>
           </span>
           
           <span id="spanQuartetoNames" style="display: none;">
             <h4 style="margin-bottom: 0px"> --- flauta, sax, violão, cello </h4>
             <h4 style="margin-top: 0px">
               <a class="navTab" style="font-style: italic;" href="#contato1"> contato1 (2023)</a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            </h3>
+            </h4>
           </span>
           
           <span id="spanMaisNames" style="display: none;">
             <h4 style="margin-bottom: 0px"> --- face/rosto </h4>
             <h4 style="margin-top: 0px">
               <a class="navTab" style="font-style: italic;" href="#miniatura1"> miniatura1 (2024)</a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            </h3>
+            </h4>
           </span>
         </nav>
       </span>
