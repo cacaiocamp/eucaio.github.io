@@ -32,6 +32,13 @@ function preload(){
   }
   
   select('#caiosCount').html(caiosCount);
+  
+  var currentUrl = window.location.href;
+  var pageName = currentUrl.substring(currentUrl.lastIndexOf('/') + 1);
+  pageName = pageName.split('#')[0];
+  if(pageName == "comps.html"){
+    windowResized();
+  }
 }
 
 function setup() {
