@@ -208,12 +208,39 @@ function openCloseContent(spanElementId){
     spanElement.elt.attributes.val.value = 1;
     pContent.style("display: inline;");
     h3Sign.elt.innerHTML = "▾";
+    
+    if(spanElement.elt.attributes.loadedMedia.value == 0){
+      let elements = pContent.elt.querySelectorAll('.videoWrapper, .scoreWrapper');
+      elements.forEach(element => {
+          console.log(element);
+          loadIFrame(element);
+      });
+      
+      spanElement.elt.attributes.loadedMedia.value = 1;
+    }
   }
   else {
     spanElement.elt.attributes.val.value = 0;
     pContent.style("display: none;");
     h3Sign.elt.innerHTML = "▸";
   }
+}
+
+function loadIFrame(element){
+  element.innerHTML = '';
+  let src = element.attributes.val.value;
+  
+  var div = document.createElement('iframe');
+  
+  var iframe = document.createElement('iframe');
+  iframe.setAttribute('width', '100%');
+  iframe.setAttribute('height', '100%');
+  iframe.setAttribute('src', src);
+  iframe.setAttribute('frameborder', '0');
+  iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+  iframe.setAttribute('allowfullscreen', true);
+  
+  element.appendChild(iframe);
 }
 
 function compsFeed(typeToFeed){
