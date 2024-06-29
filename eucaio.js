@@ -212,7 +212,6 @@ function openCloseContent(spanElementId){
     if(spanElement.elt.attributes.loadedMedia.value == 0){
       let elements = pContent.elt.querySelectorAll('.videoWrapper, .scoreWrapper');
       elements.forEach(element => {
-          console.log(element);
           loadIFrame(element);
       });
       
@@ -229,7 +228,7 @@ function openCloseContent(spanElementId){
 function loadIFrame(element){
   element.innerHTML = '';
   let src = element.attributes.val.value;
-  
+ 
   var div = document.createElement('iframe');
   
   var iframe = document.createElement('iframe');
@@ -291,6 +290,9 @@ function windowResized() {
     selectedElement = select('#h1PageName');
     selectedElement.style("display: none;");
     
+    selectedElement = select('#h4PageNameSmall');
+    selectedElement.style("display: inline;");
+    
     selectedElement = select('#navContentNames');
     selectedElement.style("display: none;");
     
@@ -308,6 +310,9 @@ function windowResized() {
   else if(heightTooShort == true && windowHeight >= 450){
     selectedElement = select('#h1PageName');
     selectedElement.style("display: inline;");
+    
+    selectedElement = select('#h4PageNameSmall');
+    selectedElement.style("display: none;");
     
     if(widthTooShort == false){
       selectedElement = select('#navContentNames');
