@@ -300,7 +300,9 @@ function windowResized() {
     selectedElement.style("top: 91%");
     
     selectedElement = select('#divContent');
-    selectedElement.style("width:90%;");
+    selectedElement.style("width:88%;");
+    selectedElement.style("height:90%;");
+    selectedElement.style("top:5%;");
     
     selectedElement = select('#oIndex');
     selectedElement.style("display: none;");
@@ -318,11 +320,13 @@ function windowResized() {
       selectedElement = select('#navContentNames');
       selectedElement.style("display: block;");
     
-    selectedElement = select('#navContentTypes');
-    selectedElement.style("top: 93%");
+      selectedElement = select('#navContentTypes');
+      selectedElement.style("top: 93%");
       
       selectedElement = select('#divContent');
       selectedElement.style("width:75%;");
+      selectedElement.style("height:95%;");
+      selectedElement.style("top:0%;");
       
       selectedElement = select('#oIndex');
       selectedElement.style("display: inline-block;");
