@@ -3,6 +3,7 @@ var backgroundColor;
 
 var DEFAULT_MAXCAIONUM = 0;
 var caiosCount = 0;
+var jumpStartAnimation = false;
 var framesCounter = 0;
 var changingNavFonts = false;
 var drawSampleCaio = false;
@@ -38,6 +39,10 @@ function preload(){
   pageName = pageName.split('#')[0];
   if(pageName == "comps.html"){
     windowResized();
+  }
+  
+  if(pageName != "index.html" && pageName != ""){
+    jumpStartAnimation = true;
   }
 }
 
@@ -85,7 +90,7 @@ function setup() {
   frameRate(60);
   targetFrameRate = 60;
   
-  if(caiosCount > 0){
+  if(caiosCount > 0 || jumpStartAnimation){
     navCaioElementControl.startOpacityChange(80, 1);
     divCountElementControl.startOpacityChange(80, 1);
   }
