@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- PLEASE NO CHANGES BELOW THIS LINE (UNTIL I SAY SO) -->
+  <script language="javascript" type="text/javascript" src="libraries/p5.min.js"></script>
+  <script language="javascript" type="text/javascript" src="Caio_class.js"></script>
+  <script language="javascript" type="text/javascript" src="definitions.js"></script>
+  <script language="javascript" type="text/javascript" src="element_class.js"></script>
+  <script language="javascript" type="text/javascript" src="eucaio.js"></script>
+  <!-- OK, YOU CAN MAKE CHANGES BELOW THIS LINE AGAIN -->
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="divCaio">
+      <h1 id="h1PageName" style="transform: translateX(-50%) translateY(140%) rotate(-90deg)">comps</h1>
+      <nav id="navCAIO">
+        <h3>
+          <div> 
+            <a class="navHover" id="c">C<p class="navP">x</p> </a> &nbsp; 
+            <span class="navTab" id="cTab"> 
+              <a class="navTab" href="#c" onclick="pageChange('comps.html')"> comps </a> 
+            </span> 
+          </div>
+        </h3>
+        <h3>
+          <div> 
+            <a class="navHover" id="a">A<p class="navP">x</p> </a> &nbsp; 
+            <span class="navTab" id="aTab"> 
+              <a class="navTab" href="http://lattes.cnpq.br/4346581838045021" target="_blank"> academia </a> 
+            </span> 
+          </div>
+        </h3>
+        <h3>
+          <div> 
+            <a class="navHover" id="i">I<p class="navP">x</p> </a> &nbsp; 
+            <span class="navTab" id="iTab"> 
+              <a class="navTab" href="#i" onclick="pageChange('impros.html')"> impros </a> 
+            </span> 
+          </div>
+        </h3>
+        <h3>
+          <div> 
+            <a class="navHover" id="o">O<p class="navP">x</p> </a> &nbsp; 
+            <span class="navTab" id="oTab"> 
+              <a class="navTab" href="https://github.com/cacaiocamp" target="_blank"> other </a> 
+              <a class="navTab" href="#bio" onclick="pageChange('bio.html')"> bio </a> 
+              <a class="navTab" id="oIndex" href="#index" onclick="pageChange('index.html')"> index </a>
+            </span> 
+          </div>
+        </h3>
+    </div>
+    
+    <div id="caiosCountDiv">
+      <span> <p class="countDiv" id="caiosCount">0</p> <p class="caiosCountDrawP" id="caiosP"> caios</p> <p class="countDiv">have fallen</p> </span>
+    </div>
+    
+    <div id="divContentOutter" onclick="closeCaioTabs()">
+      <nav id="navContentTypes">
+        <span class="typesTab" style="display: flex; justify-content: space-around;">
+            <a class="navTab" href="#s" onclick="compsFeed('s')" style="font-weight: bold"> solo </a>
+            <a class="navTab" href="#d" onclick="compsFeed('d')" style="font-weight: bold"> duo </a> 
+            <a class="navTab" href="#t" onclick="compsFeed('t')" style="font-weight: bold"> trio </a> 
+            <a class="navTab" href="#q" onclick="compsFeed('q')" style="font-weight: bold"> quartet </a> 
+            <a class="navTab" href="#g" onclick="compsFeed('g')" style="font-weight: bold"> + </a> 
+        </span>
+      </nav>
+      
+      <span id="spanContent">
+        <div id="divContent" class="overflowY">
+          <span id="spanSoloContent">
+            <h1 class="contentType">solo</h1>
+            
+            <span class="contentSpan">
+              <span class="activateContentSpan" id="activateContentSpanEepo" val="0" loadedMedia="0" onclick="openCloseContent('#activateContentSpanEepo')">
+                <span class="sameline"><h3 class="content" id="sign">▸</h3><h3 style="font-style: italic;" class="content" id="eepo">estante em posição ordinária (2023)</h3></span>
+                <h4 style="margin-top: 0px; margin-bottom: 0px; font-style: italic;">solo guitarrist</h4>
+              </span>
+              <span class="pContent">
+                <p style="margin-top: 5px; margin-right: 15px; text-align:justify;">
+                  <em> estante em posição ordinária </em> is a piece composed in colaboration with and dedicated to Pedro Henrique Gilberto Alves de Souza. 
+                </p>
+                <p style="margin-top: -5px; margin-right: 15px; text-align:justify;">
+                  The piece has the intention of dialogue with the traditional guitar performance practices as compositional materials.
+                  Approaching the contruction of musical discourses as performative, the piece focuses mainly in spatial, phisicality and corporeality relations.
+                  In that way, the movement of the arms, the direction of the gaze, the positioning of the guitar in relation to the performers body, for example, become key aspects in the expressive articulation of the piece. 
+                </p>
+                <div class="mediaWrapper">
+                  <div class="videoWrapper" val="https://www.youtube.com/embed/5wthVA3AEOw?si=eLFrNvrrXT0oqnxd" onclick="loadIFrame(this)">
+                    <p style="text-align: center;">Video-Performance - clique aqui</p>
+                  </div>
+                  <div class="videoWrapper" val="https://www.youtube.com/embed/cQ1avvefPoo?si=FQKMlQKrqgTHpFne" onclick="loadIFrame(this)">
+                    <p style="text-align: center;">Gravação de performance em concerto - clique aqui</p>
+                  </div>
+                </div>
+                <div class="mediaWrapper">
+                  <div class="scoreWrapper" val="./parts/estanteEmPosicaoOrdinaria_violonistaSolo_caioCostaCampos_2023_rev01.pdf" onclick="loadIFrame(this)">
+                    <p style="text-align: center;">Partitura - clique aqui</p>
+                  </div>
+                </div>
+              </span>
+            </span>
+            
+            <p style="margin-top: -10px; margin-right: 15px;" >&nbsp;</p>
+            
+            <span class="contentSpan">
+              <span class="activateContentSpan" id="activateContentSpanGHands" val="0" loadedMedia="0" onclick="openCloseContent('#activateContentSpanGHands')">
+                <span class="sameline"><h3 class="content" id="sign">▸</h3><h3 style="font-style: italic;" class="content" id="ghands">Toca (2024)</h3></span>
+                <h4 style="margin-top: 0px; margin-bottom: 0px; font-style: italic;">guitar, hands and interactive projection</h4>
+              </span>
+              <span class="pContent">
+                <p style="margin-top: 5px; margin-right: 15px; text-align:justify;">
+                  <em> Toca </em> is a piece under development, with the colaboration of and dedicated to Artur Miranda Azzi. 
+                </p>
+                <p style="margin-top: -5px; margin-right: 15px; text-align:justify;">
+                  Working with the perspective of music as performance, the piece articulates three main intentions:
+                  (1) explore the guitar's weight and its manipulation as a guiding compositional material;
+                  (2) search for automatizations of the performance's visual, physical and spatial perception, using a blackout and an interactive system that projects <em> spotlights </em> at the hands of the performer and/or specific parts of the guitar, creating and playing expressively with "assemblages" of the guitar's and the guitarrist's bodies;
+                  (3) work with the idea of 'preparation of the performer's body' or of the space in the production of sonorities.
+                </p>
+                <p style="margin-top: 5px; margin-right: 15px; text-align:justify;">
+                  The registers and score here avaible are of the process, still in develpment. <a class="navTab" style="font-style: italic;" href="https://github.com/cacaiocamp/guitarProjection" target="_blank"> Here </a> you can find a bit of its documentation and the codes used in their production.
+                </p>
+                <div class="mediaWrapper">
+                  <div class="videoWrapper" val="https://www.youtube.com/embed/zNrOhTm9XMY?si=hGzw9Ev33GTxVHd3" onclick="loadIFrame(this)">
+                    <p style="text-align: center;">Video-Performance - clique aqui</p>
+                  </div>
+                  <div class="scoreWrapper" val="./parts/toca_caioCostaCampos_2024_00.pdf" onclick="loadIFrame(this)">
+                    <p style="text-align: center;">Partitura - clique aqui</p>
+                  </div>
+                </div>
+              </span>
+            </span>
+          </span>  
+          
+          <span id="spanDuoContent" style="display: none;">
+            <h1 class="contentType">duo</h1>
+            
+            <span class="contentSpan">
+              <span class="activateContentSpan" id="activateContentSpanAnesidora" val="0" loadedMedia="0" onclick="openCloseContent('#activateContentSpanAnesidora')">
+                <span class="sameline"><h3 class="content" id="sign">▸</h3><h3 class="content" style="font-style: italic;" id="anesidora">anesidora (2022)</h3></span>
+                <h4 style="margin-top: 0px; margin-bottom: 0px; font-style: italic;">percussion duo and live electronics</h4>
+              </span>
+              <span class="pContent">
+                <p style="margin-top: 5px; margin-right: 15px; text-align:justify;">
+                  piece composed for Sonante21
+                </p>
+                <p style="margin-top: 5px; margin-right: 15px; text-align:justify;">
+                  <em>anesidora</em> has the intention of exploring the instrument <em>pandora</em>, developed by Sergio Freire, 
+                  with <a href="https://musica.ufmg.br/lapis/projects/obie/" target="_blank">Obié</a>, interactive music system in which I took part in the development 
+                  during my undergraduation at UFMG, through a research initiation in LaPIS.
+                </p>
+                <p style="margin-top: -5px; margin-right: 15px; text-align:justify;">
+                  The piece explores the possibility of producing sounds in the pandora remotely, without any actions of the percussionists. Certain body gestures
+                  in the performance of the instruments are explored through that possibility. Using Obié, audio descriptions of certain sounds gestures feed algorythms that
+                  produced certain sonorities in the pandora. With those two main variables, the piece plays with the idea of action-reaction and physical/corporeal expectations of the performance in multiple ways. 
+                </p>
+                <div class="mediaWrapper">
+                  <div class="videoWrapper" val="https://www.youtube.com/embed/jBbDUFM322k?si=khvtS3L8T_l_Sims" onclick="loadIFrame(this)">
+                    <p style="text-align: center;">Performance em concerto - clique aqui</p>
+                  </div>
+                  <div class="scoreWrapper" val="./parts/anesidora_percussionDuoAndLiveElectronics_caioCampos_score_2022_rev01.pdf" onclick="loadIFrame(this)">
+                    <p style="text-align: center;">Partitura - clique aqui</p>
+                  </div>
+                </div>
+              </span>
+            </span>
+          </span>  
+          
+          <span id="spanTrioContent" style="display: none;">
+            <h1 class="contentType">trio</h1>
+            
+            <span class="contentSpan">
+              <span class="activateContentSpan" id="activateContentCorp" val="0" loadedMedia="0" onclick="openCloseContent('#activateContentCorp')">
+                <span class="sameline"><h3 class="content" id="sign">▸</h3><h3 class="content" style="font-style: italic;" id="corp">corpos/corpses (2024)</h3></span>
+                <h4 style="margin-top: 0px; margin-bottom: 0px; font-style: italic;">percussion, two wind instruments, live electronics, interactive lights and video</h4>
+              </span>
+              <span class="pContent">
+                <p style="margin-top: 5px; margin-right: 15px; text-align:justify;">
+                  piece composed for Hanatsu Mirroir
+                </p>
+                <p style="margin-top: 5px; margin-right: 15px; text-align:justify;">
+                  Focusing in the body and instrumental expressivity of the performers, the piece explores performer's mouth as composition materials. For that, it uses three cameras focusing in their mouths,
+                  together with explorations of their voices and, mainly in the case of two wind performers, in the materiality of the instruments. The piece happens almost intirely in <em>blackout</em>, using
+                  IR iluminators in the video capturing of the mouths.
+                </p>
+                <div class="mediaWrapper">
+                  <div class="scoreWrapper" val="./parts/corposcorpses_trioVideoAndLiveElectronics_caioCostaCampos_2024_v0.pdf" onclick="loadIFrame(this)">
+                    <p style="text-align: center;">Partitura - clique aqui</p>
+                  </div>
+                </div>
+              </span>
+            </span>
+          </span>
+          
+          <span id="spanQuartetoContent" style="display: none;">
+            <h1 class="contentType">quartet</h1>
+            
+            <span class="contentSpan">
+              <span class="activateContentSpan" id="activateContentContato1" val="0" loadedMedia="0" onclick="openCloseContent('#activateContentContato1')">
+                <span class="sameline"><h3 class="content" id="sign">▸</h3><h3 class="content" style="font-style: italic;" id="contato1">contato1 (2023)</h3></span>
+                <h4 style="margin-top: 0px; margin-bottom: 0px; font-style: italic;">flutes, saxophones, guitar and cello</h4>
+              </span>
+              <span class="pContent">
+                <p style="margin-top: 5px; margin-right: 15px; text-align:justify;">
+                  piece composed for Ensemble Móbile, during the 40ª Oficina de Música de Curitiba
+                </p>
+                <p style="margin-top: 5px; margin-right: 15px; text-align:justify;">
+                  
+                </p>
+                <div class="mediaWrapper">
+                  <div class="videoWrapper" val="https://www.youtube.com/embed/D5tuqZrxgM8?si=7crcWHHqxkc1Agbk" onclick="loadIFrame(this)">
+                    <p style="text-align: center;">Performance em concerto - clique aqui</p>
+                  </div>
+                  <div class="scoreWrapper" val="./parts/contato1_quarteto_caioCostaCampos_2023_rev01.pdf" onclick="loadIFrame(this)">
+                    <p style="text-align: center;">Partitura - clique aqui</p>
+                  </div>
+                </div>
+              </span>
+            </span>
+          </span> 
+          
+          <span id="spanMaisContent" style="display: none;">
+            <h1 class="contentType">+</h1>
+            
+            <span class="contentSpan">
+              <span class="activateContentSpan" id="activateContentMiniatura1" val="0" loadedMedia="0" onclick="openCloseContent('#activateContentMiniatura1')">
+                <span class="sameline"><h3 class="content" id="sign">▸</h3><h3 class="content" style="font-style: italic;" id="miniatura1">miniatura1 (2024)</h3></span>
+                <h4 style="margin-top: 0px; margin-bottom: 0px; font-style: italic;">for faces</h4>
+              </span>
+              <span class="pContent">
+                <p style="margin-top: 5px; margin-right: 15px; text-align:justify;">
+                  Faces serve as powerful sources of expression across different performances, from artistic to everyday ones. This piece is an exploration of faces where facial 
+                  muscles -with their complexities and limitations of movement- are the core materials of a composition performed in 'unison' across many faces, searching for new articulations of expression. 
+                  Some of which may evoke a sense of musicality.
+                </p>
+                <p style="margin-top: 5px; margin-right: 15px; text-align:justify;">
+                  Although focused on facial expressions, this work challenges the traditional view of expressions as mere reflections of emotion, instead exploring a broader array of ways that faces can communicate expressively. Specifically, the piece aims to:
+                  (1) dissect the face into its components, analyzing each muscle’s material properties and movement capabilities, with attention to their ranges and movement qualities;
+                  (2) establish new connections between muscles, grouping them not only by spatial proximity but also through movement coordination;
+                  (3) introduce a sense of 'polyphony' in facial movement, engaging multiple muscle groups to express different intentions and movement qualities simultaneously;
+                  (4) explore differences between multiple performers' faces, using precise timing and synchronized movement to emphasize these distinctions;
+                  (5) investigate physical excesses in facial expressions, such as wrinkles, tension, and traces left by certain movements; 
+                  (6) create opportunities for each performer to explore and highlight unique aspects of their own facial characteristics.
+                </p>
+                <p style="margin-top: 5px; margin-right: 15px; text-align:justify;">
+                  Each face will be individually recorded and projected in sync on the walls of an installation space. The recordings will be front-facing, showcasing each face’s f
+                  ull range of expressions, even if performers’ eyes look elsewhere. Played in a continuous loop with an estimated duration of 10 minutes, these videos will feature 12 
+                  or more performers. Arranged in the space to highlight individual differences, the projections will maintain a sense of a cohesive and complex performance, radicaly 
+                  filling up the space with the face performances the will also be perceived as a single performance. The installation will be silent, any musicality will arise solely from 
+                  associations with the facial muscle movements over time.
+                </p>
+                <p style="margin-top: 5px; margin-right: 15px; text-align:justify;">
+                  The facePiece is under development and what is presented here is part of its process: a 3 minute miniature, performed with in two different occasions as tests of comprehension of the score,
+                  and technical aspects of the face recordings.
+                </p>
+                <div class="mediaWrapper">
+                  <div class="videoWrapper" val="https://www.youtube.com/embed/9-lDrsnHpXg?si=XMI1nZ_KHdwilp7p" onclick="loadIFrame(this)">
+                    <p style="text-align: center;">Performance - clique aqui</p>
+                  </div>
+                  <div class="videoWrapper" val="https://www.youtube.com/embed/9-lDrsnHpXg?si=XMI1nZ_KHdwilp7p" onclick="loadIFrame(this)">
+                    <p style="text-align: center;">Performance - clique aqui</p>
+                  </div>
+                </div>
+                <div class="mediaWrapper">
+                  <div class="scoreWrapper" val="./parts/facePiece_miniatura1_caioCampos_2024_sample.pdf" onclick="loadIFrame(this)">
+                    <p style="text-align: center;">Partitura - clique aqui</p>
+                  </div>
+                </div>
+              </span>
+            </span>
+          </span> 
+        </div>
+        
+        <nav id="navContentNames">
+          <span id="spanSoloNames">
+            <h4 style="margin-bottom: 0px"> --- guitar </h4>
+            <h4 style="margin-top: 0px; margin-bottom: 5px;">
+              - <a class="navTab" style="font-style: italic;" href="#eepo">  estante em posição ordinária (2023)</a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+            </h4>
+            <h4 style="margin-top: 0px; margin-bottom: 5px;">
+              - <a class="navTab" style="font-style: italic;" href="#ghands"> Toca (2024)</a> &nbsp; &nbsp; &nbsp;
+            </h4>
+          </span>
+          
+          <span id="spanDuoNames" style="display: none;">
+            <h4 style="margin-bottom: 0px"> --- percussion </h4>
+           <h4 style="margin-top: 0px; margin-bottom: 5px;">
+              - <a class="navTab" style="font-style: italic;" href="#anesidora"> anesidora (2022)</a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            </h4>
+          </span>
+          
+          <span id="spanTrioNames" style="display: none;">
+            <h4 style="margin-bottom: 0px"> --- percussion + 2 </h4>
+            <h4 style="margin-top: 0px; margin-bottom: 5px;">
+              - <a class="navTab" style="font-style: italic;" href="#corp"> corpos/corpses (2024)</a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            </h4>
+          </span>
+          
+          <span id="spanQuartetoNames" style="display: none;">
+            <h4 style="margin-bottom: 0px"> --- flute, sax, guitar, cello </h4>
+            <h4 style="margin-top: 0px; margin-bottom: 5px;">
+              - <a class="navTab" style="font-style: italic;" href="#contato1"> contato1 (2023)</a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            </h4>
+          </span>
+          
+          <span id="spanMaisNames" style="display: none;">
+            <h4 style="margin-bottom: 0px"> --- faces </h4>
+            <h4 style="margin-top: 0px; margin-bottom: 5px;">
+              - <a class="navTab" style="font-style: italic;" href="#miniatura1"> miniatura1 (2024)</a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            </h4>
+          </span>
+        </nav>
+      </span>
+    </div>
+    
+    <h4 id="h4PageNameSmall" style="transform: translateX(-50%) translateY(140%) rotate(-90deg)">comps</h1>
+</body>
+</html>
