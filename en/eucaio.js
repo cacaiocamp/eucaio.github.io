@@ -205,6 +205,7 @@ function sampleCaioDraw(){
 
 function openCloseContent(spanElementId){
   let spanElement = select(spanElementId);
+  print(spanElementId);
   let h3Sign = select('#sign', spanElement);
   let parent = spanElement.elt.parentElement;
   let pContent = select('span.pContent', parent);
@@ -277,6 +278,37 @@ function compsFeed(typeToFeed){
       currentCompNamesId = '#spanMaisNames';
     }
     
+    
+    selectedElement = select(currentCompContentId);
+    selectedElement.style("display: block;");
+    
+    selectedElement = select(currentCompNamesId);
+    selectedElement.style("display: block;");
+    
+    currentCompType = typeToFeed;
+  }
+}
+
+function improsFeed(typeToFeed){
+  if(typeToFeed != currentCompType){
+    selectedElement = select(currentCompContentId);
+    selectedElement.style("display: none;");
+    
+    selectedElement = select(currentCompNamesId);
+    selectedElement.style("display: none;");
+    
+    if(typeToFeed == 's'){
+      currentCompContentId = '#spanSoloContent';
+      currentCompNamesId = '#spanSoloNames';
+    }
+    else if(typeToFeed == 'c'){
+      currentCompContentId = '#spanCACOContent';
+      currentCompNamesId = '#spanCACONames';
+    }
+    else{ // g
+      currentCompContentId = '#spanMaisContent';
+      currentCompNamesId = '#spanMaisNames';
+    }
     
     selectedElement = select(currentCompContentId);
     selectedElement.style("display: block;");

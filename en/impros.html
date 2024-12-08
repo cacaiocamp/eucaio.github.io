@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- PLEASE NO CHANGES BELOW THIS LINE (UNTIL I SAY SO) -->
+  <script language="javascript" type="text/javascript" src="libraries/p5.min.js"></script>
+  <script language="javascript" type="text/javascript" src="Caio_class.js"></script>
+  <script language="javascript" type="text/javascript" src="definitions.js"></script>
+  <script language="javascript" type="text/javascript" src="element_class.js"></script>
+  <script language="javascript" type="text/javascript" src="eucaio.js"></script>
+  <!-- OK, YOU CAN MAKE CHANGES BELOW THIS LINE AGAIN -->
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="divCaio">
+      <h1 id="h1PageNameImpros" style="transform: translateX(-50%) translateY(140%) rotate(-90deg)">impros</h1>
+      <nav id="navCAIO">
+        <h3>
+          <div> 
+            <a class="navHover" id="c">C<p class="navP">x</p> </a> &nbsp; 
+            <span class="navTab" id="cTab"> 
+              <a class="navTab" href="#c" onclick="pageChange('comps.html')"> comps </a> 
+            </span> 
+          </div>
+        </h3>
+        <h3>
+          <div> 
+            <a class="navHover" id="a">A<p class="navP">x</p> </a> &nbsp; 
+            <span class="navTab" id="aTab"> 
+              <a class="navTab" href="http://lattes.cnpq.br/4346581838045021" target="_blank"> academia </a> 
+            </span> 
+          </div>
+        </h3>
+        <h3>
+          <div> 
+            <a class="navHover" id="i">I<p class="navP">x</p> </a> &nbsp; 
+            <span class="navTab" id="iTab"> 
+              <a class="navTab" href="#i" onclick="pageChange('impros.html')"> impros </a> 
+            </span> 
+          </div>
+        </h3>
+        <h3>
+          <div> 
+            <a class="navHover" id="o">O<p class="navP">x</p> </a> &nbsp; 
+            <span class="navTab" id="oTab"> 
+              <a class="navTab" href="https://github.com/cacaiocamp" target="_blank"> other </a> 
+              <a class="navTab" href="#bio" onclick="pageChange('bio.html')"> bio </a> 
+              <a class="navTab" id="oIndex" href="#index" onclick="pageChange('index.html')"> index </a>
+            </span> 
+          </div>
+        </h3>
+    </div>
+    
+    <div id="caiosCountDiv">
+      <span> <p class="countDiv" id="caiosCount">0</p> <p class="caiosCountDrawP" id="caiosP"> caios</p> <p class="countDiv">have fallen</p> </span>
+    </div>
+    
+    <div id="divContentOutter" onclick="closeCaioTabs()">
+      <nav id="navContentTypes">
+        <span class="typesTab" style="display: flex; justify-content: space-around;">
+            <a class="navTab" href="#s" onclick="improsFeed('s')" style="font-weight: bold"> solo </a>
+            <a class="navTab" href="#c" onclick="improsFeed('c')" style="font-weight: bold"> CACO </a>  
+            <a class="navTab" href="#g" onclick="improsFeed('g')" style="font-weight: bold"> + </a> 
+        </span>
+      </nav>
+      
+      <span id="spanContent">
+        <div id="divContent" class="overflowY">
+          <span id="spanSoloContent">
+            <h1 class="contentTypeImpros">solo</h1>
+            
+            <span class="contentSpan">
+              <span class="activateContentSpan" id="activateContentSpanSfiils" val="0" loadedMedia="0" onclick="openCloseContent('#activateContentSpanSfiils')">
+                <span class="sameline"><h3 class="content" id="sign">▸</h3><h3 style="font-style: italic;" class="content" id="sfiils">SFI/ILS</h3></span>
+                <h4 style="margin-top: 0px; margin-bottom: 0px; font-style: italic;">solo bass guitar</h4>
+              </span>
+              <span class="pContent">
+                <p style="margin-top: 5px; margin-right: 15px; text-align:justify;">
+                  <em> SFI/ILS </em> is a solo performance in a somewhat constant development. It's articulated through a Performance as Research metodology, interested in the experimentation with physicality in music performances - specially in my own e-bass improvisations. 
+                </p>
+                <p style="margin-top: -5px; margin-right: 15px; text-align:justify;">
+                  The performance focuses on explorations of how physicality in its relations and articulations with sound, corporality and temporality can shape our perceptions of presence and, 
+                  with that, what an improvised e-bass performance is. 
+                  Trying to separate itself from a type of music performance that is supposed to be articulated only in the realm of a crystalized and imaterial "music perception" - 
+                  that tends to create a dissociation with the performance itself - 
+                  it strives constantly to presentify itself, using repetition in multiple layers (structure, form, physicality, ...) to achieve this goal.
+                </p>
+                <p style="margin-top: -5px; margin-right: 15px; text-align:justify;">
+                  In 2024, it was presented three times in different occasions, formats and with different focuses. Here, you can watch its first public performance. 
+                </p>
+                <div class="mediaWrapper">
+                  <div class="videoWrapper" val="https://www.youtube.com/embed/uIcRdH6WAhc?si=8667xvm5h08Mv2tH" onclick="loadIFrame(this)">
+                    <p style="text-align: center;">Video-Performance - clique aqui</p>
+                  </div>
+                </div>
+              </span>
+            </span>
+            
+            <p style="margin-top: -10px; margin-right: 15px;" >&nbsp;</p>             
+          </span>  
+          
+          <span id="spanCACOContent" style="display: none;">
+            <h1 class="contentTypeImpros">CACO</h1>
+            
+            <span class="contentSpan">
+              <span class="activateContentSpan" id="activateContentSpanQI183" val="0" loadedMedia="0" onclick="openCloseContent('#activateContentSpanQI183')">
+                <span class="sameline"><h3 class="content" id="sign">▸</h3><h3 class="content" style="font-style: italic;" id="qi183">QI 183 (2024)</h3></span>
+                <h4 style="margin-top: 0px; margin-bottom: 0px; font-style: italic;">CACO + Pat Bizzotto + Chico Cesar + Remy Rebber</h4>
+              </span>
+              <span class="pContent">
+                <p style="margin-top: 5px; margin-right: 15px; text-align:justify;">
+                  Free improvisation with CACO (Artur Versiani: flutes; Caio Campos: e-bass; Luiz Pretti: percussion, sax, voice; Marcos Alves: percussion; Pedro Gabriel: cello; Pedro Gilberto: guitar) + Patrícia Bizzotto (voice, trompet, objects) + Chico César (saxophone) + Rémy Reber (e-guitar).
+                  
+                </p>
+                <p style="margin-top: -5px; margin-right: 15px; text-align:justify;">
+                  Audio recording can be accessed at <a class="navTab" href="https://archive.org/details/qi_especiais_4" target="_blank"> QI's archieve </a> .
+                </p>
+              </span>
+            </span>
+            
+            <p style="margin-top: -10px; margin-right: 15px;" >&nbsp;</p>
+            
+            <span class="contentSpan">
+              <span class="activateContentSpan" id="activateContentSpanVertices" val="0" loadedMedia="0" onclick="openCloseContent('#activateContentSpanVertices')">
+                <span class="sameline"><h3 class="content" id="sign">▸</h3><h3 class="content" style="font-style: italic;" id="vertices">Vertices (2024)</h3></span>
+                <h4 style="margin-top: 0px; margin-bottom: 0px; font-style: italic;">Pat Bizzotto's Vertices </h4>
+              </span>
+              <span class="pContent">
+                <p style="margin-top: 5px; margin-right: 15px; text-align:justify;">
+                  Structured improvisation, based on the idea of Trombone Boxing. Performed by CACO (Artur Versiani: flutes, percussion; Caio Campos: e-bass; Luiz Pretti: percussion; Pedro Gilberto: guitar; Vanessa Aiséo: trombone; Nathalia Fragoso: bass) at Praça 6.
+                </p>
+                
+                <p style="margin-top: -5px; margin-right: 15px; text-align:justify;">
+                  Audio/Video recordings and photos can be accessed at <a class="navTab" href="https://archive.org/details/praca6_T4" target="_blank"> Praça 6's archieve </a> .
+                </p>
+              </span>
+            </span>
+            
+            <p style="margin-top: -10px; margin-right: 15px;" >&nbsp;</p>
+            
+            <span class="contentSpan">
+              <span class="activateContentSpan" id="activateContentSpanCC2023" val="0" loadedMedia="0" onclick="openCloseContent('#activateContentSpanCC2023')">
+                <span class="sameline"><h3 class="content" id="sign">▸</h3><h3 class="content" style="font-style: italic;" id="cc2023">CCUFMG (2023)</h3></span>
+                <h4 style="margin-top: 0px; margin-bottom: 0px; font-style: italic;">CACO + Pat Bizotto + João Paulo Prazeres</h4>
+              </span>
+              <span class="pContent">
+                <p style="margin-top: 5px; margin-right: 15px; text-align:justify;">
+                  Free improvisation, performed at the end of our residency at Cultural Center of UFMG. Performed by CACO (Artur Versiani: flutes, percussion; Caio Campos: e-bass; Luiz Pretti: percussion; Vanessa Aiséo: trombone; Nathalia Fragoso: bass; Marcos Alves: percussion; Gabs Santa: percussion; João Viana: keyboard), Pat Bizzotto (trombone and percussion) and João Paulo Prazeres (sax).
+                </p>
+                
+                <div class="mediaWrapper">
+                  <div class="videoWrapper" val="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1785336792&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true" onclick="loadIFrame(this)">
+                    <p style="text-align: center;">Video-Performance - clique aqui</p>
+                  </div>
+                </div>
+              </span>
+            </span>
+            
+            <p style="margin-top: -10px; margin-right: 15px;" >&nbsp;</p>
+            
+            <span class="contentSpan">
+              <span class="activateContentSpan" id="activateContentSpanAnestesia" val="0" loadedMedia="0" onclick="openCloseContent('#activateContentSpanAnestesia')">
+                <span class="sameline"><h3 class="content" id="sign">▸</h3><h3 class="content" style="font-style: italic;" id="anestesia">Anestesia (2022)</h3></span>
+                <h4 style="margin-top: 0px; margin-bottom: 0px; font-style: italic;">Walter Smetak's Anestesia, for 10 musicians </h4>
+              </span>
+              <span class="pContent">
+                <p style="margin-top: 5px; margin-right: 15px; text-align:justify;">
+                  Performed by CACO (Daniel Tamietti, Violoncello; Marc Wallach, Gitarre; João Viana, E-Gitarre; Vanessa Aiseó, Posaune; Fefo, Trompete; Pedro Gilberto, Gitarre; Marcos Alves, Percussion; Davi Gazzaniga, Klavier; Silas Prado, Flöte; Caio Campos, E-Bass)
+                </p>
+                <p style="margin-top: -5px; margin-right: 15px; text-align:justify;">
+                  This was CACO's first performance in articulation as a Improvisation Group, invited and directed by Marcos Scarassatti and Luiz Pretti. 
+                </p>
+                <p style="margin-top: -5px; margin-right: 15px; text-align:justify;">
+                  Video recordings were done by the group's performers and edited by Luiz Pretti. I also did some of its visuals, using C++/openFrameworks.
+                </p>
+                
+                <div class="mediaWrapper">
+                  <div class="videoWrapper" val="https://www.youtube.com/embed/6YIatH5gI0o?si=8Pza-J2Qdoqs3WGq" onclick="loadIFrame(this)">
+                    <p style="text-align: center;">Video-Performance - clique aqui</p>
+                  </div>
+                </div>
+              </span>
+            </span>
+          </span>  
+          
+          <span id="spanMaisContent" style="display: none;">
+            <h1 class="contentTypeImpros">+</h1>
+            
+            <span class="contentSpan">
+              <span class="activateContentSpan" id="activateContentCemsois" val="0" loadedMedia="0" onclick="openCloseContent('#activateContentCemsois')">
+                <span class="sameline"><h3 class="content" id="sign">▸</h3><h3 class="content" style="font-style: italic;" id="cemsois"> cemsois (2023)</h3></span>
+                <h4 style="margin-top: 0px; margin-bottom: 0px; font-style: italic;">trio with Bruno Cunha and Kino Lopes</h4>
+              </span>
+              <span class="pContent">
+                <p style="margin-top: 5px; margin-right: 15px; text-align:justify;">
+                  Bruno Cunha, flute and voice; Caio Costa Campos, e-bass; Kino Lopes, e-guitar; Luis Spiga also made a participation, with Clarone.
+                </p>
+                <p style="margin-top: -5px; margin-right: 15px; text-align:justify;">
+                  Performed in the festival cemsois, at Brasilia. 
+                </p>
+                <div class="mediaWrapper">
+                  <div class="videoWrapper" val="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1785335913&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true" onclick="loadIFrame(this)">
+                    <p style="text-align: center;">Performance - clique aqui</p>
+                  </div>
+                </div>
+              </span>
+            </span>
+            
+            <p style="margin-top: -10px; margin-right: 15px;" >&nbsp;</p>
+            
+            <span class="contentSpan">
+              <span class="activateContentSpan" id="activateContentPing" val="0" loadedMedia="0" onclick="openCloseContent('#activateContentPing')">
+                <span class="sameline"><h3 class="content" id="sign">▸</h3><h3 class="content" style="font-style: italic;" id="ping"> PING (2020)</h3></span>
+                <h4 style="margin-top: 0px; margin-bottom: 0px; font-style: italic;">nao≠igual interactive duo</h4>
+              </span>
+              <span class="pContent">
+                <p style="margin-top: 5px; margin-right: 15px; text-align:justify;">
+                  PING is inspired by PONG, the classic ATARI game, reimagined as an audiovisual system that interacts with musical improvisation, where each side of this ping-pong is controlled by a musician who, instead of using a joystick (or paddle), plays their instrument.
+                </p>
+                <p style="margin-top: -5px; margin-right: 15px; text-align:justify;">
+                  As in the original, PING is a competition between two sides, but here, these sides can reverse, multiply, expand, contract, or even bounce across the screen... and all this movement is controlled by the players through melodies, intensities, and rhythms.
+                </p>
+                <p style="margin-top: -5px; margin-right: 15px; text-align:justify;">
+                  With the players 500 km apart, we present an "online version" of the game, with real-time audio exchange, processing, and analysis performed using patches in Pd that communicate with a sketch built in Processing3.
+                </p>
+                <div class="mediaWrapper">
+                  <div class="videoWrapper" val="https://www.youtube.com/embed/MAQt6TKRm38?si=uontOPrJpE6hNDLi" onclick="loadIFrame(this)">
+                    <p style="text-align: center;">Performance - clique aqui</p>
+                  </div>
+                </div>
+              </span>
+            </span>
+          </span> 
+        </div>
+        
+        <nav id="navContentNames">
+          <span id="spanSoloNames">
+            <h4 style="margin-bottom: 0px"> --- e-bass </h4>
+            <h4 style="margin-top: 0px; margin-bottom: 5px;">
+              - <a class="navTab" style="font-style: italic;" href="#sfiils">  SFI/ILS </a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+            </h4>
+          </span>
+          
+          <span id="spanCACONames" style="display: none;">
+           <h4 style="margin-bottom: 0px"> --- 10+ </h4>
+           <h4 style="margin-top: 0px; margin-bottom: 5px;">
+              - <a class="navTab" style="font-style: italic;" href="#qi183"> QI 183 (2024)</a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+           </h4>
+           <h4 style="margin-top: 0px; margin-bottom: 5px;">
+              - <a class="navTab" style="font-style: italic;" href="#cc2023"> CCUFMG (2023)</a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+           </h4>
+           <h4 style="margin-top: 0px; margin-bottom: 5px;">
+              - <a class="navTab" style="font-style: italic;" href="#anestesia"> Anestesia (2022)</a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+           </h4>
+           <h4 style="margin-bottom: 0px"> --- 6+ </h4>
+           <h4 style="margin-top: 0px; margin-bottom: 5px;">
+              - <a class="navTab" style="font-style: italic;" href="#vertices"> vertices (2024)</a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+           </h4>
+          </span>
+          
+          <span id="spanMaisNames" style="display: none;">
+            <h4 style="margin-bottom: 0px"> --- trio </h4>
+            <h4 style="margin-top: 0px; margin-bottom: 5px;">
+              - <a class="navTab" style="font-style: italic;" href="#cemsois"> cem sois - bsb (2023)</a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            </h4>
+            <h4 style="margin-bottom: 0px"> --- nao≠igual </h4>
+            <h4 style="margin-top: 0px; margin-bottom: 5px;">
+              - <a class="navTab" style="font-style: italic;" href="#ping"> PING (2020)</a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            </h4>
+          </span>
+        </nav>
+      </span>
+    </div>
+    
+    <h4 id="h4PageNameSmallImpros" style="transform: translateX(-50%) translateY(140%) rotate(-90deg)">impros</h1>
+</body>
+</html>
