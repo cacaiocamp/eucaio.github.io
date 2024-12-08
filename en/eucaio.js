@@ -37,7 +37,7 @@ function preload(){
   var currentUrl = window.location.href;
   var pageName = currentUrl.substring(currentUrl.lastIndexOf('/') + 1);
   pageName = pageName.split('#')[0];
-  if(pageName == "comps.html"){
+  if(pageName == "comps.html" || pageName == "impros.html"){
     windowResized();
   }
   
