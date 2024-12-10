@@ -10,6 +10,7 @@ var drawSampleCaio = false;
 var sampleCaioIndex = 0;
 var widthTooShort = false;
 var heightTooShort = false;
+var curPage = null;
 
 var navCaioElementControl = null
 var divCountElementControl = null;
@@ -37,13 +38,18 @@ function preload(){
   var currentUrl = window.location.href;
   var pageName = currentUrl.substring(currentUrl.lastIndexOf('/') + 1);
   pageName = pageName.split('#')[0];
-  if(pageName == "comps.html"){
+  if(pageName == "comps.html" || pageName == "impros.html"){
     windowResized();
+  }
+  else if(pageName == "bio.html"){
+    windowResized();
+    changeHeadshot();
   }
   
   if(pageName != "index.html" && pageName != ""){
     jumpStartAnimation = true;
   }
+  curPage = pageName;
 }
 
 function setup() {
@@ -205,6 +211,7 @@ function sampleCaioDraw(){
 
 function openCloseContent(spanElementId){
   let spanElement = select(spanElementId);
+  print(spanElementId);
   let h3Sign = select('#sign', spanElement);
   let parent = spanElement.elt.parentElement;
   let pContent = select('span.pContent', parent);
@@ -288,8 +295,39 @@ function compsFeed(typeToFeed){
   }
 }
 
+function improsFeed(typeToFeed){
+  if(typeToFeed != currentCompType){
+    selectedElement = select(currentCompContentId);
+    selectedElement.style("display: none;");
+    
+    selectedElement = select(currentCompNamesId);
+    selectedElement.style("display: none;");
+    
+    if(typeToFeed == 's'){
+      currentCompContentId = '#spanSoloContent';
+      currentCompNamesId = '#spanSoloNames';
+    }
+    else if(typeToFeed == 'c'){
+      currentCompContentId = '#spanCACOContent';
+      currentCompNamesId = '#spanCACONames';
+    }
+    else{ // g
+      currentCompContentId = '#spanMaisContent';
+      currentCompNamesId = '#spanMaisNames';
+    }
+    
+    selectedElement = select(currentCompContentId);
+    selectedElement.style("display: block;");
+    
+    selectedElement = select(currentCompNamesId);
+    selectedElement.style("display: block;");
+    
+    currentCompType = typeToFeed;
+  }
+}
+
 function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
+  resizeCanvas(windowWidth, windowHeight + 200);
   
   if(heightTooShort == false && windowHeight < 450){
     selectedElement = select('#h1PageName');
@@ -376,6 +414,17 @@ function windowResized() {
   }
   
   DEFAULT_MAXCAIONUM = windowWidth / 10; 
+  
+  if(curPage == "bio.html"){
+    changeHeadshot();
+  }
+}
+
+function changeHeadshot(){
+  selectedElement = select('#headshotImg');
+  let headNumber = int(random(1,6.9));
+  let path = './imgs/headshot' + str(headNumber) + '.JPG';
+  selectedElement.elt.src = path;
 }
 
 var changeFontChance = 0.98;
@@ -418,6 +467,12 @@ function updateNavFonts(){
     
     if(changeFontChance < 0.825 || changeFontChance > 0.98){
       chanceChange = chanceChange * -1;
+    }
+    
+    if(random(0, 1.001) > 0.4){
+      if(curPage == "bio.html"){
+        changeHeadshot();
+      }
     }
   }
 }

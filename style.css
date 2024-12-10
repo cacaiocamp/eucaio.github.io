@@ -6,7 +6,7 @@ canvas { position:fixed; top:0; left:0; z-index:1; focus:true }
 
 #divCaio {position:absolute; width: 75%; height: 95%; top: 5%; left: 3%;}
 #navCAIO { position:absolute; z-index:3; opacity :0%; bottom: 4%; left: 0%; margin:0%;}
-#h1PageName { position:absolute; z-index:2; opacity :75%; letter-spacing: 25px; top:2%; float: left; margin:0%; color: #4E1400;}
+#h1PageName{ position:absolute; z-index:2; opacity :75%; letter-spacing: 25px; top:2%; float: left; margin:0%; color: #4E1400;}
 #h4PageNameSmall { position:absolute; z-index:2; opacity :75%; letter-spacing: 15px; right: -105px; bottom: 85px; float: right; margin:0%; color: #4E1400; display: none;}
 
 #divContentOutter {position:fixed; z-index:2; width: 91.5%; height: 92.5%; top: 5%; left: 12.5%;}
@@ -37,12 +37,25 @@ canvas { position:fixed; top:0; left:0; z-index:1; focus:true }
     align-items: center;
 }
 
+.imgWrapper {
+  margin: 10px;
+    background-color: rgba(230, 230, 255, 0.25); 
+    flex: 1 1 48%; /* Initial width for two items */
+    max-width: 35%; /* Ensure max width for two items */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 @media (max-width: 2000px) {
     .mediaWrapper {
         flex-wrap: nowrap; /* Prevent wrapping on larger screens */
     }
     .videoWrapper, .scoreWrapper {
         flex: 1 1 48%; /* Maintain 48% width for two items */
+    }
+    .imgWrapper {
+      flex: 1 1 48%; /* Initial width for two items */
     }
 }
 
@@ -54,12 +67,20 @@ canvas { position:fixed; top:0; left:0; z-index:1; focus:true }
         flex: 1 1 96%; /* Full width for single item layout */
         max-width: 96%; /* Ensure max width for single item */
     }
+    .imgWrapper {
+      flex: 1 1 96%; /* Full width for single item layout */
+      max-width: 96%; /* Ensure max width for single item */
+    }
 }
 
 @media (max-width: 600px) {
     .videoWrapper, .scoreWrapper {
         flex: 1 1 96%; /* Full width for single item layout on smaller screens */
         max-width: 96%; /* Ensure max width for single item on smaller screens */
+    }
+    .imgWrapper {
+      flex: 1 1 96%; /* Full width for single item layout */
+      max-width: 96%; /* Ensure max width for single item */
     }
 }
 
@@ -107,6 +128,20 @@ h1.contentType {
   margin-bottom: 8px; 
   letter-spacing: 5px; 
   color: #4E1400;
+}
+
+h1.contentTypeImpros {
+  margin-top: 0px; 
+  margin-bottom: 8px; 
+  letter-spacing: 5px; 
+  color: #7E6221;
+}
+
+h1.contentTypeBio {
+  margin-top: 0px; 
+  margin-bottom: 8px; 
+  letter-spacing: 5px; 
+  color: #115E21;
 }
 
 h3 {max-height: 40px}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>eucaio.art | bio </title>
+
+  <!-- PLEASE NO CHANGES BELOW THIS LINE (UNTIL I SAY SO) -->
+  <script language="javascript" type="text/javascript" src="libraries/p5.min.js"></script>
+  <script language="javascript" type="text/javascript" src="Caio_class.js"></script>
+  <script language="javascript" type="text/javascript" src="definitions.js"></script>
+  <script language="javascript" type="text/javascript" src="element_class.js"></script>
+  <script language="javascript" type="text/javascript" src="eucaio.js"></script>
+  <!-- OK, YOU CAN MAKE CHANGES BELOW THIS LINE AGAIN -->
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="divCaio">
+      <h1 id="h1PageName" style="color: #115E21; transform: translateX(-45%) translateY(130%) rotate(-90deg)">bio</h1>
+      <nav id="navCAIO">
+        <h3>
+          <div> 
+            <a class="navHover" id="c">C<p class="navP">x</p> </a> &nbsp; 
+            <span class="navTab" id="cTab"> 
+              <a class="navTab" href="#c" onclick="pageChange('comps.html')"> comps </a> 
+            </span> 
+          </div>
+        </h3>
+        <h3>
+          <div> 
+            <a class="navHover" id="a">A<p class="navP">x</p> </a> &nbsp; 
+            <span class="navTab" id="aTab"> 
+              <a class="navTab" href="http://lattes.cnpq.br/4346581838045021" target="_blank"> academia </a> 
+            </span> 
+          </div>
+        </h3>
+        <h3>
+          <div> 
+            <a class="navHover" id="i">I<p class="navP">x</p> </a> &nbsp; 
+            <span class="navTab" id="iTab"> 
+              <a class="navTab" href="#i" onclick="pageChange('impros.html')"> impros </a> 
+            </span> 
+          </div>
+        </h3>
+        <h3>
+          <div> 
+            <a class="navHover" id="o">O<p class="navP">x</p> </a> &nbsp; 
+            <span class="navTab" id="oTab"> 
+              <a class="navTab" href="https://github.com/cacaiocamp" target="_blank"> outros </a> 
+              <a class="navTab" href="#bio" onclick="pageChange('bio.html')"> bio </a> 
+              <a class="navTab" id="oIndex" href="#index" onclick="pageChange('index.html')"> index </a>
+            </span> 
+          </div>
+        </h3>
+    </div>
+    
+    <div id="caiosCountDiv">
+      <span> <p class="countDiv" id="caiosCount">0</p> <p class="caiosCountDrawP" id="caiosP"> caios</p> <p class="countDiv">caíram</p> </span>
+    </div>
+    
+    <div id="divContentOutter" onclick="closeCaioTabs()">
+      <nav id="navContentTypes">
+        <span class="typesTab" style="display: flex; justify-content: space-around;">
+        </span>
+      </nav>
+      
+      <span id="spanContent">
+        <div id="divContent" class="overflowY">
+          <span id="spanSoloContent">
+            <h1 class="contentTypeBio" style=""color: #115E21;">caio costa campos</h1>
+            
+            <span class="contentSpan">
+              <span>
+                <p style="margin-top: 5px; margin-right: 15px; text-align:justify;">
+                   é compositor e improvisador de Belo Horizonte, Brasil. Seus trabalhos recentes estão relacionados a uma visão da música como performance, 
+                   inspirando-se em conceitos como presença, fisicalidade, corporificação, liveness e em materiais e intenções expressivas de outras práticas 
+                   da arte da performance, para serem articulados na música, além daqueles que acontecem por meio da chamada "percepção musical". Possui experiência em programação 
+                   criativa, eletrônica ao vivo e improvisação livre, tanto em contextos marginais quanto em ambientes de concerto, e baseia seu trabalho nessas experiências 
+                   para alcançar essas explorações expressivas.
+                </p>
+                <!--
+                <p style="margin-top: -5px; margin-right: 15px; text-align:justify;">
+                  Currently based in Austin TX, he pursues his Masters in Composition at University of Texas at Austin, while also doing a Masters in Music at Federal University of Minas Gerais, 
+                  with a research around music and composition as performance.
+                </p>
+                !-->
+                
+                <div class="mediaWrapper">
+                  <img id="headshotImg" class="imgWrapper" src="./imgs/headshot1.JPG" style="opacity: 90%">
+                </div>
+              </span>
+            </span>          
+          </span>  
+        </div>
+        
+        <nav id="navContentNames">
+          
+        </nav>
+      </span>
+    </div>
+    
+    <h4 id="h4PageNameSmall" style="color: #115E21; transform: translateX(-128%) translateY(270%) rotate(-90deg)">bio</h1>
+</body>
+</html>
