@@ -239,6 +239,7 @@ function openCloseContent(spanElementId){
 
 function loadIFrame(element){
   element.innerHTML = '';
+  print(element.attributes.val.value);
   let src = element.attributes.val.value;
  
   var div = document.createElement('iframe');
@@ -423,7 +424,7 @@ function windowResized() {
 function changeHeadshot(){
   selectedElement = select('#headshotImg');
   let headNumber = int(random(1,6.9));
-  let path = './imgs/headshot' + str(headNumber) + '.JPG';
+  let path = '../imgs/headshot' + str(headNumber) + '.JPG';
   selectedElement.elt.src = path;
 }
 

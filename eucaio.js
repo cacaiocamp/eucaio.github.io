@@ -423,7 +423,7 @@ function windowResized() {
 function changeHeadshot(){
   selectedElement = select('#headshotImg');
   let headNumber = int(random(1,6.9));
-  let path = './imgs/headshot' + str(headNumber) + '.JPG';
+  let path = '/en/imgs/headshot' + str(headNumber) + '.JPG';
   selectedElement.elt.src = path;
 }
 
