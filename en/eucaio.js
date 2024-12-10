@@ -55,7 +55,7 @@ function preload(){
 function setup() {
   angleMode(DEGREES);
   backgroundColor = color(200, 200, 210);
-  createCanvas(windowWidth, windowHeight + 200, WEBGL);
+  createCanvas(windowWidth, windowHeight, WEBGL);
   DEFAULT_MAXCAIONUM = windowWidth / 10; 
   
   selectedElement = select('#c');
