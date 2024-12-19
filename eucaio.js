@@ -327,7 +327,7 @@ function improsFeed(typeToFeed){
 }
 
 function windowResized() {
-  resizeCanvas(windowWidth, windowHeight + 200);
+  resizeCanvas(windowWidth, windowHeight);
   
   if(heightTooShort == false && windowHeight < 450){
     selectedElement = select('#h1PageName');
