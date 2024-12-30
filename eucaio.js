@@ -28,7 +28,18 @@ var currentCompContentId = '#spanSoloContent';
 var currentCompNamesId = '#spanSoloNames';
 
 function preload(){
-  caiosCount = window.location.hash.substring(1);
+  let linkVars = window.location.hash.substring(1);
+  let linkAction = null;
+  let linkValue = null;
+  caiosCount = linkVars.split('&')[1];
+  
+  if(linkVars.split('?').length > 1){
+    linkAction = linkVars.split('?')[0];
+  
+    if(linkAction != undefined){
+      linkValue = linkVars.split('?')[1].split('&')[0];
+    }
+  }
   
   if(caiosCount == '' || isNaN(caiosCount)){
       caiosCount = 0;
@@ -44,6 +55,21 @@ function preload(){
     windowResized();
     
     selectedFeedId = '#sFeed';
+    
+    if(linkAction != null){
+      if(pageName == "comps.html"){
+        compsFeed(linkAction);
+        if(linkValue != null && linkValue != undefined){
+          openCloseContent(linkValue);
+        }
+      }
+      else if(pageName == "impros.html"){
+        improsFeed(linkAction);
+        if(linkValue != null && linkValue != undefined){
+          openCloseContent(linkValue);
+        }
+      }
+    }
   }
   else if(pageName == "bio.html"){
     windowResized();
@@ -461,16 +487,10 @@ function addRightNavigation(){
     if((selectedElement.elt.scrollHeight > selectedElement.elt.offsetHeight) && (widthTooShort == false) && (heightTooShort == false)){
       selectedElement = select('#navContentNames');
       selectedElement.style("display: block;");
-  
-      print(1);
     }
     else if((selectedElement.elt.scrollHeight <= selectedElement.elt.offsetHeight) || (widthTooShort == true)){
       selectedElement = select('#navContentNames');
       selectedElement.style("display: none;");
-      print(2);
-    }
-    else {
-      print(3);
     }
   }
 }
@@ -571,6 +591,11 @@ function closeCaioTabs(){
   oTab.startOpacityChange(0, targetFrameRate*1, 'inline-block');
 }
 
-function pageChange(nextPage) {
-  window.location.href = nextPage + "#" + caiosCount;
+function pageChange(nextPage, action = "", value = "") {
+  let vlink = "";
+  
+  if(value != ""){
+    vlink = "?" + value;
+  }
+  window.location.href = nextPage + "#" + action + vlink + "&" + caiosCount;
 }
