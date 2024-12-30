@@ -147,6 +147,13 @@ h1.contentTypeBio {
   color: #115E21;
 }
 
+h1.contentTypeIndex {
+  margin-top: 0px; 
+  margin-bottom: 8px; 
+  letter-spacing: 5px; 
+  color: #336699;
+}
+
 h4 {font-family: Verdana, sans-serif;}
 
 h3 {
