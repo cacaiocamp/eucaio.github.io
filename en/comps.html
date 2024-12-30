@@ -49,7 +49,9 @@
             <a class="navHover" id="o">O<p class="navP">x</p> </a> &nbsp; 
             <span class="navTab" id="oTab"> 
               <a class="navTab" href="https://github.com/cacaiocamp" target="_blank"> other </a> 
-              <a class="navTab" href="#bio" onclick="pageChange('bio.html')"> bio </a> 
+              |
+              <a class="navTab" href="#bio" onclick="pageChange('bio.html')"> bio </a>
+              |
               <a class="navTab" id="oIndex" href="#index" onclick="pageChange('index.html')"> index </a>
               <a class="navTab" id="optbr" href="#optbr" onclick="pageChange('../comps.html')"> ptBR </a>
             </span> 
@@ -64,11 +66,11 @@
     <div id="divContentOutter" onclick="closeCaioTabs()">
       <nav id="navContentTypes">
         <span class="typesTab" style="display: flex; justify-content: space-around;">
-            <a class="navTab" href="#s" onclick="compsFeed('s')" style="font-weight: bold"> solo </a>
-            <a class="navTab" href="#d" onclick="compsFeed('d')" style="font-weight: bold"> duo </a> 
-            <a class="navTab" href="#t" onclick="compsFeed('t')" style="font-weight: bold"> trio </a> 
-            <a class="navTab" href="#q" onclick="compsFeed('q')" style="font-weight: bold"> quartet </a> 
-            <a class="navTab" href="#g" onclick="compsFeed('g')" style="font-weight: bold"> + </a> 
+            <a class="navTabB" href="#s" onclick="compsFeed('s')" style="font-weight: bold; background-color: #ff663321" id="sFeed"> solo </a>
+            <a class="navTabB" href="#d" onclick="compsFeed('d')" style="font-weight: bold" id="dFeed"> duo </a> 
+            <a class="navTabB" href="#t" onclick="compsFeed('t')" style="font-weight: bold" id="tFeed"> trio </a> 
+            <a class="navTabB" href="#q" onclick="compsFeed('q')" style="font-weight: bold" id="qFeed"> quartet </a> 
+            <a class="navTabB" href="#g" onclick="compsFeed('g')" style="font-weight: bold" id="mFeed"> ++ </a> 
         </span>
       </nav>
       
@@ -227,7 +229,7 @@
           </span> 
           
           <span id="spanMaisContent" style="display: none;">
-            <h1 class="contentType">+</h1>
+            <h1 class="contentType">++</h1>
             
             <span class="contentSpan">
               <span class="activateContentSpan" id="activateContentMiniatura1" val="0" loadedMedia="0" onclick="openCloseContent('#activateContentMiniatura1')">
@@ -278,43 +280,43 @@
           </span> 
         </div>
         
-        <nav id="navContentNames">
+        <nav id="navContentNames" style="display: none;">
           <span id="spanSoloNames">
-            <h4 style="margin-bottom: 0px"> --- guitar </h4>
-            <h4 style="margin-top: 0px; margin-bottom: 5px;">
-              - <a class="navTab" style="font-style: italic;" href="#eepo">  estante em posição ordinária (2023)</a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
-            </h4>
-            <h4 style="margin-top: 0px; margin-bottom: 5px;">
-              - <a class="navTab" style="font-style: italic;" href="#ghands"> Toca (2024)</a> &nbsp; &nbsp; &nbsp;
-            </h4>
+            <h4 style="margin-bottom: 0px" style="display: block;"> --- guitar </h4>
+            <p style="margin-top: 0px; margin-bottom: 5px;">
+              - <a style="font-style: italic;" href="#eepo">  estante em posição ordinária (2023)</a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+            </p>
+            <p style="margin-top: 0px; margin-bottom: 5px;">
+              - <a style="font-style: italic;" href="#ghands"> Toca (2024)</a> &nbsp; &nbsp; &nbsp;
+            </p>
           </span>
           
           <span id="spanDuoNames" style="display: none;">
             <h4 style="margin-bottom: 0px"> --- percussion </h4>
-           <h4 style="margin-top: 0px; margin-bottom: 5px;">
-              - <a class="navTab" style="font-style: italic;" href="#anesidora"> anesidora (2022)</a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            </h4>
+           <p style="margin-top: 0px; margin-bottom: 5px;">
+              - <a style="font-style: italic;" href="#anesidora"> anesidora (2022)</a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            </p>
           </span>
           
           <span id="spanTrioNames" style="display: none;">
             <h4 style="margin-bottom: 0px"> --- percussion + 2 </h4>
-            <h4 style="margin-top: 0px; margin-bottom: 5px;">
-              - <a class="navTab" style="font-style: italic;" href="#corp"> corpos/corpses (2024)</a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            </h4>
+            <p style="margin-top: 0px; margin-bottom: 5px;">
+              - <a style="font-style: italic;" href="#corp"> corpos/corpses (2024)</a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            </p>
           </span>
           
           <span id="spanQuartetoNames" style="display: none;">
             <h4 style="margin-bottom: 0px"> --- flute, sax, guitar, cello </h4>
-            <h4 style="margin-top: 0px; margin-bottom: 5px;">
-              - <a class="navTab" style="font-style: italic;" href="#contato1"> contato1 (2023)</a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            </h4>
+            <p style="margin-top: 0px; margin-bottom: 5px;">
+              - <a style="font-style: italic;" href="#contato1"> contato1 (2023)</a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            </p>
           </span>
           
           <span id="spanMaisNames" style="display: none;">
             <h4 style="margin-bottom: 0px"> --- faces </h4>
-            <h4 style="margin-top: 0px; margin-bottom: 5px;">
-              - <a class="navTab" style="font-style: italic;" href="#miniatura1"> miniatura1 (2024)</a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            </h4>
+            <p style="margin-top: 0px; margin-bottom: 5px;">
+              - <a style="font-style: italic;" href="#miniatura1"> miniatura1 (2024)</a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            </p>
           </span>
         </nav>
       </span>

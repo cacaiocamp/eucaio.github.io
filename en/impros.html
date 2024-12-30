@@ -49,7 +49,9 @@
             <a class="navHover" id="o">O<p class="navP">x</p> </a> &nbsp; 
             <span class="navTab" id="oTab"> 
               <a class="navTab" href="https://github.com/cacaiocamp" target="_blank"> other </a> 
-              <a class="navTab" href="#bio" onclick="pageChange('bio.html')"> bio </a> 
+              |
+              <a class="navTab" href="#bio" onclick="pageChange('bio.html')"> bio </a>
+              |
               <a class="navTab" id="oIndex" href="#index" onclick="pageChange('index.html')"> index </a>
               <a class="navTab" id="optbr" href="#optbr" onclick="pageChange('../impros.html')"> ptBR </a>
             </span> 
@@ -64,9 +66,9 @@
     <div id="divContentOutter" onclick="closeCaioTabs()">
       <nav id="navContentTypes">
         <span class="typesTab" style="display: flex; justify-content: space-around;">
-            <a class="navTab" href="#s" onclick="improsFeed('s')" style="font-weight: bold"> solo </a>
-            <a class="navTab" href="#c" onclick="improsFeed('c')" style="font-weight: bold"> CACO </a>  
-            <a class="navTab" href="#g" onclick="improsFeed('g')" style="font-weight: bold"> + </a> 
+            <a class="navTabB" href="#s" onclick="improsFeed('s')" style="font-weight: bold; background-color: #ccaa1141" id="sFeed"> solo </a>
+            <a class="navTabB" href="#c" onclick="improsFeed('c')" style="font-weight: bold" id="cFeed"> CACO </a>  
+            <a class="navTabB" href="#g" onclick="improsFeed('g')" style="font-weight: bold" id="mFeed"> ++ </a> 
         </span>
       </nav>
       
@@ -188,7 +190,7 @@
           </span>  
           
           <span id="spanMaisContent" style="display: none;">
-            <h1 class="contentTypeImpros" style="color: #7E5221;">+</h1>
+            <h1 class="contentTypeImpros" style="color: #7E5221;">++</h1>
             
             <span class="contentSpan">
               <span class="activateContentSpan" id="activateContentCemsois" val="0" loadedMedia="0" onclick="openCloseContent('#activateContentCemsois')">
@@ -237,40 +239,40 @@
           </span> 
         </div>
         
-        <nav id="navContentNames">
-          <span id="spanSoloNames">
+        <nav id="navContentNames" style="display: none;">
+          <span id="spanSoloNames" style="display: block;">
             <h4 style="margin-bottom: 0px"> --- e-bass </h4>
-            <h4 style="margin-top: 0px; margin-bottom: 5px;">
-              - <a class="navTab" style="font-style: italic;" href="#sfiils">  SFI/ILS </a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
-            </h4>
+            <p style="margin-top: 0px; margin-bottom: 5px;">
+              - <a style="font-style: italic;" href="#sfiils">  SFI/ILS </a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+            </p>
           </span>
           
           <span id="spanCACONames" style="display: none;">
            <h4 style="margin-bottom: 0px"> --- 10+ </h4>
+           <p style="margin-top: 0px; margin-bottom: 5px;">
+              - <a style="font-style: italic;" href="#qi183"> QI 183 (2024)</a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+           </p>
            <h4 style="margin-top: 0px; margin-bottom: 5px;">
-              - <a class="navTab" style="font-style: italic;" href="#qi183"> QI 183 (2024)</a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+              - <a style="font-style: italic;" href="#cc2023"> CCUFMG (2023)</a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
            </h4>
-           <h4 style="margin-top: 0px; margin-bottom: 5px;">
-              - <a class="navTab" style="font-style: italic;" href="#cc2023"> CCUFMG (2023)</a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-           </h4>
-           <h4 style="margin-top: 0px; margin-bottom: 5px;">
-              - <a class="navTab" style="font-style: italic;" href="#anestesia"> Anestesia (2022)</a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-           </h4>
+           <p style="margin-top: 0px; margin-bottom: 5px;">
+              - <a style="font-style: italic;" href="#anestesia"> Anestesia (2022)</a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+           </p>
            <h4 style="margin-bottom: 0px"> --- 6+ </h4>
-           <h4 style="margin-top: 0px; margin-bottom: 5px;">
-              - <a class="navTab" style="font-style: italic;" href="#vertices"> vertices (2024)</a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-           </h4>
+           <p style="margin-top: 0px; margin-bottom: 5px;">
+              - <a style="font-style: italic;" href="#vertices"> vertices (2024)</a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+           </p>
           </span>
           
           <span id="spanMaisNames" style="display: none;">
             <h4 style="margin-bottom: 0px"> --- trio </h4>
-            <h4 style="margin-top: 0px; margin-bottom: 5px;">
-              - <a class="navTab" style="font-style: italic;" href="#cemsois"> cem sois - bsb (2023)</a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            </h4>
+            <p style="margin-top: 0px; margin-bottom: 5px;">
+              - <a style="font-style: italic;" href="#cemsois"> cem sois - bsb (2023)</a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            </p>
             <h4 style="margin-bottom: 0px"> --- nao≠igual </h4>
-            <h4 style="margin-top: 0px; margin-bottom: 5px;">
-              - <a class="navTab" style="font-style: italic;" href="#ping"> PING (2020)</a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            </h4>
+            <p style="margin-top: 0px; margin-bottom: 5px;">
+              - <a style="font-style: italic;" href="#ping"> PING (2020)</a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            </p>
           </span>
         </nav>
       </span>

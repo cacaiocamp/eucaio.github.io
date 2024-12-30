@@ -12,60 +12,12 @@
   <script language="javascript" type="text/javascript" src="element_class.js"></script>
   <script language="javascript" type="text/javascript" src="eucaio.js"></script>
   <!-- OK, YOU CAN MAKE CHANGES BELOW THIS LINE AGAIN -->
-
-  <style>
-    body {
-      padding: 0;
-    }
-    
-    canvas { position:fixed; top:0; left:0; z-index:1; focus:true }
-    
-    #divContainer {position:absolute; width: 75%; height: 95%; top: 5%; left: 3%;}
-    #navCAIO { position:absolute; z-index:2; opacity :0%; bottom: 4%; left: 0%; margin:0%;}
-    #h1PageName { position:absolute; z-index:2; opacity :75%; letter-spacing: 25px; top:2%; float: left; margin:0%; color: #4E1400;}
-    
-    a.navTab {text-decoration: none;}
-    p.navP {
-      text-align: center;
-      display: inline-block;
-      opacity: 0;
-    }
-    
-    a.navHover{
-      text-decoration: none;
-      text-align: center; 
-      cursor: pointer;
-      color: #336699;
-    }
-    a.navHover:hover{
-      color: #990000;
-    }
   
-    span.navTab {
-      display: inline-block;
-      opacity: 0%;
-      display: none;
-    }
-    h3 {max-height: 40px}
-    
-    #caiosCountDiv { position:absolute; z-index:2; opacity: 0%; top: -1%; right: 1%}
-    p.countDiv {
-      display: inline-block;
-    }
-    
-    p.caiosCountDrawP{
-      display: inline-block;
-    }
-    p.caiosCountDrawP:hover {
-      color: #990000;
-      cursor: help;
-      display: inline-block;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div id="divContainer">
+    <div id="divCaio">
       <nav id="navCAIO">
         <h3>
           <div> 
@@ -96,7 +48,9 @@
             <a class="navHover" id="o">O<p class="navP">x</p> </a> &nbsp; 
             <span class="navTab" id="oTab"> 
               <a class="navTab" href="https://github.com/cacaiocamp" target="_blank"> outros </a> 
+              |
               <a class="navTab" href="#bio" onclick="pageChange('bio.html')"> bio </a> 
+              |
               <a class="navTab" id="oIndex" href="#index" onclick="pageChange('index.html')"> index </a>
               <a class="navTab" id="oenus" href="#oenus" onclick="pageChange('en/index.html')"> enUS </a>
             </span>  

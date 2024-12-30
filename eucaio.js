@@ -11,6 +11,7 @@ var sampleCaioIndex = 0;
 var widthTooShort = false;
 var heightTooShort = false;
 var curPage = null;
+var selectedFeedId = null;
 
 var navCaioElementControl = null
 var divCountElementControl = null;
@@ -35,11 +36,14 @@ function preload(){
   
   select('#caiosCount').html(caiosCount);
   
+  selectedFeedId = null;
   var currentUrl = window.location.href;
   var pageName = currentUrl.substring(currentUrl.lastIndexOf('/') + 1);
   pageName = pageName.split('#')[0];
   if(pageName == "comps.html" || pageName == "impros.html"){
     windowResized();
+    
+    selectedFeedId = '#sFeed';
   }
   else if(pageName == "bio.html"){
     windowResized();
@@ -235,6 +239,8 @@ function openCloseContent(spanElementId){
     pContent.style("display: none;");
     h3Sign.elt.innerHTML = "▸";
   }
+  
+  windowResized();
 }
 
 function loadIFrame(element){
@@ -262,28 +268,41 @@ function compsFeed(typeToFeed){
     selectedElement = select(currentCompNamesId);
     selectedElement.style("display: none;");
     
+    select(selectedFeedId).elt.style.backgroundColor = "";
+    
     if(typeToFeed == 's'){
       currentCompContentId = '#spanSoloContent';
       currentCompNamesId = '#spanSoloNames';
+      
+      selectedFeedId = '#sFeed';
     }
     else if(typeToFeed == 'd'){
       currentCompContentId = '#spanDuoContent';
       currentCompNamesId = '#spanDuoNames';
+      
+      selectedFeedId = '#dFeed';
     }
     else if(typeToFeed == 't'){
       currentCompContentId = '#spanTrioContent';
       currentCompNamesId = '#spanTrioNames';
+      
+      selectedFeedId = '#tFeed';
     }
     else if(typeToFeed == 'q'){
       currentCompContentId = '#spanQuartetoContent';
       currentCompNamesId = '#spanQuartetoNames';
       
+      selectedFeedId = '#qFeed';
+      
     }
     else{ // g
       currentCompContentId = '#spanMaisContent';
       currentCompNamesId = '#spanMaisNames';
+      
+      selectedFeedId = '#mFeed';
     }
     
+    select(selectedFeedId).style("background-color: #ff663321");
     
     selectedElement = select(currentCompContentId);
     selectedElement.style("display: block;");
@@ -293,6 +312,8 @@ function compsFeed(typeToFeed){
     
     currentCompType = typeToFeed;
   }
+  
+  addRightNavigation();
 }
 
 function improsFeed(typeToFeed){
@@ -303,18 +324,27 @@ function improsFeed(typeToFeed){
     selectedElement = select(currentCompNamesId);
     selectedElement.style("display: none;");
     
+    select(selectedFeedId).elt.style.backgroundColor = "";
+    
     if(typeToFeed == 's'){
       currentCompContentId = '#spanSoloContent';
       currentCompNamesId = '#spanSoloNames';
+      
+      selectedFeedId = '#sFeed';
     }
     else if(typeToFeed == 'c'){
       currentCompContentId = '#spanCACOContent';
       currentCompNamesId = '#spanCACONames';
+      
+      selectedFeedId = '#cFeed';
     }
     else{ // g
       currentCompContentId = '#spanMaisContent';
       currentCompNamesId = '#spanMaisNames';
+      
+      selectedFeedId = '#mFeed';
     }
+    select(selectedFeedId).style("background-color: #ccaa1141");
     
     selectedElement = select(currentCompContentId);
     selectedElement.style("display: block;");
@@ -324,6 +354,8 @@ function improsFeed(typeToFeed){
     
     currentCompType = typeToFeed;
   }
+  
+  addRightNavigation();
 }
 
 function windowResized() {
@@ -336,8 +368,8 @@ function windowResized() {
     selectedElement = select('#h4PageNameSmall');
     selectedElement.style("display: inline;");
     
-    selectedElement = select('#navContentNames');
-    selectedElement.style("display: none;");
+    //selectedElement = select('#navContentNames');
+    //selectedElement.style("display: none;");
     
     selectedElement = select('#navContentTypes');
     selectedElement.style("top: 91%");
@@ -360,8 +392,8 @@ function windowResized() {
     selectedElement.style("display: none;");
     
     if(widthTooShort == false){
-      selectedElement = select('#navContentNames');
-      selectedElement.style("display: block;");
+      //selectedElement = select('#navContentNames');
+      //selectedElement.style("display: block;");
     
       selectedElement = select('#navContentTypes');
       selectedElement.style("top: 93%");
@@ -382,8 +414,8 @@ function windowResized() {
     selectedElement = select('#navContentNames');
     selectedElement.style("left:74%;");
     
-    selectedElement = select('#navContentNames');
-    selectedElement.style("display: none;");
+    //selectedElement = select('#navContentNames');
+    //selectedElement.style("display: none;");
     
     selectedElement = select('#divContent');
     selectedElement.style("width:90%;");
@@ -400,8 +432,8 @@ function windowResized() {
     selectedElement.style("left:80%;");
     
     if(heightTooShort == false){
-      selectedElement = select('#navContentNames');
-      selectedElement.style("display: block;");
+      //selectedElement = select('#navContentNames');
+      //selectedElement.style("display: block;");
       
       selectedElement = select('#divContent');
       selectedElement.style("width:75%;");
@@ -417,6 +449,29 @@ function windowResized() {
   
   if(curPage == "bio.html"){
     changeHeadshot();
+  }
+  
+  addRightNavigation();
+}
+
+function addRightNavigation(){
+  if((curPage == "impros.html") || (curPage == "comps.html")){
+    selectedElement = select('#divContent');
+    
+    if((selectedElement.elt.scrollHeight > selectedElement.elt.offsetHeight) && (widthTooShort == false) && (heightTooShort == false)){
+      selectedElement = select('#navContentNames');
+      selectedElement.style("display: block;");
+  
+      print(1);
+    }
+    else if((selectedElement.elt.scrollHeight <= selectedElement.elt.offsetHeight) || (widthTooShort == true)){
+      selectedElement = select('#navContentNames');
+      selectedElement.style("display: none;");
+      print(2);
+    }
+    else {
+      print(3);
+    }
   }
 }
 

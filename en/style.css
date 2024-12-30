@@ -84,7 +84,10 @@ canvas { position:fixed; top:0; left:0; z-index:1; focus:true }
     }
 }
 
-a.navTab {text-decoration: none;}
+a.navTab {text-decoration: none; font-size: 20px; background-color: #D0D0E0B5}
+
+a.navTabB {text-decoration: none; font-size: 20px;}
+
 p.navP {
   text-align: center;
   display: inline-block;
@@ -144,7 +147,11 @@ h1.contentTypeBio {
   color: #115E21;
 }
 
-h3 {max-height: 40px}
+h4 {font-family: Verdana, sans-serif;}
+
+h3 {
+  max-height: 40px; font-family: Verdana, sans-serif;
+}
 
 h3.content {
   display: inline-block; 
@@ -164,4 +171,8 @@ p.caiosCountDrawP:hover {
   color: #990000;
   cursor: help;
   display: inline-block;
+}
+
+p {
+  font-family: Verdana, sans-serif;
 }
