@@ -15,6 +15,8 @@ var selectedFeedId = null;
 
 var navCaioElementControl = null
 var divCountElementControl = null;
+var h1NameElementControl = null;
+var spanContentElementControl = null;
 var cTab = null;
 var aTab = null;
 var iTab = null;
@@ -47,12 +49,13 @@ function preload(){
   
   select('#caiosCount').html(caiosCount);
   
+  windowResized();
+  
   selectedFeedId = null;
   var currentUrl = window.location.href;
   var pageName = currentUrl.substring(currentUrl.lastIndexOf('/') + 1);
   pageName = pageName.split('#')[0];
   if(pageName == "comps.html" || pageName == "impros.html"){
-    windowResized();
     
     selectedFeedId = '#sFeed';
     
@@ -72,7 +75,6 @@ function preload(){
     }
   }
   else if(pageName == "bio.html"){
-    windowResized();
     changeHeadshot();
   }
   
@@ -113,6 +115,16 @@ function setup() {
   
   navCaioElementControl = new ElementControl('#navCAIO');
   divCountElementControl = new ElementControl('#caiosCountDiv');
+  h1NameElementControl = new ElementControl('#h1PageName');
+  spanContentElementControl = new ElementControl('#spanContent');
+  
+  if(curPage == "index.html"){
+    if(caiosCount <= 0){
+      h1NameElementControl.startOpacityChange(0, 1);
+      spanContentElementControl.startOpacityChange(0, 1);
+    }
+  }
+  
   cTab = new ElementControl('#cTab');
   aTab = new ElementControl('#aTab');
   iTab = new ElementControl('#iTab');
@@ -129,6 +141,8 @@ function setup() {
   if(caiosCount > 0 || jumpStartAnimation){
     navCaioElementControl.startOpacityChange(80, 1);
     divCountElementControl.startOpacityChange(80, 1);
+    h1NameElementControl.startOpacityChange(80, 1);
+    spanContentElementControl.startOpacityChange(100, 1);
   }
 }
 
@@ -159,16 +173,22 @@ function update(){
     
     if(framesCounter == int(targetFrameRate*4)){
       navCaioElementControl.startOpacityChange(80, int(targetFrameRate*4));
+      h1NameElementControl.startOpacityChange(100, int(targetFrameRate*4));
+      spanContentElementControl.startOpacityChange(100, int(targetFrameRate*4));
     }
     framesCounter++;
     
     if(framesCounter == int(targetFrameRate*4.5) || caiosCount > 0){
       changingNavFonts = true;
     }
+    
+    
   }
   
   navCaioElementControl.update();
   divCountElementControl.update();
+  h1NameElementControl.update();
+  spanContentElementControl.update();
   cTab.update();
   aTab.update();
   iTab.update();
@@ -387,7 +407,7 @@ function improsFeed(typeToFeed){
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
   
-  if(heightTooShort == false && windowHeight < 450){
+  if(heightTooShort == false && windowHeight < 550){
     selectedElement = select('#h1PageName');
     selectedElement.style("display: none;");
     
@@ -405,12 +425,9 @@ function windowResized() {
     selectedElement.style("height:90%;");
     selectedElement.style("top:5%;");
     
-    selectedElement = select('#oIndex');
-    selectedElement.style("display: none;");
-    
     heightTooShort = true;
   }
-  else if(heightTooShort == true && windowHeight >= 450){
+  else if(heightTooShort == true && windowHeight >= 550){
     selectedElement = select('#h1PageName');
     selectedElement.style("display: inline;");
     
@@ -428,9 +445,6 @@ function windowResized() {
       selectedElement.style("width:75%;");
       selectedElement.style("height:95%;");
       selectedElement.style("top:0%;");
-      
-      selectedElement = select('#oIndex');
-      selectedElement.style("display: inline-block;");
     }
     
     heightTooShort = false;
@@ -446,9 +460,6 @@ function windowResized() {
     selectedElement = select('#divContent');
     selectedElement.style("width:90%;");
     
-    selectedElement = select('#oIndex');
-    selectedElement.style("display: none;");
-    
     widthTooShort = true;
     
     
@@ -463,9 +474,6 @@ function windowResized() {
       
       selectedElement = select('#divContent');
       selectedElement.style("width:75%;");
-      
-      selectedElement = select('#oIndex');
-      selectedElement.style("display: inline-block;");
     }
     
     widthTooShort = false;
