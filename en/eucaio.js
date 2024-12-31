@@ -515,16 +515,10 @@ function addRightNavigation(){
     if((selectedElement.elt.scrollHeight > selectedElement.elt.offsetHeight) && (widthTooShort == false) && (heightTooShort == false)){
       selectedElement = select('#navContentNames');
       selectedElement.style("display: block;");
-  
-      print(1);
     }
     else if((selectedElement.elt.scrollHeight <= selectedElement.elt.offsetHeight) || (widthTooShort == true)){
       selectedElement = select('#navContentNames');
       selectedElement.style("display: none;");
-      print(2);
-    }
-    else {
-      print(3);
     }
   }
 }

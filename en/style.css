@@ -15,6 +15,14 @@ canvas { position:fixed; top:0; left:0; z-index:1; focus:true }
 #navContentNames {position:relative; z-index:5; width: 15%; height: 79%; top: 11%; left: 80%;}
 #spanContent {position:absolute; z-index:3; width: 100%; height: 100%; top: -1.5%; left: 0%;}
 
+span.contentSpanHoverImpros:hover{
+  color: #7E5221
+}
+
+span.contentSpanHoverComps:hover{
+  color: #7E1400
+}
+
 #caiosCountDiv { position:absolute; z-index:2; opacity: 0%; top: -1%; right: 1%}
 
 .overflowY {overflow-y:auto;}
