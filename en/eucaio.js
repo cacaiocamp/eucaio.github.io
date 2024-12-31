@@ -118,7 +118,7 @@ function setup() {
   h1NameElementControl = new ElementControl('#h1PageName');
   spanContentElementControl = new ElementControl('#spanContent');
   
-  if(curPage == "index.html"){
+  if(!jumpStartAnimation){
     if(caiosCount <= 0){
       h1NameElementControl.startOpacityChange(0, 1);
       spanContentElementControl.startOpacityChange(0, 1);
@@ -135,14 +135,25 @@ function setup() {
   selectedElement.mouseClicked(closeCaioTabs);
   selectedElement.touchStarted(closeCaioTabs);
   
+  selectedElement = select('#divContentOutter');
+  selectedElement.mouseClicked(closeCaioTabs);
+  selectedElement.touchStarted(closeCaioTabs);
+  
   frameRate(60);
   targetFrameRate = 60;
   
   if(caiosCount > 0 || jumpStartAnimation){
     navCaioElementControl.startOpacityChange(80, 1);
     divCountElementControl.startOpacityChange(80, 1);
-    h1NameElementControl.startOpacityChange(80, 1);
-    spanContentElementControl.startOpacityChange(100, 1);
+    
+    if(!jumpStartAnimation){
+      let display = "inline";
+      if(heightTooShort){
+        display = "none";
+      }
+      h1NameElementControl.startOpacityChange(80, 1, display);
+      spanContentElementControl.startOpacityChange(100, 1);
+    }
   }
 }
 
@@ -173,22 +184,31 @@ function update(){
     
     if(framesCounter == int(targetFrameRate*4)){
       navCaioElementControl.startOpacityChange(80, int(targetFrameRate*4));
-      h1NameElementControl.startOpacityChange(100, int(targetFrameRate*4));
-      spanContentElementControl.startOpacityChange(100, int(targetFrameRate*4));
+      
+      let display = "inline";
+      if(heightTooShort){
+        display = "none";
+      }
+      if(!jumpStartAnimation){
+        h1NameElementControl.startOpacityChange(80, int(targetFrameRate*4), display);
+        spanContentElementControl.startOpacityChange(100, int(targetFrameRate*4));
+      }
     }
     framesCounter++;
     
     if(framesCounter == int(targetFrameRate*4.5) || caiosCount > 0){
       changingNavFonts = true;
     }
-    
-    
   }
   
   navCaioElementControl.update();
   divCountElementControl.update();
-  h1NameElementControl.update();
-  spanContentElementControl.update();
+  
+  if(!jumpStartAnimation){
+    h1NameElementControl.update();
+    spanContentElementControl.update();
+  }
+  
   cTab.update();
   aTab.update();
   iTab.update();
