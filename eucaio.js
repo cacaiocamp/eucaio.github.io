@@ -505,6 +505,10 @@ function windowResized() {
     changeHeadshot();
   }
   
+  if(curPage == "comps.html"){
+    changeHeadshot();
+  }
+  
   addRightNavigation();
 }
 
@@ -528,6 +532,18 @@ function changeHeadshot(){
   let headNumber = int(random(1,6.9));
   let path = './en/imgs/headshot' + str(headNumber) + '.JPG';
   selectedElement.elt.src = path;
+}
+
+function changeRegisters(){
+  // registers Toca  
+  selectedElement = select('#activateContentToca');
+  
+  if(selectedElement.elt.attributes.val.value == 1){
+    selectedElement = select('#tocaEnsaioImg');
+    let headNumber = int(random(1,8.9));
+    let path = './en/imgs/toca_ensaio' + str(headNumber) + '.PNG';
+    selectedElement.elt.src = path;
+  }
 }
 
 var changeFontChance = 0.98;
@@ -575,6 +591,12 @@ function updateNavFonts(){
     if(random(0, 1.001) > 0.4){
       if(curPage == "bio.html"){
         changeHeadshot();
+      }
+    }
+    
+    if(random(0, 1.001) > 0.9){
+      if(curPage == "comps.html"){
+        changeRegisters();
       }
     }
   }

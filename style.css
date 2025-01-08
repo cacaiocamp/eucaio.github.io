@@ -55,11 +55,21 @@ span.contentSpanHoverComps:hover{
     align-items: center;
 }
 
+.registerWrapper {
+  margin: 10px;
+    background-color: rgba(230, 230, 255, 0.25); 
+    flex: 1 1 48%; /* Initial width for two items */
+    max-width: 48%; /* Ensure max width for two items */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 @media (max-width: 2000px) {
     .mediaWrapper {
         flex-wrap: nowrap; /* Prevent wrapping on larger screens */
     }
-    .videoWrapper, .scoreWrapper {
+    .videoWrapper, .scoreWrapper, .registerWrapper {
         flex: 1 1 48%; /* Maintain 48% width for two items */
     }
     .imgWrapper {
@@ -71,7 +81,7 @@ span.contentSpanHoverComps:hover{
     .mediaWrapper {
         flex-wrap: wrap; /* Allow wrapping on smaller screens */
     }
-    .videoWrapper, .scoreWrapper {
+    .videoWrapper, .scoreWrapper, .registerWrapper {
         flex: 1 1 96%; /* Full width for single item layout */
         max-width: 96%; /* Ensure max width for single item */
     }
@@ -82,7 +92,7 @@ span.contentSpanHoverComps:hover{
 }
 
 @media (max-width: 600px) {
-    .videoWrapper, .scoreWrapper {
+    .videoWrapper, .scoreWrapper, .registerWrapper {
         flex: 1 1 96%; /* Full width for single item layout on smaller screens */
         max-width: 96%; /* Ensure max width for single item on smaller screens */
     }
