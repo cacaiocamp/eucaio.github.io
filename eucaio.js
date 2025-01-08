@@ -506,7 +506,7 @@ function windowResized() {
   }
   
   if(curPage == "comps.html"){
-    changeHeadshot();
+    changeRegisters();
   }
   
   addRightNavigation();
@@ -541,7 +541,7 @@ function changeRegisters(){
   if(selectedElement.elt.attributes.val.value == 1){
     selectedElement = select('#tocaEnsaioImg');
     let headNumber = int(random(1,8.9));
-    let path = './en/imgs/toca_ensaio' + str(headNumber) + '.PNG';
+    let path = './en/imgs/toca_ensaio' + str(headNumber) + '.png';
     selectedElement.elt.src = path;
   }
 }
