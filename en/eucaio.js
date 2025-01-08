@@ -540,8 +540,8 @@ function changeRegisters(){
   
   if(selectedElement.elt.attributes.val.value == 1){
     selectedElement = select('#tocaEnsaioImg');
-    let headNumber = int(random(1,8.9));
-    let path = './imgs/toca_ensaio' + str(headNumber) + '.png';
+    let tocaNumber = int(random(1,8.9));
+    let path = './imgs/toca_ensaio' + str(tocaNumber) + '.png';
     selectedElement.elt.src = path;
   }
 }
