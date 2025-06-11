@@ -544,6 +544,16 @@ function changeRegisters(){
     let path = './en/imgs/toca_ensaio' + str(headNumber) + '.png';
     selectedElement.elt.src = path;
   }
+  
+  // registers facePiece
+  selectedElement = select('#activateContentFacePiece');
+  
+  if(selectedElement.elt.attributes.val.value == 1){
+    selectedElement = select('#facePieceImg');
+    let tocaNumber = int(random(1,2.9));
+    let path = './en/imgs/facePiece_doc' + str(tocaNumber) + '.jpg';
+    selectedElement.elt.src = path;
+  }
 }
 
 var changeFontChance = 0.98;
