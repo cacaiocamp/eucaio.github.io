@@ -45,6 +45,18 @@ span.contentSpanHoverComps:hover{
     align-items: center;
 }
 
+.archiveWrapper {
+  margin: 10px;
+    background-color: rgba(230, 230, 255, 0.25); 
+    flex: 1 1 100%; /* Initial width for two items */
+    max-width: 60%; /* Ensure max width for two items */
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 .imgWrapper {
   margin: 10px;
     background-color: rgba(230, 230, 255, 0.25); 

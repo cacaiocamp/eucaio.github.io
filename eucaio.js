@@ -292,7 +292,7 @@ function openCloseContent(spanElementId){
     h3Sign.elt.innerHTML = "▾";
     
     if(spanElement.elt.attributes.loadedMedia.value == 0){
-      let elements = pContent.elt.querySelectorAll('.videoWrapper, .scoreWrapper');
+      let elements = pContent.elt.querySelectorAll('.videoWrapper, .scoreWrapper, .archiveWrapper');
       elements.forEach(element => {
           loadIFrame(element);
       });
@@ -550,7 +550,7 @@ function changeRegisters(){
   
   if(selectedElement.elt.attributes.val.value == 1){
     selectedElement = select('#facePieceImg');
-    let tocaNumber = int(random(1,2.9));
+    let tocaNumber = int(random(1,4.9));
     let path = './en/imgs/facePiece_doc' + str(tocaNumber) + '.jpg';
     selectedElement.elt.src = path;
   }
