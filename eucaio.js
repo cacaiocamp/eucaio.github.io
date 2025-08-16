@@ -326,6 +326,23 @@ function loadIFrame(element){
   element.appendChild(iframe);
 }
 
+function loadIFrame(element){
+  element.innerHTML = '';
+  let src = element.attributes.val.value;
+ 
+  var div = document.createElement('iframe');
+  
+  var iframe = document.createElement('iframe');
+  iframe.setAttribute('width', '100%');
+  iframe.setAttribute('height', '100%');
+  iframe.setAttribute('src', src);
+  iframe.setAttribute('frameborder', '0');
+  iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+  iframe.setAttribute('allowfullscreen', true);
+  
+  element.appendChild(iframe);
+}
+
 function compsFeed(typeToFeed){
   if(typeToFeed != currentCompType){
     selectedElement = select(currentCompContentId);
@@ -546,14 +563,14 @@ function changeRegisters(){
   }
   
   // registers facePiece
-  selectedElement = select('#activateContentFacePiece');
+  // selectedElement = select('#activateContentFacePiece');
   
-  if(selectedElement.elt.attributes.val.value == 1){
-    selectedElement = select('#facePieceImg');
-    let tocaNumber = int(random(1,4.9));
-    let path = './en/imgs/facePiece_doc' + str(tocaNumber) + '.jpg';
-    selectedElement.elt.src = path;
-  }
+  // if(selectedElement.elt.attributes.val.value == 1){
+  //   selectedElement = select('#facePieceImg');
+  //   let tocaNumber = int(random(1,4.9));
+  //   let path = './en/imgs/facePiece_doc' + str(tocaNumber) + '.jpg';
+  //   selectedElement.elt.src = path;
+  // }
 }
 
 var changeFontChance = 0.98;
