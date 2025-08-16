@@ -545,14 +545,14 @@ function changeRegisters(){
     selectedElement.elt.src = path;
   }
   
-  selectedElement = select('#activateContentFacePiece');
+  // selectedElement = select('#activateContentFacePiece');
   
-  if(selectedElement.elt.attributes.val.value == 1){
-    selectedElement = select('#facePieceImg');
-    let tocaNumber = int(random(1,4.9));
-    let path = './imgs/facePiece_doc' + str(tocaNumber) + '.jpg';
-    selectedElement.elt.src = path;
-  }
+  // if(selectedElement.elt.attributes.val.value == 1){
+  //   selectedElement = select('#facePieceImg');
+  //   let tocaNumber = int(random(1,4.9));
+  //   let path = './imgs/facePiece_doc' + str(tocaNumber) + '.jpg';
+  //   selectedElement.elt.src = path;
+  // }
 }
 
 var changeFontChance = 0.98;
