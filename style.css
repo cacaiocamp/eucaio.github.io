@@ -23,6 +23,21 @@ span.contentSpanHoverComps:hover{
   color: #7E1400
 }
 
+em.contentEmHoverComps:hover{
+  color: #7E1400;
+  cursor: pointer;
+}
+
+em.contentEmHoverImpros:hover{
+  color: #7E5221;
+  cursor: pointer;
+}
+
+em.contentEmHoverOutlink:hover{
+  color: #3366ff;
+  cursor: pointer;
+}
+
 #caiosCountDiv { position:absolute; z-index:2; opacity: 0%; top: -1%; right: 1%}
 
 .overflowY {overflow-y:auto;}
@@ -60,7 +75,7 @@ span.contentSpanHoverComps:hover{
   margin: 10px;
     background-color: rgba(230, 230, 255, 0.25); 
     flex: 1 1 48%; /* Initial width for two items */
-    max-width: 35%; /* Ensure max width for two items */
+    max-width: 33%; /* Ensure max width for two items */
     display: flex;
     justify-content: center;
     align-items: center;

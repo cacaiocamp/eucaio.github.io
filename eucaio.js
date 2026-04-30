@@ -279,7 +279,7 @@ function sampleCaioDraw(){
   drawSampleCaio = !drawSampleCaio;
 }
 
-function openCloseContent(spanElementId){
+function openCloseContent(spanElementId, openOnly = false){
   let spanElement = select(spanElementId);
   print(spanElementId);
   let h3Sign = select('#sign', spanElement);
@@ -300,7 +300,7 @@ function openCloseContent(spanElementId){
       spanElement.elt.attributes.loadedMedia.value = 1;
     }
   }
-  else {
+  else if (openOnly == false){
     spanElement.elt.attributes.val.value = 0;
     pContent.style("display: none;");
     h3Sign.elt.innerHTML = "▸";
@@ -529,11 +529,15 @@ function windowResized() {
   addRightNavigation();
 }
 
+function hasScrollbar(element) {
+  return element.scrollHeight > element.clientHeight;
+}
+
 function addRightNavigation(){
   if((curPage == "impros.html") || (curPage == "comps.html")){
     selectedElement = select('#divContent');
     
-    if((selectedElement.elt.scrollHeight > selectedElement.elt.offsetHeight) && (widthTooShort == false) && (heightTooShort == false)){
+    if((selectedElement.elt.scrollHeight > selectedElement.elt.clientHeight) && (widthTooShort == false) && (heightTooShort == false)){
       selectedElement = select('#navContentNames');
       selectedElement.style("display: block;");
     }
@@ -558,7 +562,7 @@ function changeRegisters(){
   if(selectedElement.elt.attributes.val.value == 1){
     selectedElement = select('#tocaEnsaioImg');
     let headNumber = int(random(1,8.9));
-    let path = './en/imgs/toca_ensaio' + str(headNumber) + '.png';
+    let path = './en/imgs/toca_ensaio' + str(headNumber) + '.jpg';
     selectedElement.elt.src = path;
   }
   
@@ -668,11 +672,29 @@ function closeCaioTabs(){
   oTab.startOpacityChange(0, targetFrameRate*1, 'inline-block');
 }
 
-function pageChange(nextPage, action = "", value = "") {
+function pageChange(nextPage, action = "", value = "", newWindow = false) {
   let vlink = "";
   
   if(value != ""){
     vlink = "?" + value;
   }
-  window.location.href = nextPage + "#" + action + vlink + "&" + caiosCount;
+  
+  let url = nextPage + "#" + action + vlink + "&" + caiosCount;
+  
+  if(newWindow == false){
+    window.location.href = url;
+  }
+  else {
+    window.open(url, "_blank");
+  }
+}
+
+function scrollToId(elementId) {
+  const element = document.getElementById(elementId);
+  if (element) {
+    element.scrollIntoView({
+      behavior: 'smooth',  // Smooth scrolling
+      block: 'start'       // Align to top
+    });
+  }
 }
