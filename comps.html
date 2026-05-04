@@ -67,9 +67,7 @@
       <nav id="navContentTypes">
         <span class="typesTab" style="display: flex; justify-content: space-around;">
             <a class="navTabB" href="#s" onclick="compsFeed('s')" style="font-weight: bold; background-color: #ff663321;" id="sFeed" > solo </a>
-            <a class="navTabB" href="#d" onclick="compsFeed('d')" style="font-weight: bold" id="dFeed"> duo </a> 
-            <a class="navTabB" href="#t" onclick="compsFeed('t')" style="font-weight: bold" id="tFeed"> trio </a> 
-            <a class="navTabB" href="#q" onclick="compsFeed('q')" style="font-weight: bold" id="qFeed"> quarteto </a> 
+            <a class="navTabB" href="#dq" onclick="compsFeed('dq')" style="font-weight: bold" id="dqFeed"> 2-4 </a> 
             <a class="navTabB" href="#g" onclick="compsFeed('g')" style="font-weight: bold" id="mFeed"> ++ </a> 
         </span>
       </nav>
@@ -144,8 +142,8 @@
             </span>
           </span>  
           
-          <span id="spanDuoContent" style="display: none;">
-            <h1 class="contentType">duo</h1>
+          <span id="spanDqContent" style="display: none;">
+            <h1 class="contentType">2-4</h1>
             
             <span class="contentSpan">
               <span class="activateContentSpan" id="activateContentAnesidora" val="0" loadedMedia="0" onclick="openCloseContent('#activateContentAnesidora')">
@@ -178,10 +176,8 @@
                 </div>
               </span>
             </span>
-          </span>  
-          
-          <span id="spanTrioContent" style="display: none;">
-            <h1 class="contentType">trio</h1>
+            
+            <p style="margin-top: -10px; margin-right: 15px;" >&nbsp;</p>
             
             <span class="contentSpan">
               <span class="activateContentSpan" id="activateContentCorp" val="0" loadedMedia="0" onclick="openCloseContent('#activateContentCorp')">
@@ -208,10 +204,8 @@
                 </div>
               </span>
             </span>
-          </span>
-          
-          <span id="spanQuartetoContent" style="display: none;">
-            <h1 class="contentType">quarteto</h1>
+            
+            <p style="margin-top: -10px; margin-right: 15px;" >&nbsp;</p>
             
             <span class="contentSpan">
               <span class="activateContentSpan" id="activateContentContato1" val="0" loadedMedia="0" onclick="openCloseContent('#activateContentContato1')">
@@ -239,7 +233,7 @@
                 </div>
               </span>
             </span>
-          </span> 
+          </span>  
           
           <span id="spanMaisContent" style="display: none;">
             <h1 class="contentType">++</h1>
@@ -377,25 +371,19 @@
             </p>
           </span>
           
-          <span id="spanDuoNames" style="display: none;">
-           <h4 style="margin-bottom: 0px"> --- percussão </h4>
-           <p style="margin-top: 0px; margin-bottom: 5px;">
-              - <u><em class="contentEmHoverComps" onclick="openCloseContent('#Toca', true); scrollToId('anesidora')"> anesidora (2022)</em></u> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+          <span id="spanDqNames" style="display: none;">
+            <h4 style="margin-bottom: 0px"> --- percussão </h4>
+            <p style="margin-top: 0px; margin-bottom: 5px;">
+              - <u><em class="contentEmHoverComps" onclick="openCloseContent('#activateContentAnesidora', true); scrollToId('anesidora')"> anesidora (2022)</em></u> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
             </p>
-          </span>
-          
-          <span id="spanTrioNames" style="display: none;">
             <h4 style="margin-bottom: 0px"> --- percussão + 2 </h4>
             <p style="margin-top: 0px; margin-bottom: 5px;">
               - <u><em class="contentEmHoverComps" onclick="openCloseContent('#activateContentCorp', true); scrollToId('corp')"> corpos/corpses (2024)</em></u> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
             </p>
-          </span>
-          
-          <span id="spanQuartetoNames" style="display: none;">
             <h4 style="margin-bottom: 0px"> --- flauta, sax, violão, cello </h4>
-            <h4 style="margin-top: 0px; margin-bottom: 5px;">
+            <p style="margin-top: 0px; margin-bottom: 5px;">
               - <u><em class="contentEmHoverComps" onclick="openCloseContent('#activateContentContato1', true); scrollToId('contato1')"> contato1 (2023)</em></u> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            </h4>
+            </p>
           </span>
           
           <span id="spanMaisNames" style="display: none;">

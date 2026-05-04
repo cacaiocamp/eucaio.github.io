@@ -359,25 +359,25 @@ function compsFeed(typeToFeed){
       
       selectedFeedId = '#sFeed';
     }
-    else if(typeToFeed == 'd'){
-      currentCompContentId = '#spanDuoContent';
-      currentCompNamesId = '#spanDuoNames';
+    else if(typeToFeed == 'dq'){
+      currentCompContentId = '#spanDqContent';
+      currentCompNamesId = '#spanDqNames';
       
-      selectedFeedId = '#dFeed';
+      selectedFeedId = '#dqFeed';
     }
-    else if(typeToFeed == 't'){
-      currentCompContentId = '#spanTrioContent';
-      currentCompNamesId = '#spanTrioNames';
+    //else if(typeToFeed == 't'){
+    //  currentCompContentId = '#spanTrioContent';
+    //  currentCompNamesId = '#spanTrioNames';
       
-      selectedFeedId = '#tFeed';
-    }
-    else if(typeToFeed == 'q'){
-      currentCompContentId = '#spanQuartetoContent';
-      currentCompNamesId = '#spanQuartetoNames';
+    //  selectedFeedId = '#tFeed';
+    //}
+    //else if(typeToFeed == 'q'){
+    //  currentCompContentId = '#spanQuartetoContent';
+    //  currentCompNamesId = '#spanQuartetoNames';
       
-      selectedFeedId = '#qFeed';
+    //  selectedFeedId = '#qFeed';
       
-    }
+    //}
     else{ // g
       currentCompContentId = '#spanMaisContent';
       currentCompNamesId = '#spanMaisNames';
