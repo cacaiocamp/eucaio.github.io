@@ -23,6 +23,10 @@ span.contentSpanHoverComps:hover{
   color: #7E1400
 }
 
+span.contentSpanHoverAcademia:hover{
+  color: #E17663
+}
+
 em.contentEmHoverComps:hover{
   color: #7E1400;
   cursor: pointer;
@@ -30,6 +34,11 @@ em.contentEmHoverComps:hover{
 
 em.contentEmHoverImpros:hover{
   color: #7E5221;
+  cursor: pointer;
+}
+
+em.contentEmHoverAcademia:hover{
+  color: #E17663;
   cursor: pointer;
 }
 
@@ -175,6 +184,13 @@ h1.contentType {
   margin-bottom: 8px; 
   letter-spacing: 5px; 
   color: #4E1400;
+}
+
+h1.contentTypeAcademia {
+  margin-top: 0px; 
+  margin-bottom: 8px; 
+  letter-spacing: 5px; 
+  color: #D17653;
 }
 
 h1.contentTypeImpros {

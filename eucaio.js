@@ -72,6 +72,9 @@ function preload(){
           openCloseContent(linkValue);
         }
       }
+      else if(pageName == "academia.html"){
+        academiaFeed(linkAction);
+      }
     }
   }
   else if(pageName == "bio.html"){
@@ -441,6 +444,18 @@ function improsFeed(typeToFeed){
   addRightNavigation();
 }
 
+function academiaFeed(typeToFeed){
+  currentCompContentId = '#spanAcademiaContent';
+  currentCompNamesId = '#spanAcademiaNames';
+  
+  selectedFeedId = '#tFeed';
+  select(selectedFeedId).style("background-color: #d1563321");
+    
+  currentCompType = typeToFeed;
+  
+  addRightNavigation();
+}
+
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
   
@@ -488,6 +503,7 @@ function windowResized() {
   }
   
   if(widthTooShort == false && windowWidth < 450){
+    print("trigger!");
     selectedElement = select('#navContentNames');
     selectedElement.style("left:74%;");
     
@@ -534,7 +550,7 @@ function hasScrollbar(element) {
 }
 
 function addRightNavigation(){
-  if((curPage == "impros.html") || (curPage == "comps.html")){
+  if((curPage == "academia.html") || (curPage == "impros.html") || (curPage == "comps.html") ){
     selectedElement = select('#divContent');
     
     if((selectedElement.elt.scrollHeight > selectedElement.elt.clientHeight) && (widthTooShort == false) && (heightTooShort == false)){
