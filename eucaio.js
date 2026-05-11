@@ -75,6 +75,12 @@ function preload(){
       else if(pageName == "academia.html"){
         academiaFeed(linkAction);
       }
+      else if(pageName == "otr.html"){
+        otrFeed(linkAction);
+        if(linkValue != null && linkValue != undefined){
+          openCloseContent(linkValue);
+        }
+      }
     }
   }
   else if(pageName == "bio.html"){
@@ -284,7 +290,6 @@ function sampleCaioDraw(){
 
 function openCloseContent(spanElementId, openOnly = false){
   let spanElement = select(spanElementId);
-  print(spanElementId);
   let h3Sign = select('#sign', spanElement);
   let parent = spanElement.elt.parentElement;
   let pContent = select('span.pContent', parent);
@@ -456,6 +461,51 @@ function academiaFeed(typeToFeed){
   addRightNavigation();
 }
 
+function otrFeed(typeToFeed){
+  if(typeToFeed != currentCompType){
+    if(currentCompContentId == '#spanSoloContent'){
+      
+      currentCompContentId = '#spanEventsContent';
+      currentCompNamesId = '#spanEventsNames';
+      selectedFeedId = '#eventsFeed';
+    }
+    
+    
+    selectedElement = select(currentCompContentId);
+    selectedElement.style("display: none;");
+    
+    selectedElement = select(currentCompNamesId);
+    selectedElement.style("display: none;");
+    
+    select(selectedFeedId).elt.style.backgroundColor = "";
+    
+    if(typeToFeed == 'events'){
+      currentCompContentId = '#spanEventsContent';
+      currentCompNamesId = '#spanEventsNames';
+      
+      selectedFeedId = '#eventsFeed';
+    }
+    else {
+      currentCompContentId = '#spanCodesContent';
+      currentCompNamesId = '#spanCodesNames';
+      
+      selectedFeedId = '#codesFeed';
+    }
+    
+    select(selectedFeedId).style("background-color: #6655ba21");
+    
+    selectedElement = select(currentCompContentId);
+    selectedElement.style("display: block;");
+    
+    selectedElement = select(currentCompNamesId);
+    selectedElement.style("display: block;");
+    
+    currentCompType = typeToFeed;
+  }
+  
+  addRightNavigation();
+}
+
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
   
@@ -503,7 +553,7 @@ function windowResized() {
   }
   
   if(widthTooShort == false && windowWidth < 450){
-    print("trigger!");
+    
     selectedElement = select('#navContentNames');
     selectedElement.style("left:74%;");
     
@@ -550,7 +600,7 @@ function hasScrollbar(element) {
 }
 
 function addRightNavigation(){
-  if((curPage == "academia.html") || (curPage == "impros.html") || (curPage == "comps.html") ){
+  if((curPage == "otr.html") || (curPage == "academia.html") || (curPage == "impros.html") || (curPage == "comps.html") ){
     selectedElement = select('#divContent');
     
     if((selectedElement.elt.scrollHeight > selectedElement.elt.clientHeight) && (widthTooShort == false) && (heightTooShort == false)){

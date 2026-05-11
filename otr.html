@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>eucaio.art | outros </title>
+
+  <!-- PLEASE NO CHANGES BELOW THIS LINE (UNTIL I SAY SO) -->
+  <script language="javascript" type="text/javascript" src="libraries/p5.min.js"></script>
+  <script language="javascript" type="text/javascript" src="Caio_class.js"></script>
+  <script language="javascript" type="text/javascript" src="definitions.js"></script>
+  <script language="javascript" type="text/javascript" src="element_class.js"></script>
+  <script language="javascript" type="text/javascript" src="eucaio.js"></script>
+  <!-- OK, YOU CAN MAKE CHANGES BELOW THIS LINE AGAIN -->
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="divCaio">
+      <h1 id="h1PageName" style="color: #6655ba; transform: translateX(-49%) translateY(300%) rotate(-90deg)">outros</h1>
+      <nav id="navCAIO">
+        <h3>
+          <div> 
+            <a class="navHover" id="c">C<p class="navP">x</p> </a> &nbsp; 
+            <span class="navTab" id="cTab"> 
+              <a class="navTab" href="#c" onclick="pageChange('comps.html')"> comps </a> 
+            </span> 
+          </div>
+        </h3>
+        <h3>
+          <div> 
+            <a class="navHover" id="a">A<p class="navP">x</p> </a> &nbsp; 
+            <span class="navTab" id="aTab"> 
+              <a class="navTab" href="#a" onclick="pageChange('academia.html')"> academia </a> 
+            </span> 
+          </div>
+        </h3>
+        <h3>
+          <div> 
+            <a class="navHover" id="i">I<p class="navP">x</p> </a> &nbsp; 
+            <span class="navTab" id="iTab"> 
+              <a class="navTab" href="#i" onclick="pageChange('impros.html')"> impros </a> 
+            </span> 
+          </div>
+        </h3>
+        <h3>
+          <div> 
+            <a class="navHover" id="o">O<p class="navP">x</p> </a> &nbsp; 
+            <span class="navTab" id="oTab"> 
+              <a class="navTab" href="#o" onclick="pageChange('otr.html')"> outros </a> 
+              |
+              <a class="navTab" href="#bio" onclick="pageChange('bio.html')"> bio </a> 
+              |
+              <a class="navTab" id="oIndex" href="#index" onclick="pageChange('index.html')"> index </a>
+              |
+              <a class="navTab" id="oenus" href="#oenus" onclick="pageChange('en/academia.html')"> enUS </a>
+            </span> 
+          </div>
+        </h3>
+    </div>
+    
+    <div id="caiosCountDiv">
+      <span> <p class="countDiv" id="caiosCount">0</p> <p class="caiosCountDrawP" id="caiosP"> caios</p> <p class="countDiv">caíram</p> </span>
+    </div>
+    
+    <div id="divContentOutter" onclick="closeCaioTabs()">
+      <nav id="navContentTypes">
+        <span class="typesTab" style="display: flex; justify-content: space-around;">
+            <a class="navTabB" href="#e" onclick="otrFeed('events')" style="font-weight: bold; background-color: #6655ba21;" id="eventsFeed" > eventos </a>
+            <a class="navTabB" href="#c" onclick="otrFeed('codes')" id="codesFeed"> códigos </a>
+            <a class="navTabB" href="#portfolio" onclick="window.open('./en/imgs/portfolio_ptbr.pdf', '_blank');"> portfólio </a>  
+            <a class="navTabB" href="#github" onclick="window.open('https://github.com/cacaiocamp/')" target="_blank"> github </a> 
+        </span>
+      </nav>
+      
+      <span id="spanContent">
+        <div id="divContent" class="overflowY">
+          <span id="spanEventsContent">
+            <h1 class="contentTypeOtr">eventos</h1>
+            
+            <span class="contentSpan">
+              <span class="activateContentSpan" id="activateContentUp" val="0" loadedMedia="0" onclick="openCloseContent('#activateContentUp')">
+                <span class="contentSpanHoverOtr">
+                  <span class="sameline"><h3 class="content" id="sign">▸</h3><h3 style="font-style: italic;" class="content" id="up">De pé</h3></span>
+                </span>
+              </span>
+              <span class="pContent">
+                <p style="margin-top: 5px; margin-right: 15px; text-align:justify;">
+                  - <strong>[16/05/2026]</strong>
+                </p>
+                <p style="margin-top: -15px; margin-right: 15px; text-align:justify;">
+                  Improvisação Livre com Nathalia Fragoso e KiD azucrina, na Feira Faísca, Mercado Novo, BH. Parte da série de improvisações Quartas de Improviso.
+                </p>
+            </span>
+            
+            <p style="margin-top: -10px; margin-right: 15px;" >&nbsp;</p>
+            
+            <span class="contentSpan">
+              <span class="activateContentSpan" id="activateContentDown" val="0" loadedMedia="0" onclick="openCloseContent('#activateContentDown')">
+                <span class="contentSpanHoverOtr">
+                  <span class="sameline"><h3 class="content" id="sign">▸</h3><h3 style="font-style: italic;" class="content" id="down">Quedas</h3></span>
+                  <!--<h4 style="margin-top: 5px; margin-bottom: 0px; font-style: italic;">violonista solo</h4>-->
+                </span>
+              </span>
+              <span class="pContent">
+                <p style="margin-top: 5px; margin-right: 15px; text-align:justify;">
+                  - <strong class="contentStrongHoverOutlink" onclick="window.open('https://mp.weixin.qq.com/s/rPt_dJ7cMJB_Oz0k5qBY-w', '_blank');"><u>[04/04/2026 - 06/04/2026]</u></strong>
+                </p>
+                <p style="margin-top: -15px; margin-right: 15px; text-align:justify;">
+                  <em class="contentEmHoverComps" onclick="pageChange('comps.html', 'g', '#activateContentFacePiece', false)"><u>facePiece</u></em>
+                  GOAT performances no Theatre YOUNG, Shanghai. Com 马雨歌.
+                </p>
+                
+                <p style="margin-top: 5px; margin-right: 15px; text-align:justify;">
+                  - <strong class="contentStrongHoverOutlink" onclick="window.open('https://mp.weixin.qq.com/s/RmaX4k1DYwOZ16KikFCrdA', '_blank');"><u>[22/03/2026]</u></strong>
+                </p>
+                <p style="margin-top: -15px; margin-right: 15px; text-align:justify;">
+                  Workshop "干嘛要了解脸？ - Why do we care about faces?", sobre os processos de exploração do rosto de
+                  <em class="contentEmHoverComps" onclick="pageChange('comps.html', 'g', '#activateContentFacePiece', false)"><u>facePiece</u></em>
+                  , no Theatre YOUNG, Shanghai. Com 马雨歌.
+                </p>
+                
+                <p style="margin-top: 5px; margin-right: 15px; text-align:justify;">
+                  - <strong>[25/02/2026]</strong>
+                </p>
+                <p style="margin-top: -15px; margin-right: 15px; text-align:justify;">
+                  Defesa da dissertação 
+                  <em>Performance Notes: investigating performance composition in its relations with music processes and practices</em>,
+                  na Universidade Federal de Minas Gerais.
+                </p>
+                
+                <p style="margin-top: 5px; margin-right: 15px; text-align:justify;">
+                  - <strong>[09/12/2025 - 10/12/2025]</strong>
+                </p>
+                <p style="margin-top: -15px; margin-right: 15px; text-align:justify;">
+                  Estréia do Espetáculo 
+                  <em>Post Festum: sobre a violência mítica</em>,
+                  no Andaluz Pub, em Belo Horizonte. Participei do espetáculo com composição e performance de trilha/desenho de som (e também como pitaqueiro!). Com os coletivos [conjunto vazio] e Contraponto (experiência).
+                </p>
+                
+                
+                <p style="margin-top: 5px; margin-right: 15px; text-align:justify;">
+                  - <strong>[01/11/2025]</strong>
+                </p>
+                <p style="margin-top: -15px; margin-right: 15px; text-align:justify;">
+                  QI 199, com Ajitená Scarassatti, viola de cocho; Caio Costa Campos, baixo elétrico; Henrique Iwao, eletrônicos e objetos; Mário Del Nunzio, guitarra elétrica e objetos.
+                  Memorial dos Direitos Humanos, Belo Horizonte.
+                </p>
+                
+                <p style="margin-top: 5px; margin-right: 15px; text-align:justify;">
+                  - <strong>[31/10/2025]</strong>
+                </p>
+                <p style="margin-top: -15px; margin-right: 15px; text-align:justify;">
+                  Performance ao vivo de
+                  <em class="contentEmHoverComps" onclick="pageChange('comps.html', 'g', '#activateContentToca', false)"><u>Toca</u></em>,
+                  com Pedro Henrique Gilberto no violão e eu no controle das projeções. ECrIS, Conservatório da UFMG, Belo Horizonte.
+                </p>
+                
+                <p style="margin-top: 5px; margin-right: 15px; text-align:justify;">
+                  - <strong>[19/09/2025]</strong>
+                </p>
+                <p style="margin-top: -15px; margin-right: 15px; text-align:justify;">
+                  Performance da versão de concerto de
+                  <em class="contentEmHoverComps" onclick="pageChange('comps.html', 'g', '#activateContentFacePiece', false)"><u>facePiece</u></em>,
+                  em vídeo único com três performers ao mesmo tempo, 15 no total. Essa versão, montada especialmente para este concerto, pode ser acessada 
+                  <em class="contentEmHoverOutlink" onclick="window.open('https://youtu.be/4-LX4BW0syc', '_blank');"><u>aqui</u></em>.
+                  ECrIS, Conservatório da UFMG, Belo Horizonte.
+                </p>
+                
+                <p style="margin-top: 5px; margin-right: 15px; text-align:justify;">
+                  - <strong>[17/07/2025]</strong>
+                </p>
+                <p style="margin-top: -15px; margin-right: 15px; text-align:justify;">
+                  Boteco Ruído 25, com CACO, Bruno Cunha, Kino Lopes e Henrique Iwao. Na Kasa Invisível, Belo Horizonte.
+                </p>
+              </span>
+            </span>
+          </span>  
+          </span>
+          
+          <span id="spanCodesContent" style="display: none;">
+            <h1 class="contentTypeOtr">códigos</h1>
+            
+            <span class="contentSpan">
+              <span class="activateContentSpan" id="activateContentGuitarProjection" val="0" loadedMedia="0" onclick="openCloseContent('#activateContentGuitarProjection')">
+                <span class="contentSpanHoverOtr">
+                  <span class="sameline"><h3 class="content" id="sign">▸</h3><h3 style="font-style: italic;" class="content" id="guitarProjection">guitarProjection</h3></span>
+                  <h4 style="margin-top: 0px; margin-bottom: 0px; font-style: italic;">desenvolvido para Toca (2024)</h4>
+                </span>
+              </span>
+              <span class="pContent">
+                <p style="margin-top: 5px; margin-right: 15px; text-align:justify;">
+                  Código para o performer de luzes/projeção de <em class="contentEmHoverComps" onclick="pageChange('comps.html', 'g', '#activateContentToca', false)"><u>Toca</u></em>.
+                </p>
+                
+                <p style="margin-top: 5px; margin-right: 15px; text-align:justify;">
+                  Permite o mapeamento de caminhos lineares padronizados por onde os spotlights da peça vão passar previamente à performance. Utilizando uma controladora e a imagem de câmera infravermelha como feedback,
+                  o performer pode escolher a ordem dos caminhos que vai utilizar de acordo com cada momento da peça, podendo modficar em tempo real a posição horizontal cada luz em relação à cada caminho, 
+                  um offset vertical, rotação e transposição dos caminhos para ajustar à performance do violonista. É também possível alterar a cor das luzes, o tamanho de seu foco, sua opacidade, etc.
+                </p>
+                
+                <p style="margin-top: 5px; margin-right: 15px; text-align:justify;">
+                  Desenvolvido em Python e Processing 4. A documentação deste código pode ser encontrada <em class="contentEmHoverOutlink" onclick="window.open('https://github.com/cacaiocamp/guitarProjection', '_blank');"><u>aqui</u></em>.
+                </p>
+                
+                <div class="mediaWrapper">
+                  <video class="registerWrapper" loading="lazy" autoplay muted loop>
+                    <source src="./en/imgs/guitarProjection.mp4" type="video/mp4">
+                  </video>
+                </div>
+            </span>
+            
+            <p style="margin-top: -10px; margin-right: 15px;" >&nbsp;</p>
+            
+            <span class="contentSpan">
+              <span class="activateContentSpan" id="activateContentCaminho" val="0" loadedMedia="0" onclick="openCloseContent('#activateContentCaminho')">
+                <span class="contentSpanHoverOtr">
+                  <span class="sameline"><h3 class="content" id="sign">▸</h3><h3 style="font-style: italic;" class="content" id="caminho">caminhooculto</h3></span>
+                  <h4 style="margin-top: 5px; margin-bottom: 0px; font-style: italic;">desenvolvido para a residência SomaRumor (2021)</h4>
+                </span>
+              </span>
+              <span class="pContent">
+                <p style="margin-top: 5px; margin-right: 15px; text-align:justify;">
+                  Sistema interativo baseado no jogo Caminho Oculto. Ao invés de peças de diferentes formatos que devem ser movidas para retirar uma peça específica, <em>caminhooculto</em> utiliza
+                  8 LDRs e peças de plástico com diferentes transparências para identificar padrões randomizados em sua superfície. Cada padrão controla processamentos de audio distintos, também randomizados
+                  de tempo em tempo.
+                </p>
+                
+                <p style="margin-top: 5px; margin-right: 15px; text-align:justify;">
+                  Desenvolvido em Arduino e SuperCollider. Documentação pode ser encontrada <em class="contentEmHoverOutlink" onclick="window.open('https://github.com/cacaiocamp/caminhooculto', '_blank');"><u>aqui</u></em>.
+                </p>
+                
+                <div class="mediaWrapper">
+                  <img class="registerWrapper" loading="lazy" src="./en/imgs/caminhooculto.jpg" style="opacity: 90%">
+                </div>
+              </span>
+            </span>
+            
+            <p style="margin-top: -10px; margin-right: 15px;" >&nbsp;</p>
+            
+            <span class="contentSpan">
+              <span class="activateContentSpan" id="activateContentJoy" val="0" loadedMedia="0" onclick="openCloseContent('#activateContentJoy')">
+                <span class="contentSpanHoverOtr">
+                  <span class="sameline"><h3 class="content" id="sign">▸</h3><h3 style="font-style: italic;" class="content" id="joy">joyOSCMapper</h3></span>
+                  <h4 style="margin-top: 5px; margin-bottom: 0px; font-style: italic;">visualizador e mapeador de inputs de joycons para OSC (2021)</h4>
+                </span>
+              </span>
+              <span class="pContent">
+                <p style="margin-top: 5 px; margin-right: 15px; text-align:justify;">
+                  Visualizador e mapeador de inputs de Nintendo Switch Joycon's para OSC, permitindo a integração com sistemas interativos diversos.
+                </p>
+                
+                <p style="margin-top: 5 px; margin-right: 15px; text-align:justify;">
+                  Desenvolvido em C++/openFrameworks para a peça <em>digdigjoy</em>, que não saiu (ainda) do papel. <em class="contentEmHoverOutlink" onclick="window.open('https://github.com/cacaiocamp/joyOSCMapper', '_blank');"><u>Aqui</u></em> você encontra a documentação.
+                </p>
+                
+                <div class="mediaWrapper">
+                  <img class="registerWrapper" loading="lazy" src="./en/imgs/joycon.jpg" style="opacity: 90%">
+                </div>
+              </span>
+            </span>  
+          </span>  
+        </div>
+        
+        <nav id="navContentNames" style="display: none;">
+          <span id="spanEventsNames" style="display: block;">
+            <h4 style="margin-bottom: 0px"> --- eventos </h4>
+            <p style="margin-top: 0px; margin-bottom: 5px;">
+              - <u><em class="contentEmHoverOtr" onclick="openCloseContent('#activateContentUp', true); scrollToId('up')"> De pé</em></u>&nbsp; &nbsp; &nbsp;
+            </p>
+            
+            <p style="margin-top: 0px; margin-bottom: 5px;">
+              - <u><em class="contentEmHoverOtr" onclick="openCloseContent('#activateContentDown', true); scrollToId('down')"> Quedas</em></u> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+            </p>
+          </span>
+          
+          <span id="spanCodesNames" style="display: block;">
+            <h4 style="margin-bottom: 0px"> --- códigos </h4>
+            <p style="margin-top: 0px; margin-bottom: 5px;">
+              - <u><em class="contentEmHoverOtr" onclick="openCloseContent('#activateContentGuitarProjection', true); scrollToId('guitarProjection')"> guitarProjection</em></u>&nbsp; &nbsp; &nbsp;
+            </p>
+            
+            <p style="margin-top: 0px; margin-bottom: 5px;">
+              - <u><em class="contentEmHoverOtr" onclick="openCloseContent('#activateContentCaminho', true); scrollToId('caminho')"> caminhooculto</em></u> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+            </p>
+            
+            <p style="margin-top: 0px; margin-bottom: 5px;">
+              - <u><em class="contentEmHoverOtr" onclick="openCloseContent('#activateContentJoy', true); scrollToId('joy')"> joyOscMapper</em></u> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+            </p>
+          </span>
+          
+        </nav>
+      </span>
+    </div>
+    
+    <h4 id="h4PageNameSmall" style="color: #6655ba; transform: translateX(-33%) translateY(50%) rotate(-90deg)"">outros</h1>
+</body>
+</html>

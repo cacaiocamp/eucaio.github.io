@@ -27,13 +27,12 @@ span.contentSpanHoverAcademia:hover{
   color: #E17663
 }
 
-em.contentEmHoverComps:hover{
-  color: #7E1400;
-  cursor: pointer;
+span.contentSpanHoverOtr:hover{
+  color: #6655BA
 }
 
-em.contentEmHoverImpros:hover{
-  color: #7E5221;
+em.contentEmHoverComps:hover{
+  color: #7E1400;
   cursor: pointer;
 }
 
@@ -42,7 +41,22 @@ em.contentEmHoverAcademia:hover{
   cursor: pointer;
 }
 
+em.contentEmHoverImpros:hover{
+  color: #7E5221;
+  cursor: pointer;
+}
+
+em.contentEmHoverOtr:hover{
+  color: #6655BA;
+  cursor: pointer;
+}
+
 em.contentEmHoverOutlink:hover{
+  color: #3366ff;
+  cursor: pointer;
+}
+
+strong.contentStrongHoverOutlink:hover{
   color: #3366ff;
   cursor: pointer;
 }
@@ -205,6 +219,13 @@ h1.contentTypeBio {
   margin-bottom: 8px; 
   letter-spacing: 5px; 
   color: #115E21;
+}
+
+h1.contentTypeOtr {
+  margin-top: 0px; 
+  margin-bottom: 8px; 
+  letter-spacing: 5px; 
+  color: #6655ba;
 }
 
 h1.contentTypeIndex {
