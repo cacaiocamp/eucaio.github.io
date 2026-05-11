@@ -23,6 +23,30 @@ span.contentSpanHoverComps:hover{
   color: #7E1400
 }
 
+span.contentSpanHoverAcademia:hover{
+  color: #E17663
+}
+
+em.contentEmHoverComps:hover{
+  color: #7E1400;
+  cursor: pointer;
+}
+
+em.contentEmHoverImpros:hover{
+  color: #7E5221;
+  cursor: pointer;
+}
+
+em.contentEmHoverAcademia:hover{
+  color: #E17663;
+  cursor: pointer;
+}
+
+em.contentEmHoverOutlink:hover{
+  color: #3366ff;
+  cursor: pointer;
+}
+
 #caiosCountDiv { position:absolute; z-index:2; opacity: 0%; top: -1%; right: 1%}
 
 .overflowY {overflow-y:auto;}
@@ -56,12 +80,11 @@ span.contentSpanHoverComps:hover{
     align-items: center;
 }
 
-
 .imgWrapper {
   margin: 10px;
     background-color: rgba(230, 230, 255, 0.25); 
     flex: 1 1 48%; /* Initial width for two items */
-    max-width: 35%; /* Ensure max width for two items */
+    max-width: 33%; /* Ensure max width for two items */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -161,6 +184,13 @@ h1.contentType {
   margin-bottom: 8px; 
   letter-spacing: 5px; 
   color: #4E1400;
+}
+
+h1.contentTypeAcademia {
+  margin-top: 0px; 
+  margin-bottom: 8px; 
+  letter-spacing: 5px; 
+  color: #D17653;
 }
 
 h1.contentTypeImpros {
