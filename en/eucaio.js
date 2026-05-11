@@ -282,7 +282,7 @@ function sampleCaioDraw(){
   drawSampleCaio = !drawSampleCaio;
 }
 
-function openCloseContent(spanElementId){
+function openCloseContent(spanElementId, openOnly = false){
   let spanElement = select(spanElementId);
   print(spanElementId);
   let h3Sign = select('#sign', spanElement);
@@ -303,7 +303,7 @@ function openCloseContent(spanElementId){
       spanElement.elt.attributes.loadedMedia.value = 1;
     }
   }
-  else {
+  else if (openOnly == false){
     spanElement.elt.attributes.val.value = 0;
     pContent.style("display: none;");
     h3Sign.elt.innerHTML = "▸";
@@ -351,19 +351,25 @@ function compsFeed(typeToFeed){
       
       selectedFeedId = '#dFeed';
     }
-    else if(typeToFeed == 't'){
-      currentCompContentId = '#spanTrioContent';
-      currentCompNamesId = '#spanTrioNames';
+    else if(typeToFeed == 'dq'){
+      currentCompContentId = '#spanDqContent';
+      currentCompNamesId = '#spanDqNames';
       
-      selectedFeedId = '#tFeed';
+      selectedFeedId = '#dqFeed';
     }
-    else if(typeToFeed == 'q'){
-      currentCompContentId = '#spanQuartetoContent';
-      currentCompNamesId = '#spanQuartetoNames';
+    //else if(typeToFeed == 't'){
+    //  currentCompContentId = '#spanTrioContent';
+    //  currentCompNamesId = '#spanTrioNames';
       
-      selectedFeedId = '#qFeed';
+    //  selectedFeedId = '#tFeed';
+    //}
+    //else if(typeToFeed == 'q'){
+    //  currentCompContentId = '#spanQuartetoContent';
+    //  currentCompNamesId = '#spanQuartetoNames';
       
-    }
+    //  selectedFeedId = '#qFeed';
+      
+    //}
     else{ // g
       currentCompContentId = '#spanMaisContent';
       currentCompNamesId = '#spanMaisNames';
@@ -671,4 +677,14 @@ function pageChange(nextPage, action = "", value = "") {
     vlink = "?" + value;
   }
   window.location.href = nextPage + "#" + action + vlink + "&" + caiosCount;
+}
+
+function scrollToId(elementId) {
+  const element = document.getElementById(elementId);
+  if (element) {
+    element.scrollIntoView({
+      behavior: 'smooth',  // Smooth scrolling
+      block: 'start'       // Align to top
+    });
+  }
 }

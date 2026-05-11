@@ -67,9 +67,7 @@
       <nav id="navContentTypes">
         <span class="typesTab" style="display: flex; justify-content: space-around;">
             <a class="navTabB" href="#s" onclick="compsFeed('s')" style="font-weight: bold; background-color: #ff663321" id="sFeed"> solo </a>
-            <a class="navTabB" href="#d" onclick="compsFeed('d')" style="font-weight: bold" id="dFeed"> duo </a> 
-            <a class="navTabB" href="#t" onclick="compsFeed('t')" style="font-weight: bold" id="tFeed"> trio </a> 
-            <a class="navTabB" href="#q" onclick="compsFeed('q')" style="font-weight: bold" id="qFeed"> quartet </a> 
+            <a class="navTabB" href="#dq" onclick="compsFeed('dq')" style="font-weight: bold" id="dqFeed"> 2-4 </a>
             <a class="navTabB" href="#g" onclick="compsFeed('g')" style="font-weight: bold" id="mFeed"> ++ </a> 
         </span>
       </nav>
@@ -99,7 +97,7 @@
                 <p style="margin-top: 5px; margin-right: 15px; text-align:justify;">
                   The registers and score here avaible are of the process, still in develpment. The video, recorded by Pedro Aspahan, is the first register of the piece. The photograms were taken from a rehearsal recording.
                   
-                  <a style="font-style: italic;" href="https://github.com/cacaiocamp/guitarProjection" target="_blank">Here</a> you can find a bit of its documentation and the codes used in their production.
+                  <em class="contentEmHoverOutlink" onclick="window.open('https://github.com/cacaiocamp/guitarProjection', '_blank');"><u>Here</u></em> you can find a bit of its documentation and the codes used in their production.
                 </p>
                 <div class="mediaWrapper">
                   <div class="videoWrapper" val="https://www.youtube.com/embed/MHEerwrxB20?si=cSpON16bNR6kz3PQ" onclick="loadIFrame(this)">
@@ -145,8 +143,8 @@
             </span>
           </span>  
           
-          <span id="spanDuoContent" style="display: none;">
-            <h1 class="contentType">duo</h1>
+          <span id="spanDqContent" style="display: none;">
+            <h1 class="contentType">2-4</h1>
             
             <span class="contentSpan">
               <span class="activateContentSpan" id="activateContentAnesidora" val="0" loadedMedia="0" onclick="openCloseContent('#activateContentAnesidora')">
@@ -179,10 +177,8 @@
                 </div>
               </span>
             </span>
-          </span>  
-          
-          <span id="spanTrioContent" style="display: none;">
-            <h1 class="contentType">trio</h1>
+            
+            <p style="margin-top: -10px; margin-right: 15px;" >&nbsp;</p>
             
             <span class="contentSpan">
               <span class="activateContentSpan" id="activateContentCorp" val="0" loadedMedia="0" onclick="openCloseContent('#activateContentCorp')">
@@ -207,10 +203,8 @@
                 </div>
               </span>
             </span>
-          </span>
-          
-          <span id="spanQuartetoContent" style="display: none;">
-            <h1 class="contentType">quartet</h1>
+            
+            <p style="margin-top: -10px; margin-right: 15px;" >&nbsp;</p>
             
             <span class="contentSpan">
               <span class="activateContentSpan" id="activateContentContato1" val="0" loadedMedia="0" onclick="openCloseContent('#activateContentContato1')">
@@ -236,7 +230,7 @@
                 </div>
               </span>
             </span>
-          </span> 
+          </span>          
           
           <span id="spanMaisContent" style="display: none;">
             <h1 class="contentType">++</h1>
@@ -250,9 +244,10 @@
               </span>
               <span class="pContent">
                 <p style="margin-top: 5px; margin-right: 15px; text-align:justify;">
-                  Final presentations of <em>facePiece</em>, a piece for faces. The piece was premiered at Cohen New Works Festival, with financial support of GO! Grant.
+                  <em>facePiece</em>, a piece for faces. The piece was premiered at Cohen New Works Festival, with financial support of GO! Grant.
                   The piece was also presented in multiple other occasions, in concerts in Brasil and at the States, in video-art festivals and, in 2026, at
-                  <em class="contentEmHoverOutlink" onclick="window.open('https://mp.weixin.qq.com/s/Uj57F83aQdfuRN-R69NqVw', '_blank');"><u>GOAT Theater Festibal, at Theatre YOUNG, Shanghai</u></em>.
+                  <em class="contentEmHoverOutlink" onclick="window.open('https://mp.weixin.qq.com/s/Uj57F83aQdfuRN-R69NqVw', '_blank');"><u>GOAT Theater Festival, at Theatre YOUNG Shanghai</u></em>, in colaboration with 
+                  马雨歌.
                   See <em class="contentEmHoverComps" onclick="openCloseContent('#activateContentMiniatura1', true); scrollToId('miniatura1')"><u> miniatura1 (2024)</u></em> for more information regarding the creative process of the piece.
                 </p> 
                 <p style="margin-top: 5px; margin-right: 15px; text-align:justify;">
@@ -368,41 +363,38 @@
           <span id="spanSoloNames">
             <h4 style="margin-bottom: 0px" style="display: block;"> --- guitar </h4>
             <p style="margin-top: 0px; margin-bottom: 5px;">
-              - <a style="font-style: italic;" href="#ghands"> Toca (2024)</a> &nbsp; &nbsp; &nbsp;
+              - <u><em class="contentEmHoverComps" onclick="openCloseContent('#activateContentToca', true); scrollToId('ghands')"> Toca (2024) </em></u>&nbsp; &nbsp; &nbsp;
             </p>
+            
             <p style="margin-top: 0px; margin-bottom: 5px;">
-              - <a style="font-style: italic;" href="#eepo">  estante em posição ordinária (2023)</a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+              - <u><em class="contentEmHoverComps" onclick="openCloseContent('#activateContentEepo', true); scrollToId('eepo')">  estante em posição ordinária (2023)</em></u> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
             </p>
           </span>
           
-          <span id="spanDuoNames" style="display: none;">
-            <h4 style="margin-bottom: 0px"> --- percussion </h4>
-           <p style="margin-top: 0px; margin-bottom: 5px;">
-              - <a style="font-style: italic;" href="#anesidora"> anesidora (2022)</a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+          <span id="spanDqNames" style="display: none;">
+            <h4 style="margin-bottom: 0px"> --- percussion duo</h4>
+            <p style="margin-top: 0px; margin-bottom: 5px;">
+              - <u><em class="contentEmHoverComps" onclick="openCloseContent('#activateContentAnesidora', true); scrollToId('anesidora')"> anesidora (2022)</em></u> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
             </p>
-          </span>
-          
-          <span id="spanTrioNames" style="display: none;">
+            
             <h4 style="margin-bottom: 0px"> --- percussion + 2 </h4>
             <p style="margin-top: 0px; margin-bottom: 5px;">
-              - <a style="font-style: italic;" href="#corp"> corpos/corpses (2024)</a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+              - <u><em class="contentEmHoverComps" onclick="openCloseContent('#activateContentCorp', true); scrollToId('corp')"> corpos/corpses (2024)</em></u> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
             </p>
-          </span>
-          
-          <span id="spanQuartetoNames" style="display: none;">
+            
             <h4 style="margin-bottom: 0px"> --- flute, sax, guitar, cello </h4>
             <p style="margin-top: 0px; margin-bottom: 5px;">
-              - <a style="font-style: italic;" href="#contato1"> contato1 (2023)</a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+              - <u><em class="contentEmHoverComps" onclick="openCloseContent('#activateContentContato1', true); scrollToId('contato1')"> contato1 (2023)</em></u> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
             </p>
           </span>
           
           <span id="spanMaisNames" style="display: none;">
             <h4 style="margin-bottom: 0px"> --- faces </h4>
             <p style="margin-top: 0px; margin-bottom: 5px;">
-              - <a style="font-style: italic;" href="#facePiece"> facePiece (2025)</a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+              - <u><em class="contentEmHoverComps" onclick="openCloseContent('#activateContentFacePiece', true); scrollToId('facePiece')"> facePiece (2025)</em></u> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
             </p>
             <p style="margin-top: 0px; margin-bottom: 5px;">
-              - <a style="font-style: italic;" href="#miniatura1"> miniatura1 (2024)</a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+              - <u><em class="contentEmHoverComps" onclick="openCloseContent('#activateContentMiniatura1', true); scrollToId('miniatura1')"> miniatura1 (2024)</em></u> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
             </p>
           </span>
         </nav>
