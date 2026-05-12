@@ -445,6 +445,52 @@ function academiaFeed(typeToFeed){
   addRightNavigation();
 }
 
+
+function otrFeed(typeToFeed){
+  if(typeToFeed != currentCompType){
+    if(currentCompContentId == '#spanSoloContent'){
+      
+      currentCompContentId = '#spanEventsContent';
+      currentCompNamesId = '#spanEventsNames';
+      selectedFeedId = '#eventsFeed';
+    }
+    
+    
+    selectedElement = select(currentCompContentId);
+    selectedElement.style("display: none;");
+    
+    selectedElement = select(currentCompNamesId);
+    selectedElement.style("display: none;");
+    
+    select(selectedFeedId).elt.style.backgroundColor = "";
+    
+    if(typeToFeed == 'events'){
+      currentCompContentId = '#spanEventsContent';
+      currentCompNamesId = '#spanEventsNames';
+      
+      selectedFeedId = '#eventsFeed';
+    }
+    else {
+      currentCompContentId = '#spanCodesContent';
+      currentCompNamesId = '#spanCodesNames';
+      
+      selectedFeedId = '#codesFeed';
+    }
+    
+    select(selectedFeedId).style("background-color: #6655ba21");
+    
+    selectedElement = select(currentCompContentId);
+    selectedElement.style("display: block;");
+    
+    selectedElement = select(currentCompNamesId);
+    selectedElement.style("display: block;");
+    
+    currentCompType = typeToFeed;
+  }
+  
+  addRightNavigation();
+}
+
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
   
@@ -534,7 +580,7 @@ function windowResized() {
 }
 
 function addRightNavigation(){
-  if((curPage == "academia.html") || (curPage == "impros.html") || (curPage == "comps.html")){
+  if((curPage == "otr.html") || (curPage == "academia.html") || (curPage == "impros.html") || (curPage == "comps.html")){
     selectedElement = select('#divContent');
     
     if((selectedElement.elt.scrollHeight > selectedElement.elt.offsetHeight) && (widthTooShort == false) && (heightTooShort == false)){
