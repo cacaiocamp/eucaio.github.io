@@ -94,6 +94,21 @@ strong.contentStrongHoverOutlink:hover{
     align-items: center;
 }
 
+.mediaItem {
+  margin: 10px;
+  flex: 1 1 48%;
+  max-width: 33%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mediaItem video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 .imgWrapper {
   margin: 10px;
     background-color: rgba(230, 230, 255, 0.25); 
